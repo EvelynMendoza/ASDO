@@ -159,7 +159,7 @@ public class consumidoresDAOImpl implements consumidoresDAO{
     public static void main(String[] args) throws SQLException, DAOException{
         Connection conn=null;
         try {
-            conn=DriverManager.getConnection("jdbc:mysql://localhost/SDO","octavio", "octavio");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost/SDO","root", "root");
             consumidoresDAO dao= new consumidoresDAOImpl(conn);
             List<consumidores> consumidores=dao.buscarTodos();            
             for(consumidores c:consumidores){
@@ -167,7 +167,7 @@ public class consumidoresDAOImpl implements consumidoresDAO{
             }
             
             //consulta por id
-            /*consumidores consumidor =dao.buscarConsumidor(1);
+           /* consumidores consumidor =dao.buscarConsumidor(1);
             System.out.println(consumidor.toString());*/
             
             /*Insert*/
