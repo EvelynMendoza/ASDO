@@ -10,36 +10,51 @@ package modelo;
  * @author octavio
  */
 public class consumidores {
+    
    int idConsumidor;
+   String numUsuario;
+   String numMedidor;
    String nombreCompleto;
    String direccion;
+    int manzana;
    String telefono;
-   int numMedidor;
 
-    public consumidores(String nombreCompleto, String direccion, String telefono, int numMedidor) {
-        
+    public consumidores(String numUsuario, String numMedidor, String nombreCompleto, String direccion, int manzana, String telefono) {
+        this.numUsuario = numUsuario;
+        this.numMedidor = numMedidor;
         this.nombreCompleto = nombreCompleto;
         this.direccion = direccion;
+        this.manzana = manzana;
         this.telefono = telefono;
-        this.numMedidor = numMedidor;
     }
 
-//    public consumidores(String nombreCompleto) {
-//        this.nombreCompleto = nombreCompleto;
-//    }
-    
+   
     public consumidores() {
-        
     }
-   
-   
 
+   
     public int getIdConsumidor() {
         return idConsumidor;
     }
 
     public void setIdConsumidor(int idConsumidor) {
         this.idConsumidor = idConsumidor;
+    }
+
+    public String getNumUsuario() {
+        return numUsuario;
+    }
+
+    public void setNumUsuario(String numUsuario) {
+        this.numUsuario = numUsuario;
+    }
+
+    public String getNumMedidor() {
+        return numMedidor;
+    }
+
+    public void setNumMedidor(String numMedidor) {
+        this.numMedidor = numMedidor;
     }
 
     public String getNombreCompleto() {
@@ -58,6 +73,14 @@ public class consumidores {
         this.direccion = direccion;
     }
 
+    public int getManzana() {
+        return manzana;
+    }
+
+    public void setManzana(int manzana) {
+        this.manzana = manzana;
+    }
+
     public String getTelefono() {
         return telefono;
     }
@@ -66,18 +89,12 @@ public class consumidores {
         this.telefono = telefono;
     }
 
-    public int getNumMedidor() {
-        return numMedidor;
-    }
-
-    public void setNumMedidor(int numMedidor) {
-        this.numMedidor = numMedidor;
-    }
-
     @Override
     public String toString() {
-        return "consumidores{" + "idConsumidor=" + idConsumidor + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", telefono=" + telefono + ", numMedidor=" + numMedidor + '}';
+        return "consumidores{" + "idConsumidor=" + idConsumidor + ", numUsuario=" + numUsuario + ", numMedidor=" + numMedidor + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", manzana=" + manzana + ", telefono=" + telefono + '}';
     }
+  
+
    
    
    
