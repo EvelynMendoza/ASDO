@@ -14,7 +14,7 @@ import modelo.consumidores;
  */
 public interface consumidoresDAO {
     void insertar(consumidores c) throws DAOException;
-    void elimnar(consumidores c)throws DAOException;
+    void elimnar(int c)throws DAOException;
     void actualizar(consumidores c)throws DAOException;
     consumidores buscarConsumidor(int id)throws DAOException;
     List<consumidores> buscarTodos()throws DAOException;

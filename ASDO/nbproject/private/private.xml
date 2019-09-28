@@ -2,8 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
+
             <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/asdo/ASDO.java</file>
+
+            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAO.java</file>
+            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAOImpl.java</file>
+
         </group>
     </open-files>
 </project-private>

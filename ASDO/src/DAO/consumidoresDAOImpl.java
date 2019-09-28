@@ -18,41 +18,42 @@ import modelo.consumidores;
  *
  * @author octavio
  */
-public class consumidoresDAOImpl implements consumidoresDAO{
+public class consumidoresDAOImpl implements consumidoresDAO {
 
-    
-    final String INSERT="insert into consumidores(nombreCompleto, direccion, telefono,  numMedidor) values(?,?,?,?);";
-    final String GETONE="select * from consumidores where idConsumidor=?";
-    final String GETALL="select * from consumidores;";
-   
+    final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) values(?,?,?,?,?,?);";
+    final String GETONE = "select * from consumidores where idConsumidor=?";
+    final String GETALL = "select * from consumidores;";
+    final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
+    final String UPDATE = "UPDATE consumidores SET numUsuario =?, numMedidor =?, nombreCompleto =?,  direccion =?, manzana =?, telefono=? WHERE idConsumidor= ?;";
+
     private Connection conn;
 
     public consumidoresDAOImpl(Connection conn) {
         this.conn = conn;
     }
-    
-    
-    
-    
+
     @Override
-    public void insertar(consumidores c) throws DAOException{
-        PreparedStatement stat=null;
+    public void insertar(consumidores c) throws DAOException {
+        PreparedStatement stat = null;
         try {
-            stat=conn.prepareStatement(INSERT);
+            stat = conn.prepareStatement(INSERT);
             //stat.setInt(1, c.getIdConsumidor());
-            stat.setString(1, c.getNombreCompleto());
-            stat.setString(2, c.getDireccion());
-            stat.setString(3, c.getTelefono());
-            stat.setInt(4, c.getNumMedidor());
-            if(stat.executeUpdate()==0){
-                throw new DAOException("No se guardaron los datos" );
-            }else{
+            stat.setString(1, c.getNumUsuario());
+            stat.setString(2, c.getNumMedidor());
+            stat.setString(3, c.getNombreCompleto());
+            stat.setString(4, c.getDireccion());
+            stat.setInt(5, c.getManzana());
+            stat.setString(6, c.getTelefono());
+
+            if (stat.executeUpdate() == 0) {
+                throw new DAOException("No se guardaron los datos");
+            } else {
                 System.out.println("Los datos se han guardado");
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
-        }finally{
-            if(stat!=null){
+        } finally {
+            if (stat != null) {
                 try {
                     stat.close();
                 } catch (SQLException e) {
@@ -63,40 +64,87 @@ public class consumidoresDAOImpl implements consumidoresDAO{
     }
 
     @Override
-    public void elimnar(consumidores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void actualizar(consumidores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public consumidores buscarConsumidor(int id) throws DAOException {
-        PreparedStatement stat=null;        
-        ResultSet rs=null;
-        consumidores c=null;
+    public void elimnar(int c) throws DAOException {
+        PreparedStatement stat = null;
         try {
-            stat=conn.prepareStatement(GETONE);            
-            stat.setInt(1, id);            
-            rs=stat.executeQuery();
-            if(rs.next()){
-                c=convertir(rs);
-            }else{
-                throw new DAOException("No se ha encontrado ese registro");
+            stat = conn.prepareStatement(DELETE);
+            stat.setInt(1, c);
+
+            if (stat.executeUpdate() == 0) {
+                throw new DAOException("No se ha podido elimiar el registro");
+            } else {
+                System.out.println("Los datos se han borrado");
             }
         } catch (SQLException e) {
-            throw new DAOException("Error SQL" + e);
-        }finally{
-             if(stat!=null){
+            throw new DAOException("Error sql" + e);
+        } finally {
+            if (stat != null) {
                 try {
                     stat.close();
                 } catch (SQLException e) {
                     throw new DAOException("Error en SQL" + e);
                 }
             }
-             if(rs!=null){
+        }
+    }
+
+    @Override
+    public void actualizar(consumidores c) throws DAOException {
+
+        PreparedStatement stat = null;
+        try {
+            stat = conn.prepareStatement(UPDATE);
+
+            stat.setString(1, c.getNumUsuario());
+            stat.setString(2, c.getNumMedidor());
+            stat.setString(3, c.getNombreCompleto());
+            stat.setString(4, c.getDireccion());
+            stat.setInt(5, c.getManzana());
+            stat.setString(6, c.getTelefono());
+            stat.setInt(7, c.getIdConsumidor());
+            if (stat.executeUpdate() == 0) {
+                throw new DAOException("No se guardaron los datos");
+            } else {
+                System.out.println("Los datos se han guardado");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error sql" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public consumidores buscarConsumidor(int id) throws DAOException {
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        consumidores c = null;
+        try {
+            stat = conn.prepareStatement(GETONE);
+            stat.setInt(1, id);
+            rs = stat.executeQuery();
+            if (rs.next()) {
+                c = convertir(rs);
+            } else {
+                throw new DAOException("No se ha encontrado ese registro");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
                 try {
                     rs.close();
                 } catch (SQLException e) {
@@ -109,28 +157,28 @@ public class consumidoresDAOImpl implements consumidoresDAO{
 
     @Override
     public List<consumidores> buscarTodos() throws DAOException {
-        
-        List<consumidores> consumidores= new ArrayList<>();        
-        PreparedStatement stat=null;        
-        ResultSet rs=null;
-        consumidores c=null;
+
+        List<consumidores> consumidores = new ArrayList<>();
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        consumidores c = null;
         try {
-            stat=conn.prepareStatement(GETALL);           
-            rs=stat.executeQuery();
-        while(rs.next()){
-            consumidores.add(convertir(rs));
+            stat = conn.prepareStatement(GETALL);
+            rs = stat.executeQuery();
+            while (rs.next()) {
+                consumidores.add(convertir(rs));
             }
         } catch (SQLException e) {
             throw new DAOException("Error SQL" + e);
-        }finally{
-             if(stat!=null){
+        } finally {
+            if (stat != null) {
                 try {
                     stat.close();
                 } catch (SQLException e) {
                     throw new DAOException("Error en SQL" + e);
                 }
             }
-             if(rs!=null){
+            if (rs != null) {
                 try {
                     rs.close();
                 } catch (SQLException e) {
@@ -138,45 +186,24 @@ public class consumidoresDAOImpl implements consumidoresDAO{
                 }
             }
         }
-        
+
         return consumidores;
-        
+
     }
-    
-    private consumidores convertir(ResultSet rs) throws SQLException{
+
+    private consumidores convertir(ResultSet rs) throws SQLException {
         //String nombreCompleto=rs.getString("nombreCompleto");
-        consumidores consumidor= new consumidores();
+        consumidores consumidor = new consumidores();
         consumidor.setIdConsumidor(rs.getInt("idConsumidor"));
+        consumidor.setNumUsuario(rs.getString("numUsuario"));
+        consumidor.setNumMedidor(rs.getString("numMedidor"));
         consumidor.setNombreCompleto(rs.getString("nombreCompleto"));
         consumidor.setDireccion(rs.getString("direccion"));
+        consumidor.setManzana(rs.getInt("manzana"));
         consumidor.setTelefono(rs.getString("telefono"));
-        consumidor.setNumMedidor(rs.getInt("numMedidor"));
-   
+
         return consumidor;
     }
-    
-    
-    public static void main(String[] args) throws SQLException, DAOException{
-        Connection conn=null;
-        try {
-            conn=DriverManager.getConnection("jdbc:mysql://localhost/SDO","octavio", "octavio");
-            consumidoresDAO dao= new consumidoresDAOImpl(conn);
-            List<consumidores> consumidores=dao.buscarTodos();            
-            for(consumidores c:consumidores){
-                System.out.println(c.toString());
-            }
-            
-            //consulta por id
-            /*consumidores consumidor =dao.buscarConsumidor(1);
-            System.out.println(consumidor.toString());*/
-            
-            /*Insert*/
-            /*consumidores consu=new consumidores("Luis","Zaragosa 20","9515194019", 245);
-            dao.insertar(consu);*/
-        } finally{
-            if(conn!=null){
-                conn.close();
-            }
-        }
-    }
+
+   
 }
