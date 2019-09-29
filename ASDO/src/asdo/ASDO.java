@@ -26,7 +26,7 @@ public class ASDO {
     public static void main(String[] args) throws SQLException, DAOException {
           Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/SDO", "octavio", "octavio");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/SDO", "usuario", "pass");
             consumidoresDAO dao = new consumidoresDAOImpl(conn);
             List<consumidores> consumidores = dao.buscarTodos();
 
