@@ -42,7 +42,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             stat.setString(2, c.getNumMedidor());
             stat.setString(3, c.getNombreCompleto());
             stat.setString(4, c.getDireccion());
-            stat.setInt(5, c.getManzana());
+            stat.setString(5, c.getManzana());
             stat.setString(6, c.getTelefono());
 
             if (stat.executeUpdate() == 0) {
@@ -99,7 +99,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             stat.setString(2, c.getNumMedidor());
             stat.setString(3, c.getNombreCompleto());
             stat.setString(4, c.getDireccion());
-            stat.setInt(5, c.getManzana());
+            stat.setString(5, c.getManzana());
             stat.setString(6, c.getTelefono());
             stat.setInt(7, c.getIdConsumidor());
             if (stat.executeUpdate() == 0) {
@@ -199,7 +199,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
         consumidor.setNumMedidor(rs.getString("numMedidor"));
         consumidor.setNombreCompleto(rs.getString("nombreCompleto"));
         consumidor.setDireccion(rs.getString("direccion"));
-        consumidor.setManzana(rs.getInt("manzana"));
+        consumidor.setManzana(rs.getString("manzana"));
         consumidor.setTelefono(rs.getString("telefono"));
 
         return consumidor;

@@ -16,10 +16,10 @@ public class consumidores {
    String numMedidor;
    String nombreCompleto;
    String direccion;
-    int manzana;
+    String manzana;
    String telefono;
 
-    public consumidores(String numUsuario, String numMedidor, String nombreCompleto, String direccion, int manzana, String telefono) {
+    public consumidores(String numUsuario, String numMedidor, String nombreCompleto, String direccion, String manzana, String telefono) {
         this.numUsuario = numUsuario;
         this.numMedidor = numMedidor;
         this.nombreCompleto = nombreCompleto;
@@ -73,11 +73,11 @@ public class consumidores {
         this.direccion = direccion;
     }
 
-    public int getManzana() {
+    public String getManzana() {
         return manzana;
     }
 
-    public void setManzana(int manzana) {
+    public void setManzana(String manzana) {
         this.manzana = manzana;
     }
 

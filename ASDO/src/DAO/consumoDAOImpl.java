@@ -43,7 +43,7 @@ public class consumoDAOImpl implements consumoDAO {
         try {
             stat = conn.prepareStatement(INSERT);
             //stat.setInt(1, c.getIdConsumidor());
-            stat.setInt(1, c.getIdUsuario());
+            stat.setString(1, c.getNumUsuario());
             stat.setDouble(2, c.getLecturaActual());
             stat.setDouble(3, c.getConsumoMedidor());
             stat.setDouble(4, c.getPrecio());
@@ -110,7 +110,7 @@ public class consumoDAOImpl implements consumoDAO {
         try {
             stat = conn.prepareStatement(UPDATE);
 
-            stat.setInt(1, c.getIdUsuario());
+            stat.setString(1, c.getNumUsuario());
             stat.setDouble(2, c.getLecturaActual());
             stat.setDouble(3, c.getConsumoMedidor());
             stat.setDouble(4, c.getPrecio());
@@ -218,7 +218,7 @@ public class consumoDAOImpl implements consumoDAO {
         //String nombreCompleto=rs.getString("nombreCompleto");
          consumo consumo = new consumo();
             consumo.setIdConsumo(rs.getInt("idConsumo"));
-             consumo.setIdUsuario(rs.getInt("idUsuario"));
+             consumo.setNumUsuario(rs.getString("numUsuario"));
            consumo.setLecturaActual(rs.getDouble("lecturaActual"));
            consumo.setConsumoMedidor(rs.getDouble("consumoMedidor"));
            consumo.setPrecio(rs.getDouble("precio"));

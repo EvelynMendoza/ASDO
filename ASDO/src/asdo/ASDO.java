@@ -48,7 +48,7 @@ public class ASDO {
                 //consulta por id
                 consumidores consumidor =dao.buscarConsumidor(2); 
               
-               System.out.println(consumidor.toString());
+               //System.out.println(consumidor.toString());
  /*Insert*/
  /*consumidores consu=new consumidores("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
             dao.insertar(consu);*/
@@ -57,16 +57,16 @@ public class ASDO {
             
             consu.setIdConsumidor(1);
             dao.actualizar(consu);*/
- /* for (consumidores c : consumidores) {
+ for (consumidores c : consumidores) {
                 System.out.println(c.toString());
-            }*/
+            }
                 //PRUEBA CONSUMO
               //  consumoDAOImpl dao = new consumoDAOImpl(conn);
                 //List<consumo> consumo = dao.buscarTodos();
 
                 consumo consu = new consumo();
                 
-                consu.setIdUsuario(1);
+                //consu.setIdUsuario(1);
                 consu.setLecturaActual(2.0);
                 consu.setConsumoMedidor(3.0);
                 consu.setPrecio(4.0);

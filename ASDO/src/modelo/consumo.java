@@ -14,7 +14,7 @@ import java.util.Date;
 public class consumo {
 
     int idConsumo;
-    int idUsuario;
+    String numUsuario;
     double lecturaActual;
     double consumoMedidor;
     double precio;
@@ -43,13 +43,16 @@ public class consumo {
         this.idConsumo = idConsumo;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getNumUsuario() {
+        return numUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setNumUsuario(String numUsuario) {
+        this.numUsuario = numUsuario;
     }
+
+    
+    
 
     public double getLecturaActual() {
         return lecturaActual;
@@ -171,9 +174,9 @@ public class consumo {
         this.status = status;
     }
 
-    public consumo(int idConsumo, int idUsuario, double lecturaActual, double consumoMedidor, double precio, double importeConsumo, double coutaFija, double recargos, double cooperacion, double bonificaciones, double sanciones, double varios, double totalPagar, String fechaPAgo, String notas, String aviso, int status) {
+    public consumo(int idConsumo, String idUsuario, double lecturaActual, double consumoMedidor, double precio, double importeConsumo, double coutaFija, double recargos, double cooperacion, double bonificaciones, double sanciones, double varios, double totalPagar, String fechaPAgo, String notas, String aviso, int status) {
         this.idConsumo = idConsumo;
-        this.idUsuario = idUsuario;
+        this.numUsuario = idUsuario;
         this.lecturaActual = lecturaActual;
         this.consumoMedidor = consumoMedidor;
         this.precio = precio;
@@ -193,7 +196,7 @@ public class consumo {
 
     @Override
     public String toString() {
-        return "consumo{" + "idConsumo=" + idConsumo + ", idUsuario=" + idUsuario + ", lecturaActual=" + lecturaActual + ", consumoMedidor=" + consumoMedidor + ", precio=" + precio + ", importeConsumo=" + importeConsumo + ", coutaFija=" + coutaFija + ", recargos=" + recargos + ", cooperacion=" + cooperacion + ", bonificaciones=" + bonificaciones + ", sanciones=" + sanciones + ", varios=" + varios + ", totalPagar=" + totalPagar + ", fechaPAgo=" + fechaPAgo + ", notas=" + notas + ", aviso=" + aviso + ", status=" + status + '}';
+        return "consumo{" + "idConsumo=" + idConsumo + ", idUsuario=" + numUsuario + ", lecturaActual=" + lecturaActual + ", consumoMedidor=" + consumoMedidor + ", precio=" + precio + ", importeConsumo=" + importeConsumo + ", coutaFija=" + coutaFija + ", recargos=" + recargos + ", cooperacion=" + cooperacion + ", bonificaciones=" + bonificaciones + ", sanciones=" + sanciones + ", varios=" + varios + ", totalPagar=" + totalPagar + ", fechaPAgo=" + fechaPAgo + ", notas=" + notas + ", aviso=" + aviso + ", status=" + status + '}';
     }
 
 }

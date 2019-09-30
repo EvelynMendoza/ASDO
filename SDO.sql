@@ -7,14 +7,14 @@ CREATE TABLE consumidores (
   numMedidor varchar(50),
   nombreCompleto varchar(100),
   direccion varchar(100),
-  manzana int,
-  telefono varchar(15),
+  manzana varchar(10),
+  telefono varchar(30),
   primary key(idConsumidor)
    );
 
 CREATE TABLE consumo(
  idConsumo int AUTO_INCREMENT,
- idUsuario int,
+ numUsuario varchar(50),
  lecturaActual double,
  consumoMedidor double,
  precio double,
@@ -34,10 +34,11 @@ primary key(idConsumo)
 );
 
 -- insert into consumidores(nombreCompleto, direccion, telefono,  numMedidor) values("octavio","Zaragosa 20","9515194019", 244);
-insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
-values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
+-- insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
+-- values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
 
-insert consumo(idUsuario, lecturaActual, consumoMedidor, precio, importeConsumo,
- coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
- fechaPAgo, notas,aviso, status) values(1,'2.0','2.3','4.0','432.0',
- '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);
+-- insert consumo(numUsuario, lecturaActual, consumoMedidor, precio, importeConsumo,
+ -- coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
+ -- fechaPAgo, notas,aviso, status) values(1,'2.0','2.3','4.0','432.0',
+ -- '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);
+
