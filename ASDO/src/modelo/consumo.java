@@ -5,31 +5,34 @@
  */
 package modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author octavio
  */
 public class consumo {
-int idConsumo;
-int idUsuario;
-String periodo;
-String fechaInicio;
-String fechaIfin;
-double mCubicos;
-double pConsumo;
-double pTotal;
-String status;
 
-    public consumo(int idConsumo, int idUsuario, String periodo, String fechaInicio, String fechaIfin, double mCubicos, double pConsumo, double pTotal, String status) {
-        this.idConsumo = idConsumo;
-        this.idUsuario = idUsuario;
-        this.periodo = periodo;
-        this.fechaInicio = fechaInicio;
-        this.fechaIfin = fechaIfin;
-        this.mCubicos = mCubicos;
-        this.pConsumo = pConsumo;
-        this.pTotal = pTotal;
-        this.status = status;
+    int idConsumo;
+    int idUsuario;
+    double lecturaActual;
+    double consumoMedidor;
+    double precio;
+    double importeConsumo;
+    double coutaFija;
+    double recargos;
+    double cooperacion;
+    double bonificaciones;
+    double sanciones;
+    double varios;
+    double totalPagar;
+    String fechaPAgo;
+    String notas;
+    String aviso;
+    int status;
+
+    public consumo() {
+
     }
 
     public int getIdConsumo() {
@@ -48,66 +51,149 @@ String status;
         this.idUsuario = idUsuario;
     }
 
-    public String getPeriodo() {
-        return periodo;
+    public double getLecturaActual() {
+        return lecturaActual;
     }
 
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
+    public void setLecturaActual(double lecturaActual) {
+        this.lecturaActual = lecturaActual;
     }
 
-    public String getFechaInicio() {
-        return fechaInicio;
+    public double getConsumoMedidor() {
+        return consumoMedidor;
     }
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setConsumoMedidor(double consumoMedidor) {
+        this.consumoMedidor = consumoMedidor;
     }
 
-    public String getFechaIfin() {
-        return fechaIfin;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setFechaIfin(String fechaIfin) {
-        this.fechaIfin = fechaIfin;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public double getmCubicos() {
-        return mCubicos;
+    public double getImporteConsumo() {
+        return importeConsumo;
     }
 
-    public void setmCubicos(double mCubicos) {
-        this.mCubicos = mCubicos;
+    public void setImporteConsumo(double importeConsumo) {
+        this.importeConsumo = importeConsumo;
     }
 
-    public double getpConsumo() {
-        return pConsumo;
+    public double getCoutaFija() {
+        return coutaFija;
     }
 
-    public void setpConsumo(double pConsumo) {
-        this.pConsumo = pConsumo;
+    public void setCoutaFija(double coutaFija) {
+        this.coutaFija = coutaFija;
     }
 
-    public double getpTotal() {
-        return pTotal;
+    public double getRecargos() {
+        return recargos;
     }
 
-    public void setpTotal(double pTotal) {
-        this.pTotal = pTotal;
+    public void setRecargos(double recargos) {
+        this.recargos = recargos;
     }
 
-    public String getStatus() {
+    public double getCooperacion() {
+        return cooperacion;
+    }
+
+    public void setCooperacion(double cooperacion) {
+        this.cooperacion = cooperacion;
+    }
+
+    public double getBonificaciones() {
+        return bonificaciones;
+    }
+
+    public void setBonificaciones(double bonificaciones) {
+        this.bonificaciones = bonificaciones;
+    }
+
+    public double getSanciones() {
+        return sanciones;
+    }
+
+    public void setSanciones(double sanciones) {
+        this.sanciones = sanciones;
+    }
+
+    public double getVarios() {
+        return varios;
+    }
+
+    public void setVarios(double varios) {
+        this.varios = varios;
+    }
+
+    public double getTotalPagar() {
+        return totalPagar;
+    }
+
+    public void setTotalPagar(double totalPagar) {
+        this.totalPagar = totalPagar;
+    }
+
+    public String getFechaPAgo() {
+        return fechaPAgo;
+    }
+
+    public void setFechaPAgo(String fechaPAgo) {
+        this.fechaPAgo = fechaPAgo;
+    }
+
+    public String getNotas() {
+        return notas;
+    }
+
+    public void setNotas(String notas) {
+        this.notas = notas;
+    }
+
+    public String getAviso() {
+        return aviso;
+    }
+
+    public void setAviso(String aviso) {
+        this.aviso = aviso;
+    }
+
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public consumo(int idConsumo, int idUsuario, double lecturaActual, double consumoMedidor, double precio, double importeConsumo, double coutaFija, double recargos, double cooperacion, double bonificaciones, double sanciones, double varios, double totalPagar, String fechaPAgo, String notas, String aviso, int status) {
+        this.idConsumo = idConsumo;
+        this.idUsuario = idUsuario;
+        this.lecturaActual = lecturaActual;
+        this.consumoMedidor = consumoMedidor;
+        this.precio = precio;
+        this.importeConsumo = importeConsumo;
+        this.coutaFija = coutaFija;
+        this.recargos = recargos;
+        this.cooperacion = cooperacion;
+        this.bonificaciones = bonificaciones;
+        this.sanciones = sanciones;
+        this.varios = varios;
+        this.totalPagar = totalPagar;
+        this.fechaPAgo = fechaPAgo;
+        this.notas = notas;
+        this.aviso = aviso;
         this.status = status;
     }
 
     @Override
     public String toString() {
-        return "consumo{" + "idConsumo=" + idConsumo + ", idUsuario=" + idUsuario + ", periodo=" + periodo + ", fechaInicio=" + fechaInicio + ", fechaIfin=" + fechaIfin + ", mCubicos=" + mCubicos + ", pConsumo=" + pConsumo + ", pTotal=" + pTotal + ", status=" + status + '}';
+        return "consumo{" + "idConsumo=" + idConsumo + ", idUsuario=" + idUsuario + ", lecturaActual=" + lecturaActual + ", consumoMedidor=" + consumoMedidor + ", precio=" + precio + ", importeConsumo=" + importeConsumo + ", coutaFija=" + coutaFija + ", recargos=" + recargos + ", cooperacion=" + cooperacion + ", bonificaciones=" + bonificaciones + ", sanciones=" + sanciones + ", varios=" + varios + ", totalPagar=" + totalPagar + ", fechaPAgo=" + fechaPAgo + ", notas=" + notas + ", aviso=" + aviso + ", status=" + status + '}';
     }
-
 
 }

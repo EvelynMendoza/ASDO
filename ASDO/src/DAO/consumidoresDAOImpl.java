@@ -132,7 +132,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             if (rs.next()) {
                 c = convertir(rs);
             } else {
-                throw new DAOException("No se ha encontrado ese registro");
+                System.out.println("No hay registors");
             }
         } catch (SQLException e) {
             throw new DAOException("Error SQL" + e);

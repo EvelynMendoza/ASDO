@@ -28,8 +28,8 @@ CREATE TABLE consumo(
  totalPagar double,
  fechaPAgo date,
  notas varchar(300),
- avis varchar(300),
- status varchar(10),
+ aviso varchar(300),
+ status int,
 primary key(idConsumo)
 );
 
@@ -37,3 +37,7 @@ primary key(idConsumo)
 insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
 values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
 
+insert consumo(idUsuario, lecturaActual, consumoMedidor, precio, importeConsumo,
+ coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
+ fechaPAgo, notas,aviso, status) values(1,'2.0','2.3','4.0','432.0',
+ '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);

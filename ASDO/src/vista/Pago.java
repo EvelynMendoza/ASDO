@@ -5,15 +5,27 @@
  */
 package vista;
 
+import ConexionCloseBD.ConexionBD;
+import DAO.DAOException;
+import DAO.consumidoresDAO;
+import DAO.consumidoresDAOImpl;
+import DAO.consumoDAOImpl;
+import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.consumidores;
+import modelo.consumo;
+
 /**
  *
  * @author Evelyn
  */
 public class Pago extends javax.swing.JFrame {
 
-    /**
-     * Creates new form priueba
-     */
+    Connection conn = null;
+    ConexionBD conecionBD = new ConexionBD();
+
     public Pago() {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
@@ -31,7 +43,7 @@ public class Pago extends javax.swing.JFrame {
         contenedor = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextUsuario = new javax.swing.JTextField();
+        nunmUsuario = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableUsuario = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -82,8 +94,18 @@ public class Pago extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("BUSCAR USUARIO:");
 
-        jTextUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextUsuario.setForeground(new java.awt.Color(0, 51, 204));
+        nunmUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nunmUsuario.setForeground(new java.awt.Color(0, 51, 204));
+        nunmUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nunmUsuarioActionPerformed(evt);
+            }
+        });
+        nunmUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nunmUsuarioKeyReleased(evt);
+            }
+        });
 
         jTableUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTableUsuario.setModel(new javax.swing.table.DefaultTableModel(
@@ -164,38 +186,32 @@ public class Pago extends javax.swing.JFrame {
             .addGroup(otrosPAgosLayout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel12)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel5)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otrosPAgosLayout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addGap(99, 99, 99)
-                            .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextRecargo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextCooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextBonificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextSanciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextVarios, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(108, Short.MAX_VALUE))
-                        .addComponent(jLabel7)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel11))
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel5)
                     .addGroup(otrosPAgosLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(jLabel6)
+                        .addGap(99, 99, 99)
+                        .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextRecargo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextCooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextBonificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextSanciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextVarios, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel11)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         otrosPAgosLayout.setVerticalGroup(
             otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otrosPAgosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(otrosPAgosLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(otrosPAgosLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,7 +349,7 @@ public class Pago extends javax.swing.JFrame {
                         .addGap(326, 326, 326)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nunmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -348,7 +364,7 @@ public class Pago extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nunmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -401,6 +417,39 @@ public class Pago extends javax.swing.JFrame {
     private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnComprobanteActionPerformed
+
+    private void nunmUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nunmUsuarioActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_nunmUsuarioActionPerformed
+
+    private void nunmUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nunmUsuarioKeyReleased
+        int numConsumidor= Integer.parseInt(nunmUsuario.getText());
+        try {
+            
+            conn = conecionBD.conexion();
+            consumidoresDAO dao = new consumidoresDAOImpl(conn);
+            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+            consumidores consumidor = dao.buscarConsumidor(numConsumidor);
+            //System.out.println(consumidor.toString());
+             consumo consumo = daoConsumo.buscarConsumo(numConsumidor);
+             jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
+             jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
+             jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
+             jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
+             jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
+             jTextVarios.setText(String.valueOf(consumo.getVarios()));
+             jTextAreaMotivo.setText(consumo.getAviso());
+             
+                //System.out.println(consumo.toString());
+        } catch (DAOException ex) {
+            Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (conn != null) {
+                conecionBD.cerrarConexion();
+            }
+        }
+    }//GEN-LAST:event_nunmUsuarioKeyReleased
 
     /**
      * @param args the command line arguments
@@ -474,8 +523,8 @@ public class Pago extends javax.swing.JFrame {
     private javax.swing.JTextField jTextCuota;
     private javax.swing.JTextField jTextRecargo;
     private javax.swing.JTextField jTextSanciones;
-    private javax.swing.JTextField jTextUsuario;
     private javax.swing.JTextField jTextVarios;
+    private javax.swing.JTextField nunmUsuario;
     private javax.swing.JPanel otrosPAgos;
     private javax.swing.JPanel pago;
     private javax.swing.JLabel totalPago;
