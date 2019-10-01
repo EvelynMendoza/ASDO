@@ -14,10 +14,10 @@ import modelo.consumo;
  * @author octavio
  */
 public interface consumoDAO {
-     void insertar(consumo c);
-    void elimnar(consumo c);
-    void actualizar(consumo c);
-    consumo buscarConsumidor(int id);
-    List<consumo> buscarTodos();
+     void insertar(consumo c) throws DAOException;
+    void elimnar(int c) throws DAOException;
+    void actualizar(consumo c)throws DAOException;
+    consumo buscarConsumo(int id)throws DAOException;
+    List<consumo> buscarTodos()throws DAOException;
     
 }
