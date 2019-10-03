@@ -192,9 +192,7 @@ public class reporte extends javax.swing.JFrame {
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17))
-                            .addGroup(pagoLayout.createSequentialGroup()
-                                .addComponent(jLabelDinero)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabelDinero))))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 

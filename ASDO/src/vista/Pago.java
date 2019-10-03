@@ -43,7 +43,7 @@ public class Pago extends javax.swing.JFrame {
         contenedor = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        nunmUsuario = new javax.swing.JTextField();
+        numUsuario = new javax.swing.JTextField();
         otrosPAgos = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -68,20 +68,20 @@ public class Pago extends javax.swing.JFrame {
         jLabelConsumo = new javax.swing.JLabel();
         jLabelTotal = new javax.swing.JLabel();
         otrosPAgos1 = new javax.swing.JPanel();
-        jTextCuota1 = new javax.swing.JTextField();
-        jTextRecargo1 = new javax.swing.JTextField();
-        jTextCooperacion1 = new javax.swing.JTextField();
+        jTextCuota = new javax.swing.JTextField();
+        jTextRecargo = new javax.swing.JTextField();
+        jTextCooperacion = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextBonificaciones1 = new javax.swing.JTextField();
-        jTextSanciones1 = new javax.swing.JTextField();
+        jTextBonificaciones = new javax.swing.JTextField();
+        jTextSanciones = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextAreaMotivo1 = new javax.swing.JTextArea();
+        jTextAreaMotivo = new javax.swing.JTextArea();
         jLabel18 = new javax.swing.JLabel();
-        jTextVarios1 = new javax.swing.JTextField();
+        jTextVarios = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,16 +103,11 @@ public class Pago extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("BUSCAR USUARIO:");
 
-        nunmUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        nunmUsuario.setForeground(new java.awt.Color(0, 51, 204));
-        nunmUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nunmUsuarioActionPerformed(evt);
-            }
-        });
-        nunmUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+        numUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        numUsuario.setForeground(new java.awt.Color(0, 51, 204));
+        numUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                nunmUsuarioKeyReleased(evt);
+                numUsuarioKeyReleased(evt);
             }
         });
 
@@ -334,11 +329,11 @@ public class Pago extends javax.swing.JFrame {
         otrosPAgos1.setBackground(new java.awt.Color(255, 255, 255));
         otrosPAgos1.setBorder(javax.swing.BorderFactory.createTitledBorder("OTROS PAGOS"));
 
-        jTextCuota1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCuota.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextRecargo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextRecargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextCooperacion1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCooperacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("Cuota fija:");
@@ -355,18 +350,18 @@ public class Pago extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Bonificaciones:");
 
-        jTextBonificaciones1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextBonificaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextSanciones1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextSanciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextAreaMotivo1.setColumns(20);
-        jTextAreaMotivo1.setRows(5);
-        jScrollPane4.setViewportView(jTextAreaMotivo1);
+        jTextAreaMotivo.setColumns(20);
+        jTextAreaMotivo.setRows(5);
+        jScrollPane4.setViewportView(jTextAreaMotivo);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setText("Varios:");
 
-        jTextVarios1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextVarios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 51, 51));
@@ -386,12 +381,12 @@ public class Pago extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addGap(99, 99, 99)
                         .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextCuota1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextRecargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextCooperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextBonificaciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextSanciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextVarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextRecargo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextCooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextBonificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextSanciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextVarios, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel16)
                     .addComponent(jLabel15)
                     .addComponent(jLabel18)
@@ -403,28 +398,28 @@ public class Pago extends javax.swing.JFrame {
             .addGroup(otrosPAgos1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextCuota1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextRecargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextRecargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextCooperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextCooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextBonificaciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextBonificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextSanciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextSanciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(otrosPAgos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextVarios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextVarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -442,7 +437,7 @@ public class Pago extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nunmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(366, 366, 366)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorLayout.createSequentialGroup()
@@ -464,7 +459,7 @@ public class Pago extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nunmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
@@ -509,30 +504,26 @@ public class Pago extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
-    private void nunmUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nunmUsuarioActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_nunmUsuarioActionPerformed
-
-    private void nunmUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nunmUsuarioKeyReleased
-        
+    private void numUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyReleased
+        System.out.println(numUsuario.getText().length());
         try {
-            int numConsumidor= Integer.parseInt(nunmUsuario.getText());
-            conn = conecionBD.conexion();
-            consumidoresDAO dao = new consumidoresDAOImpl(conn);
-            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-            consumidores consumidor = dao.buscarConsumidor(numConsumidor);
-            //System.out.println(consumidor.toString());
-             consumo consumo = daoConsumo.buscarConsumo(numConsumidor);
-//             jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-//             jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
-//             jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
-//             jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
-//             jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
-//             jTextVarios.setText(String.valueOf(consumo.getVarios()));
-//             jTextAreaMotivo.setText(consumo.getAviso());
-             
-                //System.out.println(consumo.toString());
+            if(numUsuario.getText().length()== 3){
+                int numConsumidor= Integer.parseInt(numUsuario.getText());
+                conn = conecionBD.conexion();
+                consumidoresDAO dao = new consumidoresDAOImpl(conn);
+                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+                consumidores consumidor = dao.buscarConsumidor(numConsumidor);
+                 consumo consumo = daoConsumo.buscarConsumo(numConsumidor);
+                 jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
+                 jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
+                 jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
+                 jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
+                 jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
+                 jTextVarios.setText(String.valueOf(consumo.getVarios()));
+                 jTextAreaMotivo.setText(consumo.getAviso());
+
+                    //System.out.println(consumo.toString());
+            }
         } catch (DAOException ex) {
             Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -540,7 +531,7 @@ public class Pago extends javax.swing.JFrame {
                 conecionBD.cerrarConexion();
             }
         }
-    }//GEN-LAST:event_nunmUsuarioKeyReleased
+    }//GEN-LAST:event_numUsuarioKeyReleased
 
     /**
      * @param args the command line arguments
@@ -616,14 +607,14 @@ public class Pago extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTablePeriodo;
-    private javax.swing.JTextArea jTextAreaMotivo1;
-    private javax.swing.JTextField jTextBonificaciones1;
-    private javax.swing.JTextField jTextCooperacion1;
-    private javax.swing.JTextField jTextCuota1;
-    private javax.swing.JTextField jTextRecargo1;
-    private javax.swing.JTextField jTextSanciones1;
-    private javax.swing.JTextField jTextVarios1;
-    private javax.swing.JTextField nunmUsuario;
+    private javax.swing.JTextArea jTextAreaMotivo;
+    private javax.swing.JTextField jTextBonificaciones;
+    private javax.swing.JTextField jTextCooperacion;
+    private javax.swing.JTextField jTextCuota;
+    private javax.swing.JTextField jTextRecargo;
+    private javax.swing.JTextField jTextSanciones;
+    private javax.swing.JTextField jTextVarios;
+    private javax.swing.JTextField numUsuario;
     private javax.swing.JPanel otrosPAgos;
     private javax.swing.JPanel otrosPAgos1;
     private javax.swing.JPanel pago;
