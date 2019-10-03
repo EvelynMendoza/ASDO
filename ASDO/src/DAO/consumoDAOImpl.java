@@ -216,24 +216,24 @@ public class consumoDAOImpl implements consumoDAO {
     
      private consumo convertir(ResultSet rs) throws SQLException {
         //String nombreCompleto=rs.getString("nombreCompleto");
-         consumo consumo = new consumo();
-            consumo.setIdConsumo(rs.getInt("idConsumo"));
-             consumo.setNumUsuario(rs.getString("numUsuario"));
-           consumo.setLecturaActual(rs.getDouble("lecturaActual"));
-           consumo.setConsumoMedidor(rs.getDouble("consumoMedidor"));
-           consumo.setPrecio(rs.getDouble("precio"));
-           consumo.setImporteConsumo(rs.getDouble("importeConsumo"));
-           consumo.setCoutaFija(rs.getDouble("coutaFija"));
-           consumo.setRecargos(rs.getDouble("recargos"));
-           consumo.setCooperacion(rs.getDouble("cooperacion"));
-           consumo.setBonificaciones(rs.getDouble("bonificaciones"));
-            consumo.setSanciones(rs.getDouble("sanciones"));
-            consumo.setVarios(rs.getDouble("varios"));
-            consumo.setTotalPagar(rs.getDouble("totalPagar"));
-            consumo.setFechaPAgo(rs.getString("fechaPAgo"));
-            consumo.setNotas(rs.getString("notas"));
-            consumo.setAviso(rs.getString("aviso"));
-            consumo.setStatus(rs.getInt("status"));
+        consumo consumo = new consumo();
+        consumo.setIdConsumo(rs.getInt("idConsumo"));
+        consumo.setNumUsuario(rs.getString("numUsuario"));
+        consumo.setLecturaActual(rs.getDouble("lecturaActual"));
+        consumo.setConsumoMedidor(rs.getDouble("consumoMedidor"));
+        consumo.setPrecio(rs.getDouble("precio"));
+        consumo.setImporteConsumo(rs.getDouble("importeConsumo"));
+        consumo.setCoutaFija(rs.getDouble("coutaFija"));
+        consumo.setRecargos(rs.getDouble("recargos"));
+        consumo.setCooperacion(rs.getDouble("cooperacion"));
+        consumo.setBonificaciones(rs.getDouble("bonificaciones"));
+        consumo.setSanciones(rs.getDouble("sanciones"));
+        consumo.setVarios(rs.getDouble("varios"));
+        consumo.setTotalPagar(rs.getDouble("totalPagar"));
+        consumo.setFechaPAgo(rs.getString("fechaPAgo"));
+        consumo.setNotas(rs.getString("notas"));
+        consumo.setAviso(rs.getString("aviso"));
+        consumo.setStatus(rs.getInt("status"));
 
         return consumo;
     }

@@ -5,14 +5,12 @@
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/asdo/ASDO.java</file>
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAO.java</file>
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAOImpl.java</file>
-<<<<<<< HEAD
         <group>
+            <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/ConsumidorCRUD.java</file>
+            <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/RegistroAgua.java</file>
             <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/Principal.java</file>
             <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/Pago.java</file>
             <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/reporte.java</file>
         </group>
-=======
-        <group/>
->>>>>>> b630b473103fd32aaeff199b11f81513f45cea20
     </open-files>
 </project-private>
