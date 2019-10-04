@@ -24,10 +24,17 @@ public class Pago extends javax.swing.JFrame {
 
     Connection conn = null;
     ConexionBD conecionBD = new ConexionBD();
+   
 
-    public Pago() {
+    public Pago(String usuario, int periodo, int anio) {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
+        
+        llenarPago(usuario, periodo, anio);
+    }
+
+    private Pago() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -513,11 +520,17 @@ public class Pago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
     private void numUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyReleased
+
+    }//GEN-LAST:event_numUsuarioKeyReleased
+
+    public void llenarPago(String usuario, int periodo, int anio) {
         System.out.println(numUsuario.getText().length());
-        if(numUsuario.getText().length()== 3){
-        try {
-         
-                int numConsumidor= Integer.parseInt(numUsuario.getText());
+        //if (numUsuario.getText().length() == 3) {
+            try {
+
+                int numConsumidor = Integer.parseInt(usuario);
+//                int periodo = 10;
+//                int anio = 2019;
                 conn = conecionBD.conexion();
                 consumidoresDAO dao = new consumidoresDAOImpl(conn);
                 consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
@@ -527,8 +540,9 @@ public class Pago extends javax.swing.JFrame {
                 jLabelDireccion.setText(String.valueOf(consumidor.getDireccion()));
                 jLabelManzana.setText(String.valueOf(consumidor.getManzana()));
                 jLabelTelefono.setText(String.valueOf(consumidor.getTelefono()));
-                
-                consumo consumo = daoConsumo.buscarConsumo(numConsumidor);
+
+                //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
+                consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
                 jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
                 jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
                 jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
@@ -536,19 +550,19 @@ public class Pago extends javax.swing.JFrame {
                 jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
                 jTextVarios.setText(String.valueOf(consumo.getVarios()));
                 jTextAreaMotivo.setText(consumo.getAviso());
-                    //System.out.println(consumo.toString());
-            
-        } catch (DAOException ex) {
-            Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (conn != null) {
-                conecionBD.cerrarConexion();
+                System.out.println(consumo.toString());
+
+            } catch (DAOException ex) {
+                Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (conn != null) {
+                    conecionBD.cerrarConexion();
+                }
             }
-        }
-        }else{
-                System.out.println("cadena menor a 3");
-            }
-    }//GEN-LAST:event_numUsuarioKeyReleased
+//        } else {
+//            System.out.println("cadena menor a 3");
+//        }
+    }
 
     /**
      * @param args the command line arguments
@@ -590,6 +604,8 @@ public class Pago extends javax.swing.JFrame {
                 new Pago().setVisible(true);
             }
         });
+        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

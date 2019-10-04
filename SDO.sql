@@ -13,8 +13,10 @@ CREATE TABLE consumidores (
    );
 
 CREATE TABLE consumo(
- idConsumo int AUTO_INCREMENT,
+ -- idConsumo int AUTO_INCREMENT,
  numUsuario varchar(50),
+ periodo int,
+ anio int,
  lecturaActual double,
  consumoMedidor double,
  precio double,
@@ -30,15 +32,16 @@ CREATE TABLE consumo(
  notas varchar(300),
  aviso varchar(300),
  status int,
-primary key(idConsumo)
+primary key(numUsuario,periodo, anio)
 );
 
--- insert into consumidores(nombreCompleto, direccion, telefono,  numMedidor) values("octavio","Zaragosa 20","9515194019", 244);
--- insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
--- values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
+ insert into consumidores(nombreCompleto, direccion, telefono,  numMedidor) values("octavio","Zaragosa 20","9515194019", 244);
+ insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
+ values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
 
--- insert consumo(numUsuario, lecturaActual, consumoMedidor, precio, importeConsumo,
- -- coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
- -- fechaPAgo, notas,aviso, status) values(1,'2.0','2.3','4.0','432.0',
- -- '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);
+ insert consumo(numUsuario, periodo, anio, lecturaActual, consumoMedidor, precio, importeConsumo,
+  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
+  fechaPAgo, notas,aviso, status) values(1,10,2019,'2.0','2.3','4.0','432.0',
+  '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);
 
+select * from consumo;

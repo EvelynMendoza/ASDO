@@ -137,9 +137,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
-        this.dispose();
+        /*this.dispose();
         Pago pago = new Pago();
-        pago.setVisible(true);
+        pago.setVisible(true);*/
+        BuscarUsuarioPago buscarUserPag= new BuscarUsuarioPago();
+        buscarUserPag.setVisible(true);
     }//GEN-LAST:event_btnPagoActionPerformed
     
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed

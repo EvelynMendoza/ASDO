@@ -23,16 +23,15 @@ public class consumoDAOImpl implements consumoDAO {
 
     private Connection conn;
 
-    final String INSERT = " insert consumo(idUsuario, lecturaActual, consumoMedidor, precio, importeConsumo,\n"
-            + " coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n"
-            + " fechaPAgo, notas,aviso, status) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
-    final String GETONE = "select * from consumo where idConsumo=?";
+    final String INSERT = "  insert consumo(numUsuario, periodo, anio, lecturaActual, consumoMedidor, precio, importeConsumo,\n" +
+"  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n" +
+"  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
     final String GETALL = "select * from consumo;";
-    final String DELETE = "DELETE FROM consumo WHERE idConsumo=?";
-    final String UPDATE = "UPDATE consumo SET idUsuario=?, lecturaActual=?, consumoMedidor=?, precio=?, importeConsumo=?,"
+    final String DELETE = "DELETE FROM consumo WHERE numUsuario=? and periodo=? and anio=?;";
+    final String UPDATE = "UPDATE consumo SET  lecturaActual=?, consumoMedidor=?, precio=?, importeConsumo=?,"
             + " coutaFija=?, recargos=?, cooperacion=?, bonificaciones=?, sanciones=?, varios=?, totalPagar=?,"
-            + "fechaPAgo=?, notas=?,aviso=?, status=? WHERE idConsumo= ?;";
-
+            + "fechaPAgo=?, notas=?,aviso=?, status=? WHERE numUsuario=? and periodo=? and anio=?;";
     public consumoDAOImpl(Connection conn) {
         this.conn = conn;
     }
@@ -43,22 +42,24 @@ public class consumoDAOImpl implements consumoDAO {
         try {
             stat = conn.prepareStatement(INSERT);
             //stat.setInt(1, c.getIdConsumidor());
-            stat.setString(1, c.getNumUsuario());
-            stat.setDouble(2, c.getLecturaActual());
-            stat.setDouble(3, c.getConsumoMedidor());
-            stat.setDouble(4, c.getPrecio());
-            stat.setDouble(5, c.getImporteConsumo());
-            stat.setDouble(6, c.getCoutaFija());
-            stat.setDouble(7, c.getRecargos());
-            stat.setDouble(8, c.getCooperacion());
-            stat.setDouble(9, c.getBonificaciones());
-            stat.setDouble(10, c.getSanciones());
-            stat.setDouble(11, c.getVarios());
-            stat.setDouble(12, c.getTotalPagar());
-            stat.setString(13, c.getFechaPAgo());
-            stat.setString(14, c.getNotas());
-            stat.setString(15, c.getAviso());
-            stat.setInt(16, c.getStatus());
+           stat.setString(1, c.getNumUsuario());
+            stat.setInt(2, c.getPeriodo());
+            stat.setInt(3, c.getAnio());
+            stat.setDouble(4, c.getLecturaActual());
+            stat.setDouble(5, c.getConsumoMedidor());
+            stat.setDouble(6, c.getPrecio());
+            stat.setDouble(7, c.getImporteConsumo());
+            stat.setDouble(8, c.getCoutaFija());
+            stat.setDouble(9, c.getRecargos());
+            stat.setDouble(10, c.getCooperacion());
+            stat.setDouble(11, c.getBonificaciones());
+            stat.setDouble(12, c.getSanciones());
+            stat.setDouble(13, c.getVarios());
+            stat.setDouble(14, c.getTotalPagar());
+            stat.setString(15, c.getFechaPAgo());
+            stat.setString(16, c.getNotas());
+            stat.setString(17, c.getAviso());
+            stat.setInt(18, c.getStatus());
 
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
@@ -79,11 +80,15 @@ public class consumoDAOImpl implements consumoDAO {
     }
 
     @Override
-    public void elimnar(int id) throws DAOException {
+    public void elimnar(int IdUser, int periodo, int anio) throws DAOException {
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(DELETE);
-            stat.setInt(1, id);
+            //stat.setInt(1, id);
+            stat.setInt(1,IdUser );
+            stat.setInt(2, periodo);
+            stat.setInt(3, anio);
+            
 
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se ha podido elimiar el registro");
@@ -110,23 +115,27 @@ public class consumoDAOImpl implements consumoDAO {
         try {
             stat = conn.prepareStatement(UPDATE);
 
-            stat.setString(1, c.getNumUsuario());
-            stat.setDouble(2, c.getLecturaActual());
-            stat.setDouble(3, c.getConsumoMedidor());
-            stat.setDouble(4, c.getPrecio());
-            stat.setDouble(5, c.getImporteConsumo());
-            stat.setDouble(6, c.getCoutaFija());
-            stat.setDouble(7, c.getRecargos());
-            stat.setDouble(8, c.getCooperacion());
-            stat.setDouble(9, c.getBonificaciones());
-            stat.setDouble(10, c.getSanciones());
-            stat.setDouble(11, c.getVarios());
-            stat.setDouble(12, c.getTotalPagar());
-            stat.setString(13, c.getFechaPAgo());
-            stat.setString(14, c.getNotas());
-            stat.setString(15, c.getAviso());
-            stat.setInt(16, c.getStatus());
-            stat.setInt(17, c.getIdConsumo());
+            
+            stat.setDouble(1, c.getLecturaActual());
+            stat.setDouble(2, c.getConsumoMedidor());
+            stat.setDouble(3, c.getPrecio());
+            stat.setDouble(4, c.getImporteConsumo());
+            stat.setDouble(5, c.getCoutaFija());
+            stat.setDouble(6, c.getRecargos());
+            stat.setDouble(7, c.getCooperacion());
+            stat.setDouble(8, c.getBonificaciones());
+            stat.setDouble(9, c.getSanciones());
+            stat.setDouble(10, c.getVarios());
+            stat.setDouble(11, c.getTotalPagar());
+            stat.setString(12, c.getFechaPAgo());
+            stat.setString(13, c.getNotas());
+            stat.setString(14, c.getAviso());
+            stat.setInt(15, c.getStatus());
+            
+            stat.setString(16, c.getNumUsuario());
+            stat.setInt(17, c.getPeriodo());
+            stat.setInt(18, c.getAnio());
+            
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
@@ -146,13 +155,15 @@ public class consumoDAOImpl implements consumoDAO {
     }
 
     @Override
-    public consumo buscarConsumo(int id) throws DAOException {
+    public consumo buscarConsumo(int IdUser, int periodo, int anio) throws DAOException {
         PreparedStatement stat = null;
         ResultSet rs = null;
         consumo c = null;
         try {
             stat = conn.prepareStatement(GETONE);
-            stat.setInt(1, id);
+            stat.setInt(1,IdUser );
+            stat.setInt(2, periodo);
+            stat.setInt(3, anio);
             rs = stat.executeQuery();
             if (rs.next()) {
                 c = convertir(rs);
@@ -217,8 +228,10 @@ public class consumoDAOImpl implements consumoDAO {
      private consumo convertir(ResultSet rs) throws SQLException {
         //String nombreCompleto=rs.getString("nombreCompleto");
         consumo consumo = new consumo();
-        consumo.setIdConsumo(rs.getInt("idConsumo"));
+       // consumo.setIdConsumo(rs.getInt("idConsumo"));
         consumo.setNumUsuario(rs.getString("numUsuario"));
+        consumo.setPeriodo(rs.getInt("periodo"));
+        consumo.setAnio(rs.getInt("anio"));
         consumo.setLecturaActual(rs.getDouble("lecturaActual"));
         consumo.setConsumoMedidor(rs.getDouble("consumoMedidor"));
         consumo.setPrecio(rs.getDouble("precio"));

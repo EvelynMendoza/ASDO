@@ -13,7 +13,9 @@ import java.util.Date;
  */
 public class consumo {
 
-    int idConsumo;
+    //int idConsumo;
+    int periodo;
+    int anio;
     String numUsuario;
     double lecturaActual;
     double consumoMedidor;
@@ -35,13 +37,6 @@ public class consumo {
 
     }
 
-    public int getIdConsumo() {
-        return idConsumo;
-    }
-
-    public void setIdConsumo(int idConsumo) {
-        this.idConsumo = idConsumo;
-    }
 
     public String getNumUsuario() {
         return numUsuario;
@@ -174,29 +169,26 @@ public class consumo {
         this.status = status;
     }
 
-    public consumo(int idConsumo, String idUsuario, double lecturaActual, double consumoMedidor, double precio, double importeConsumo, double coutaFija, double recargos, double cooperacion, double bonificaciones, double sanciones, double varios, double totalPagar, String fechaPAgo, String notas, String aviso, int status) {
-        this.idConsumo = idConsumo;
-        this.numUsuario = idUsuario;
-        this.lecturaActual = lecturaActual;
-        this.consumoMedidor = consumoMedidor;
-        this.precio = precio;
-        this.importeConsumo = importeConsumo;
-        this.coutaFija = coutaFija;
-        this.recargos = recargos;
-        this.cooperacion = cooperacion;
-        this.bonificaciones = bonificaciones;
-        this.sanciones = sanciones;
-        this.varios = varios;
-        this.totalPagar = totalPagar;
-        this.fechaPAgo = fechaPAgo;
-        this.notas = notas;
-        this.aviso = aviso;
-        this.status = status;
-    }
-
     @Override
     public String toString() {
-        return "consumo{" + "idConsumo=" + idConsumo + ", idUsuario=" + numUsuario + ", lecturaActual=" + lecturaActual + ", consumoMedidor=" + consumoMedidor + ", precio=" + precio + ", importeConsumo=" + importeConsumo + ", coutaFija=" + coutaFija + ", recargos=" + recargos + ", cooperacion=" + cooperacion + ", bonificaciones=" + bonificaciones + ", sanciones=" + sanciones + ", varios=" + varios + ", totalPagar=" + totalPagar + ", fechaPAgo=" + fechaPAgo + ", notas=" + notas + ", aviso=" + aviso + ", status=" + status + '}';
+        return "consumo{" + "periodo=" + periodo + ", anio=" + anio + ", numUsuario=" + numUsuario + ", lecturaActual=" + lecturaActual + ", consumoMedidor=" + consumoMedidor + ", precio=" + precio + ", importeConsumo=" + importeConsumo + ", coutaFija=" + coutaFija + ", recargos=" + recargos + ", cooperacion=" + cooperacion + ", bonificaciones=" + bonificaciones + ", sanciones=" + sanciones + ", varios=" + varios + ", totalPagar=" + totalPagar + ", fechaPAgo=" + fechaPAgo + ", notas=" + notas + ", aviso=" + aviso + ", status=" + status + '}';
     }
+
+    public int getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(int periodo) {
+        this.periodo = periodo;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
 
 }

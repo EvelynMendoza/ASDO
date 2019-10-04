@@ -61,7 +61,7 @@ public class ASDO {
                 System.out.println(c.toString());
             }
                 //PRUEBA CONSUMO
-              //  consumoDAOImpl dao = new consumoDAOImpl(conn);
+               consumoDAOImpl dao2 = new consumoDAOImpl(conn);
                 //List<consumo> consumo = dao.buscarTodos();
 
                 consumo consu = new consumo();
@@ -88,10 +88,10 @@ public class ASDO {
                
                
                //dao.elimnar(1);
-      //  List<consumo> consumo2 = dao.buscarTodos();
-               /* for (consumo c : consumo2) {
+       List<consumo> consumo2 = dao2.buscarTodos();
+                for (consumo c : consumo2) {
                 System.out.println(c.toString());
-            }*/
+            }
                
               /* consumo consumo3 = dao.buscarConsumidor(2);
                 System.out.println(consumo3.toString());*/
