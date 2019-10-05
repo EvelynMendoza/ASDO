@@ -21,7 +21,7 @@ import modelo.consumidores;
 public class consumidoresDAOImpl implements consumidoresDAO {
 
     final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) values(?,?,?,?,?,?);";
-    final String GETONE = "select * from consumidores where idConsumidor=?";
+    final String GETONE = "select * from consumidores where numUsuario=?";
     final String GETALL = "select * from consumidores;";
     final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
     final String UPDATE = "UPDATE consumidores SET numUsuario =?, numMedidor =?, nombreCompleto =?,  direccion =?, manzana =?, telefono=? WHERE idConsumidor= ?;";

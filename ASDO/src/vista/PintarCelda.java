@@ -7,29 +7,36 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
 
 /**
  *
  * @author octavio
  */
-public class PintarCelda extends JTable{
-    @Override
-    public Component prepareRenderer(TableCellRenderer renderer, int rowIndex, int columnaIndex){
-        Component component=super.prepareRenderer(renderer, rowIndex, columnaIndex);
-        component.setBackground(Color.WHITE);
-        component.setForeground(Color.BLACK);
-        if((String.class.equals(this.getColumnClass(columnaIndex))) && (getValueAt(rowIndex, columnaIndex)!=null)){
-          String status=getValueAt(rowIndex, columnaIndex).toString();
-          if(status.equals("Pendiente")){
-              component.setBackground(Color.RED);
-              component.setForeground(Color.BLACK);
-              
-          }
+public class PintarCelda extends DefaultTableCellRenderer {
+
+    private int columna;
+
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+        JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+        if (value instanceof String) {
+            String valor = String.valueOf(value);
+            cell.setBackground(Color.green);
+                    cell.setForeground(Color.BLACK);
+            if (column == 3) {
+                if (valor.equals("Pendiente")) {
+                    cell.setBackground(Color.red);
+                    cell.setForeground(Color.WHITE);
+                }else{
+                    cell.setBackground(Color.green);
+                    cell.setForeground(Color.BLACK);
+                }
+            }
         }
-        
-        return component;
-        
+        return cell;
     }
 }

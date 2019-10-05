@@ -35,13 +35,13 @@ CREATE TABLE consumo(
 primary key(numUsuario,periodo, anio)
 );
 
- insert into consumidores(nombreCompleto, direccion, telefono,  numMedidor) values("octavio","Zaragosa 20","9515194019", 244);
+ 
  insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) 
- values("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
+ values("011","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
 
  insert consumo(numUsuario, periodo, anio, lecturaActual, consumoMedidor, precio, importeConsumo,
   coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,
-  fechaPAgo, notas,aviso, status) values(1,10,2019,'2.0','2.3','4.0','432.0',
-  '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",1);
+  fechaPAgo, notas,aviso, status) values("011",13,2019,'2.0','2.3','4.0','432.0',
+  '0.0','0','0','0','0','0','0','2019-09-19',"no hay notas","aviso",0);
 
-select * from consumo;
+select * from consumidores;

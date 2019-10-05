@@ -26,7 +26,7 @@ import modelo.consumo;
  * @author Evelyn
  */
 public class BuscarUsuarioPago extends javax.swing.JFrame {
-    
+
     Connection conn = null;
     ConexionBD conecionBD = new ConexionBD();
     DefaultTableModel modelo = new DefaultTableModel();
@@ -64,10 +64,9 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         jLabelNmedidor = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         Pagos = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTablePagos = new  javax.swing.JTable();
         btnCobrar = new javax.swing.JButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTablePagos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -154,7 +153,7 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabelNmedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         otrosPAgosLayout.setVerticalGroup(
             otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,21 +178,11 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                 .addGroup(otrosPAgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
         Pagos.setBackground(new java.awt.Color(255, 255, 255));
         Pagos.setBorder(javax.swing.BorderFactory.createTitledBorder("OTROS PAGOS"));
-
-        jTablePagos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jTablePagos);
 
         btnCobrar.setBackground(new java.awt.Color(7, 82, 132));
         btnCobrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -206,30 +195,40 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
             }
         });
 
+        jTablePagos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTablePagos);
+
         javax.swing.GroupLayout PagosLayout = new javax.swing.GroupLayout(Pagos);
         Pagos.setLayout(PagosLayout);
         PagosLayout.setHorizontalGroup(
             PagosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PagosLayout.createSequentialGroup()
-                .addGroup(PagosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PagosLayout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(btnCobrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PagosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addGap(187, 187, 187)
+                .addComponent(btnCobrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PagosLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PagosLayout.setVerticalGroup(
             PagosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PagosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnCobrar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(187, Short.MAX_VALUE))
         );
-
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
@@ -238,41 +237,33 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
             .addGroup(contenedorLayout.createSequentialGroup()
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(167, 167, 167)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(34, 34, 34)
                         .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
+                        .addGap(32, 32, 32)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(otrosPAgos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Pagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 4, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(otrosPAgos, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Pagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(contenedorLayout.createSequentialGroup()
-                        .addComponent(jFormattedTextField1)
-                        .addGap(7, 7, 7)))
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(otrosPAgos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(contenedorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addComponent(Pagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Pagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addComponent(otrosPAgos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(256, 256, 256))
         );
 
@@ -303,7 +294,7 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         System.out.println(numUsuario.getText().length());
         if (numUsuario.getText().length() == 3) {
             try {
-                
+
                 int numConsumidor = Integer.parseInt(numUsuario.getText());
                 int periodo = 10;
                 int anio = 2019;
@@ -318,35 +309,37 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                 jLabelTelefono.setText(String.valueOf(consumidor.getTelefono()));
 
                 //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
-                consumo consumo = daoConsumo.buscarConsumo(numConsumidor, 10, 2019);
-                String matriz[][]= new String[8][8];
-                
-                  List<consumo> consumo2 = daoConsumo.buscarTodos();
-                  int i=0;
-                  String status="";
-                for (consumo c : consumo2) {
-               // System.out.println(c.toString());
-                if(c.getStatus()==1){
-                    status="pagado";
-                }else{
-                    status="Pendiente";
-                    
+                //consumo consumodao = daoConsumo.buscarConsumo(numConsumidor, 10, 2019);
+                List<consumo> consumo = daoConsumo.buscarTodos();
+                System.err.println("tamaña:  " + consumo.size());
+                int toalRegistro = consumo.size();
+                int i = 0;
+                String matriz[][] = new String[toalRegistro][4];
+                String status = "";
+
+                for (consumo c : consumo) {
+                    // System.out.println(c.toString());
+                    if (c.getStatus() == 1) {
+                        status = "pagado";
+                    } else {
+                        status = "Pendiente";
+
+                    }
+                    matriz[i][0] = c.getNumUsuario();
+                    matriz[i][1] = (String.valueOf(c.getPeriodo()));
+                    matriz[i][2] = (String.valueOf(c.getAnio()));
+                    matriz[i][3] = status;
+                    i++;
                 }
-                matriz[i][0]=c.getNumUsuario();
-                matriz[i][1]=(String.valueOf(c.getPeriodo()));
-                matriz[i][2]=(String.valueOf(c.getAnio()));
-                matriz[i][3]=status;
-                i++;
-            }
-                
-        jTablePagos.setModel(new javax.swing.table.DefaultTableModel(
-           matriz,
-            new String [] {
-                "Num Usuario", "Periodo" ,"anio" , "Estatus"
-            }
-        ));
+
+                jTablePagos.setModel(new javax.swing.table.DefaultTableModel(
+                        matriz,
+                        new String[]{
+                            "Num Usuario", "Periodo", "anio", "Estatus"
+                        }
+                ));
                 //System.out.println(consumo.toString());
-               // jTablePagos.setDefaultRenderer(Object.class, (TableCellRenderer) new PintarCelda());
+                jTablePagos.setDefaultRenderer(Object.class, new PintarCelda());
             } catch (DAOException ex) {
                 Logger.getLogger(BuscarUsuarioPago.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
@@ -361,16 +354,18 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
 
     private void btnCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCobrarActionPerformed
         // TODO add your handling code here:
-        int filaSelect= jTablePagos.getSelectedRow();
-        if(filaSelect>=0){
-            String usuario=jTablePagos.getValueAt(filaSelect, 0).toString();
-            int periodo=Integer.valueOf(jTablePagos.getValueAt(filaSelect, 1).toString());
-            int anio=Integer.valueOf(jTablePagos.getValueAt(filaSelect, 2).toString());
-            Pago pago = new Pago(usuario, periodo,anio);
+        int filaSelect = jTablePagos.getSelectedRow();
+        if (filaSelect >= 0) {
+            String usuario = jTablePagos.getValueAt(filaSelect, 0).toString();
+            int periodo = Integer.valueOf(jTablePagos.getValueAt(filaSelect, 1).toString());
+            int anio = Integer.valueOf(jTablePagos.getValueAt(filaSelect, 2).toString());
+            
+            
+            Pago pago = new Pago(usuario, periodo, anio);
             //Pago pago = new Pago();
-             pago.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(this,"No ha seleccionado un registro");
+            pago.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "No ha seleccionado un registro");
         }
     }//GEN-LAST:event_btnCobrarActionPerformed
 
@@ -429,7 +424,6 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
     private javax.swing.JButton btnCobrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JPanel contenedor;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -441,7 +435,7 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNmedidor;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTelefono;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTablePagos;
     private javax.swing.JTextField numUsuario;
     private javax.swing.JPanel otrosPAgos;

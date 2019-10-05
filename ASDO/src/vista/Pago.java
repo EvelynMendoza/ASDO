@@ -11,6 +11,8 @@ import DAO.consumidoresDAO;
 import DAO.consumidoresDAOImpl;
 import DAO.consumoDAOImpl;
 import java.sql.Connection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.consumidores;
@@ -22,15 +24,26 @@ import modelo.consumo;
  */
 public class Pago extends javax.swing.JFrame {
 
+    double totalAPagar = 0;
+    double totalConsumo = 0;
+    int aniox;
+    int periodox;
+
+    String numUsuarioConsulta;
     Connection conn = null;
     ConexionBD conecionBD = new ConexionBD();
-   
 
     public Pago(String usuario, int periodo, int anio) {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
-        
+        aniox = anio;
+
+        periodox = periodo;
+
+        numUsuarioConsulta = usuario;
+
         llenarPago(usuario, periodo, anio);
+
     }
 
     private Pago() {
@@ -68,11 +81,11 @@ public class Pago extends javax.swing.JFrame {
         totalPago = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         btnCobrar = new javax.swing.JButton();
-        btnComprobante = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabelConsumo = new javax.swing.JLabel();
         jLabelTotal = new javax.swing.JLabel();
+        btnComprobante = new javax.swing.JButton();
         otrosPAgos1 = new javax.swing.JPanel();
         jTextCuota = new javax.swing.JTextField();
         jTextRecargo = new javax.swing.JTextField();
@@ -89,7 +102,6 @@ public class Pago extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jTextVarios = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -112,7 +124,11 @@ public class Pago extends javax.swing.JFrame {
 
         numUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         numUsuario.setForeground(new java.awt.Color(0, 51, 204));
+        numUsuario.setEnabled(false);
         numUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                numUsuarioKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 numUsuarioKeyReleased(evt);
             }
@@ -248,22 +264,12 @@ public class Pago extends javax.swing.JFrame {
         btnCobrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCobrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCobrar.setText("COBRAR");
+        btnCobrar.setFocusPainted(false);
+        btnCobrar.setFocusable(false);
         btnCobrar.setName("btnSalir"); // NOI18N
         btnCobrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCobrarActionPerformed(evt);
-            }
-        });
-
-        btnComprobante.setBackground(new java.awt.Color(7, 82, 132));
-        btnComprobante.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnComprobante.setForeground(new java.awt.Color(255, 255, 255));
-        btnComprobante.setText("COMPROBANTE");
-        btnComprobante.setEnabled(false);
-        btnComprobante.setName("btnSalir"); // NOI18N
-        btnComprobante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprobanteActionPerformed(evt);
             }
         });
 
@@ -281,6 +287,19 @@ public class Pago extends javax.swing.JFrame {
         jLabelTotal.setForeground(new java.awt.Color(0, 0, 204));
         jLabelTotal.setText("total");
 
+        btnComprobante.setBackground(new java.awt.Color(7, 82, 132));
+        btnComprobante.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnComprobante.setForeground(new java.awt.Color(255, 255, 255));
+        btnComprobante.setText("COMPROBANTE");
+        btnComprobante.setFocusPainted(false);
+        btnComprobante.setFocusable(false);
+        btnComprobante.setName("btnSalir"); // NOI18N
+        btnComprobante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprobanteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pagoLayout = new javax.swing.GroupLayout(pago);
         pago.setLayout(pagoLayout);
         pagoLayout.setHorizontalGroup(
@@ -296,16 +315,14 @@ public class Pago extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabelConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
                 .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCobrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addGap(32, 32, 32)
+                .addGap(35, 35, 35)
                 .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(totalPago, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pagoLayout.createSequentialGroup()
-                        .addComponent(btnComprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)))
+                    .addComponent(totalPago, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnComprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         pagoLayout.setVerticalGroup(
@@ -337,10 +354,34 @@ public class Pago extends javax.swing.JFrame {
         otrosPAgos1.setBorder(javax.swing.BorderFactory.createTitledBorder("OTROS PAGOS"));
 
         jTextCuota.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCuota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextCuotaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextCuotaKeyReleased(evt);
+            }
+        });
 
         jTextRecargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextRecargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextRecargoKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextRecargoKeyReleased(evt);
+            }
+        });
 
         jTextCooperacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCooperacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextCooperacionKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextCooperacionKeyReleased(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("Cuota fija:");
@@ -358,8 +399,24 @@ public class Pago extends javax.swing.JFrame {
         jLabel17.setText("Bonificaciones:");
 
         jTextBonificaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextBonificaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextBonificacionesKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextBonificacionesKeyReleased(evt);
+            }
+        });
 
         jTextSanciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextSanciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextSancionesKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextSancionesKeyReleased(evt);
+            }
+        });
 
         jTextAreaMotivo.setColumns(20);
         jTextAreaMotivo.setRows(5);
@@ -369,6 +426,14 @@ public class Pago extends javax.swing.JFrame {
         jLabel18.setText("Varios:");
 
         jTextVarios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextVarios.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextVariosKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextVariosKeyReleased(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 51, 51));
@@ -434,8 +499,6 @@ public class Pago extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
-
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
@@ -447,9 +510,7 @@ public class Pago extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
+                        .addGap(263, 263, 263)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorLayout.createSequentialGroup()
                         .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,14 +529,10 @@ public class Pago extends javax.swing.JFrame {
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(contenedorLayout.createSequentialGroup()
-                        .addComponent(jFormattedTextField1)
-                        .addGap(7, 7, 7)))
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -507,6 +564,50 @@ public class Pago extends javax.swing.JFrame {
 
     private void btnCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCobrarActionPerformed
         // TODO add your handling code here:
+        try {
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            String fechaformateada = formato.format(new Date());
+            int numConsumidorTemp = Integer.parseInt(numUsuarioConsulta);
+            conn = conecionBD.conexion();
+            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+            consumo c = new consumo();
+
+            consumo consumo = daoConsumo.buscarConsumo(numConsumidorTemp, periodox, aniox);
+
+            c.setPeriodo(consumo.getPeriodo());
+            c.setAnio(aniox);
+            c.setNumUsuario(String.valueOf(numUsuarioConsulta));
+            c.setLecturaActual(consumo.getLecturaActual());
+            c.setConsumoMedidor(consumo.getConsumoMedidor());
+            c.setPrecio(consumo.getPrecio());
+            c.setImporteConsumo(consumo.getImporteConsumo());
+            c.setCoutaFija(Double.valueOf(jTextCuota.getText()));
+            c.setRecargos(Double.valueOf(jTextRecargo.getText()));
+            c.setCooperacion(Double.valueOf(jTextCooperacion.getText()));
+            c.setBonificaciones(Double.valueOf(jTextBonificaciones.getText()));
+            c.setSanciones(Double.valueOf(jTextSanciones.getText()));
+            c.setVarios(Double.valueOf(jTextVarios.getText()));
+            c.setTotalPagar(Double.valueOf(totalPago.getText()));
+            c.setFechaPAgo(fechaformateada);
+            c.setNotas(jTextAreaMotivo.getText());
+            c.setAviso(consumo.getAviso());
+            c.setStatus(1);
+            //System.err.println("datos a antes de atualizar "+ consumo.toString());
+            //System.err.println("datos a guardar"+ c.toString());
+            daoConsumo.actualizar(c);
+            bloquearCajas();
+            btnComprobante.show(true);
+            btnCobrar.enable(false);
+            btnCobrar.show(false);
+            
+        } catch (DAOException ex) {
+            Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (conn != null) {
+                conecionBD.cerrarConexion();
+            }
+        }
+
     }//GEN-LAST:event_btnCobrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -515,53 +616,159 @@ public class Pago extends javax.swing.JFrame {
         prin.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprobanteActionPerformed
-
     private void numUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyReleased
 
     }//GEN-LAST:event_numUsuarioKeyReleased
 
-    public void llenarPago(String usuario, int periodo, int anio) {
-        System.out.println(numUsuario.getText().length());
-        //if (numUsuario.getText().length() == 3) {
-            try {
+    private void jTextCuotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCuotaKeyPressed
+        // TODO add your handling code here:
 
-                int numConsumidor = Integer.parseInt(usuario);
+    }//GEN-LAST:event_jTextCuotaKeyPressed
+
+    private void jTextRecargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextRecargoKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTextRecargoKeyPressed
+
+    private void jTextCooperacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCooperacionKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTextCooperacionKeyPressed
+
+    private void jTextBonificacionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextBonificacionesKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTextBonificacionesKeyPressed
+
+    private void jTextSancionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSancionesKeyPressed
+
+    }//GEN-LAST:event_jTextSancionesKeyPressed
+
+    private void jTextVariosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextVariosKeyPressed
+
+    }//GEN-LAST:event_jTextVariosKeyPressed
+
+    private void numUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numUsuarioKeyPressed
+
+    private void jTextCuotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCuotaKeyReleased
+        // TODO add your handling code here:
+        calcularMonto();
+    }//GEN-LAST:event_jTextCuotaKeyReleased
+
+    private void jTextRecargoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextRecargoKeyReleased
+        calcularMonto();
+    }//GEN-LAST:event_jTextRecargoKeyReleased
+
+    private void jTextCooperacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCooperacionKeyReleased
+        calcularMonto();
+    }//GEN-LAST:event_jTextCooperacionKeyReleased
+
+    private void jTextBonificacionesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextBonificacionesKeyReleased
+        calcularMonto();
+    }//GEN-LAST:event_jTextBonificacionesKeyReleased
+
+    private void jTextSancionesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSancionesKeyReleased
+        calcularMonto();
+    }//GEN-LAST:event_jTextSancionesKeyReleased
+
+    private void jTextVariosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextVariosKeyReleased
+        calcularMonto();
+    }//GEN-LAST:event_jTextVariosKeyReleased
+
+    private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnComprobanteActionPerformed
+
+    public void llenarPago(String usuario, int periodo, int anio) {
+        //System.out.println(numUsuario.getText().length());
+        //if (numUsuario.getText().length() == 3) {
+        try {
+
+            numUsuario.setText(usuario);
+            int numConsumidorTemp = Integer.parseInt(usuario);
 //                int periodo = 10;
 //                int anio = 2019;
-                conn = conecionBD.conexion();
-                consumidoresDAO dao = new consumidoresDAOImpl(conn);
-                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-                consumidores consumidor = dao.buscarConsumidor(numConsumidor);
-                jLabelNmedidor.setText(String.valueOf(consumidor.getNumMedidor()));
-                jLabelNombre.setText(String.valueOf(consumidor.getNombreCompleto()));
-                jLabelDireccion.setText(String.valueOf(consumidor.getDireccion()));
-                jLabelManzana.setText(String.valueOf(consumidor.getManzana()));
-                jLabelTelefono.setText(String.valueOf(consumidor.getTelefono()));
+            conn = conecionBD.conexion();
+            consumidoresDAO dao = new consumidoresDAOImpl(conn);
+            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+            consumidores consumidor = dao.buscarConsumidor(numConsumidorTemp);
+            jLabelNmedidor.setText(String.valueOf(consumidor.getNumMedidor()));
+            jLabelNombre.setText(String.valueOf(consumidor.getNombreCompleto()));
+            jLabelDireccion.setText(String.valueOf(consumidor.getDireccion()));
+            jLabelManzana.setText(String.valueOf(consumidor.getManzana()));
+            jLabelTelefono.setText(String.valueOf(consumidor.getTelefono()));
 
-                //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
-                consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
-                jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-                jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
-                jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
-                jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
-                jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
-                jTextVarios.setText(String.valueOf(consumo.getVarios()));
-                jTextAreaMotivo.setText(consumo.getAviso());
-                System.out.println(consumo.toString());
+            //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
+            consumo consumo = daoConsumo.buscarConsumo(numConsumidorTemp, periodo, anio);
 
-            } catch (DAOException ex) {
-                Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                if (conn != null) {
-                    conecionBD.cerrarConexion();
-                }
+            jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
+            jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
+            jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
+            jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
+            jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
+            jTextVarios.setText(String.valueOf(consumo.getVarios()));
+            jTextAreaMotivo.setText(consumo.getAviso());
+
+            totalConsumo = consumo.getTotalPagar();
+            jLabelTotal.setText(String.valueOf(totalConsumo));
+
+            if (consumo.getStatus() == 1) {
+                btnComprobante.enable(true);
+                btnComprobante.show(true);
+                btnCobrar.enable(false);
+                btnCobrar.show(false);
+                jLabel13.setText("PAGADO: " + consumo.getFechaPAgo());
+                bloquearCajas();
+            } else {
+                btnComprobante.show(false);
             }
+            calcularMonto();
+        } catch (DAOException ex) {
+            Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (conn != null) {
+                conecionBD.cerrarConexion();
+            }
+        }
 //        } else {
 //            System.out.println("cadena menor a 3");
 //        }
+    }
+
+    public void calcularMonto() {
+        double couata = 0;
+        double recargos = 0;
+        double cooperacion = 0;
+        double bonifi = 0;
+        double sancion = 0;
+        double varios = 0;
+        try {
+            couata = Double.valueOf(jTextCuota.getText());
+            recargos = Double.valueOf(jTextRecargo.getText());
+            cooperacion = Double.valueOf(jTextCooperacion.getText());
+            bonifi = Double.valueOf(jTextBonificaciones.getText());
+            sancion = Double.valueOf(jTextSanciones.getText());
+            varios = Double.valueOf(jTextVarios.getText());
+            totalAPagar = totalConsumo + couata + recargos + cooperacion + bonifi + sancion + varios;
+            totalPago.setText(String.valueOf(totalAPagar));
+        } catch (Exception e) {
+
+            System.out.println("vista.Pago.calcularMonto()" + e);
+        }
+
+    }
+
+    public void bloquearCajas() {
+        jTextCuota.enable(false);
+        jTextRecargo.enable(false);
+        jTextCooperacion.enable(false);
+        jTextBonificaciones.enable(false);
+        jTextSanciones.enable(false);
+        jTextVarios.enable(false);
+        jTextAreaMotivo.enable(false);
+        ;
     }
 
     /**
@@ -604,7 +811,6 @@ public class Pago extends javax.swing.JFrame {
                 new Pago().setVisible(true);
             }
         });
-        
 
     }
 
@@ -613,7 +819,6 @@ public class Pago extends javax.swing.JFrame {
     private javax.swing.JButton btnComprobante;
     private javax.swing.JButton btnSalir;
     private javax.swing.JPanel contenedor;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
