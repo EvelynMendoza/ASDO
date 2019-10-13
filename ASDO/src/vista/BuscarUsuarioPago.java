@@ -7,6 +7,8 @@ import DAO.consumidoresDAO;
 import DAO.consumidoresDAOImpl;
 import DAO.consumoDAOImpl;
 import java.sql.Connection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,12 +87,17 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
 
         numUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         numUsuario.setForeground(new java.awt.Color(0, 51, 204));
-        numUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                numUsuarioKeyReleased(evt);
+        numUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numUsuarioActionPerformed(evt);
             }
+        });
+        numUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 numUsuarioKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                numUsuarioKeyReleased(evt);
             }
         });
 
@@ -349,13 +356,19 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         if (tam == 3) {
             try {
                 int numConsumidor = Integer.parseInt(numUsuario.getText());
-                int periodo = 10;
-                int anio = 2019;
+//                int periodo = 10;
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            String fechaformateada = formato.format(new Date());
+                String anioTemp= fechaformateada.substring(0, 4);
+               
+                //int anio = 2019;
+                int anio = Integer.valueOf(anioTemp);
                 conn = conecionBD.conexion();
                 consumidoresDAO dao = new consumidoresDAOImpl(conn);
-                System.out.println();
+                
                 consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
                 consumidores consumidor = dao.buscarConsumidor(numConsumidor);
+           
                 if(consumidor != null){
                     jLabelNmedidor.setText(String.valueOf(consumidor.getNumMedidor()));
                     jLabelNombre.setText(String.valueOf(consumidor.getNombreCompleto()));
@@ -365,7 +378,7 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
 
                     //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
                     //consumo consumodao = daoConsumo.buscarConsumo(numConsumidor, 10, 2019);
-                    List<consumo> consumo = daoConsumo.buscarTodos();
+                    List<consumo> consumo = daoConsumo.buscarConsumoPorUser(numConsumidor, anio);
                     //System.err.println("tamaño:  " + consumo.size());
                     int toalRegistro = consumo.size();
                     int i = 0;
@@ -435,9 +448,15 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_numUsuarioKeyReleased
 
+    private void numUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numUsuarioActionPerformed
+
     void pintarColumnaTabla(){
-        PintarCelda color = new PintarCelda(3);
-        jTablePagos.getColumnModel().getColumn(3).setCellRenderer(color);
+       // PintarCelda color = new PintarCelda(3);
+       // jTablePagos.getColumnModel().getColumn(3).setCellRenderer(color);
+       //jTablePagos.setDefaultRenderer(Object.class, (TableCellRenderer) new PintarCelda());
+         jTablePagos.setDefaultRenderer(Object.class, new PintarCelda());
     }
     
     void limpiarTabla(){

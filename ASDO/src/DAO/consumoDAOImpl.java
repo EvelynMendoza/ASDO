@@ -27,6 +27,7 @@ public class consumoDAOImpl implements consumoDAO {
 "  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n" +
 "  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
+    final String GETONEUSER = "select * from consumo WHERE numUsuario=? and anio=?;";
     final String GETALL = "select * from consumo;";
     final String DELETE = "DELETE FROM consumo WHERE numUsuario=? and periodo=? and anio=?;";
     final String UPDATE = "UPDATE consumo SET  lecturaActual=?, consumoMedidor=?, precio=?, importeConsumo=?,"
@@ -225,6 +226,41 @@ public class consumoDAOImpl implements consumoDAO {
     }
 
     
+    @Override
+    public List<consumo> buscarConsumoPorUser(int IdUser, int anio) throws DAOException {
+         List<consumo> consumo = new ArrayList<>();
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        try {            
+             stat = conn.prepareStatement(GETONEUSER);
+            stat.setInt(1,IdUser );
+            
+            stat.setInt(2, anio);
+            rs = stat.executeQuery();
+            while (rs.next()) {
+                consumo.add(convertir(rs));
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+
+        return consumo;
+    }
      private consumo convertir(ResultSet rs) throws SQLException {
         //String nombreCompleto=rs.getString("nombreCompleto");
         consumo consumo = new consumo();
@@ -250,4 +286,5 @@ public class consumoDAOImpl implements consumoDAO {
 
         return consumo;
     }
+
 }

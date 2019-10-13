@@ -17,7 +17,7 @@ import modelo.consumidores;
 public class consumidoresDAOImpl implements consumidoresDAO {
 
     final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) values(?,?,?,?,?,?);";
-    final String GETONE = "select * from consumidores where numUsuario=?";
+    final String GETONE = "select * from consumidores where numUsuario=?;";
     final String GETALL = "select * from consumidores;";
     final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
     final String UPDATE = "UPDATE consumidores SET numUsuario =?, numMedidor =?, nombreCompleto =?,  direccion =?, manzana =?, telefono=? WHERE idConsumidor= ?;";
@@ -120,10 +120,10 @@ public class consumidoresDAOImpl implements consumidoresDAO {
     public consumidores buscarConsumidor(int id) throws DAOException {
         PreparedStatement stat = null;
         ResultSet rs = null;
-        consumidores c = null;
-        try {
-            stat = conn.prepareStatement(GETONE);
-            stat.setInt(1, id);
+        consumidores c = null;        
+        try {            
+            stat = conn.prepareStatement(GETONE);            
+            stat.setInt(1, id);            
             rs = stat.executeQuery();
             if (rs.next()) {
                 c = convertir(rs);

@@ -9,6 +9,7 @@ package vista;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -16,31 +17,27 @@ import javax.swing.table.DefaultTableCellRenderer;
  *
  * @author octavio
  */
-public class PintarCelda extends DefaultTableCellRenderer{
+public class PintarCelda extends DefaultTableCellRenderer {
 
-    private final int columna_patron;
+    private int columna;
 
-    public PintarCelda(int Colpatron) {
-        this.columna_patron = Colpatron;
-    }
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+        JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value, selected, focused, row, column);
 
-    @Override
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean Selected, boolean hasFocus, int row, int col) {
-        Font font = new Font("Courier", Font.BOLD, 16);
-        switch (table.getValueAt(row, columna_patron).toString()) {
-            
-            case "PAGADO":              
-                setForeground(Color.BLUE);
-                setFont(font);
-                break;
-            case "PENDIENTE":
-                setForeground(Color.RED);
-                setFont(font);
-                break;
-            default:
-                break;
+        if (value instanceof String) {
+            String valor = String.valueOf(value);
+            cell.setBackground(Color.green);
+                    cell.setForeground(Color.BLACK);
+            if (column == 3) {
+                if (valor.equals("PENDIENTE")) {
+                    cell.setBackground(Color.red);
+                    cell.setForeground(Color.WHITE);
+                }else{
+                    cell.setBackground(Color.green);
+                    cell.setForeground(Color.BLACK);
+                }
+            }
         }
-        super.getTableCellRendererComponent(table, value, Selected, hasFocus, row, col);
-        return this;
+        return cell;
     }
 }

@@ -13,6 +13,7 @@ import DAO.consumoDAOImpl;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.consumidores;
@@ -262,6 +263,11 @@ public class Pago extends javax.swing.JFrame {
         btnCobrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCobrarActionPerformed(evt);
+            }
+        });
+        btnCobrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnCobrarKeyReleased(evt);
             }
         });
 
@@ -617,6 +623,10 @@ public class Pago extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
+    private void btnCobrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCobrarKeyReleased
+bloquearCajas();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCobrarKeyReleased
+
     public void llenarPago(String usuario, int periodo, int anio) {
         //System.out.println(numUsuario.getText().length());
         //if (numUsuario.getText().length() == 3) {
@@ -649,7 +659,7 @@ public class Pago extends javax.swing.JFrame {
 
             totalConsumo = consumo.getTotalPagar();
             jLabelTotal.setText(String.valueOf(totalConsumo));
-
+            jLabelConsumo.setText(String.valueOf((consumo.getConsumoMedidor())));
             if (consumo.getStatus() == 1) {
                 btnComprobante.enable(true);
                 btnComprobante.show(true);
@@ -660,6 +670,55 @@ public class Pago extends javax.swing.JFrame {
             } else {
                 btnComprobante.show(false);
             }
+            List<consumo> consumoPeriodo = daoConsumo.buscarConsumoPorUser(numConsumidorTemp, anio);
+              int toalRegistro = consumoPeriodo.size();
+                    int i = 0;
+                    String status = "";
+                    String matriz[][] = new String[toalRegistro][toalRegistro];
+                    for (consumo c : consumoPeriodo) {
+                        // System.out.println(c.toString());
+                        if (c.getStatus() == 1) {
+                            status = "PAGADO";
+                        } else {
+                            status = "PENDIENTE";
+
+                        }
+                        
+                        String per = String.valueOf(c.getPeriodo());
+                        switch(per){
+                            case "1":
+                                per = "DIC-ENE";
+                                break;
+                            case "2":
+                                per = "FEB-MAR";
+                                break;
+                            case "3":
+                                per = "ABR-MAY";
+                                break;
+                            case "4":
+                                per = "JUN-JUL";
+                                break;
+                            case "5":
+                                per = "AGO-SEP";
+                                break;
+                            case "6":
+                                per = "OCT-NOV";
+                                break;
+                        }
+                        matriz[0][i] = (per);
+                        matriz[1][i] = String.valueOf(c.getConsumoMedidor());
+                        
+                        i++;
+                        System.out.println(i);
+                    }
+                    
+            jTablePeriodo.setModel(new javax.swing.table.DefaultTableModel(
+                            matriz,
+                            new String[]{
+                                "","","","","",""
+                            }
+                    ));
+            
             calcularMonto();
         } catch (DAOException ex) {
             Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);

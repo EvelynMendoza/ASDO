@@ -19,5 +19,6 @@ public interface consumoDAO {
     void actualizar(consumo c)throws DAOException;
     consumo buscarConsumo(int IdUser, int periodo, int anio)throws DAOException;
     List<consumo> buscarTodos()throws DAOException;
+    List<consumo> buscarConsumoPorUser(int IdUser, int anio)throws DAOException;
     
 }
