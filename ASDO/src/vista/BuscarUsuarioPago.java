@@ -63,6 +63,8 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTablePagos = new javax.swing.JTable();
         btnCobrar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -72,7 +74,8 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
         btnSalir.setBackground(new java.awt.Color(7, 82, 132));
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setLabel("SALIR");
+        btnSalir.setText("REGRESAR AL MENÚ");
+        btnSalir.setActionCommand("");
         btnSalir.setName("btnSalir"); // NOI18N
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +232,32 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel3.setBackground(new java.awt.Color(9, 43, 96));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 17, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(9, 43, 96));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 17, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
@@ -244,14 +273,17 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
                 .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(214, 214, 214)
+                .addComponent(btnSalir)
                 .addGap(25, 25, 25))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -261,7 +293,8 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Pagos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(otrosPAgos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         otrosPAgos.getAccessibleContext().setAccessibleName(" ");
@@ -523,6 +556,8 @@ public class BuscarUsuarioPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNmedidor;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTelefono;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTablePagos;
     private javax.swing.JTextField numUsuario;

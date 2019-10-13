@@ -78,8 +78,11 @@ public class lecturaConsumo extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jComboBoxPeriodo = new javax.swing.JComboBox();
         btnGuardar = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         contenedor2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -198,6 +201,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         otrosPAgos4.setBorder(javax.swing.BorderFactory.createTitledBorder("OTROS PAGOS"));
 
         jTextCuota1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCuota1.setText("0.0");
         jTextCuota1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextCuota1KeyTyped(evt);
@@ -205,6 +209,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         });
 
         jTextRecargo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextRecargo1.setText("0.0");
         jTextRecargo1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextRecargo1KeyTyped(evt);
@@ -212,6 +217,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         });
 
         jTextCooperacion1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextCooperacion1.setText("0.0");
         jTextCooperacion1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextCooperacion1KeyTyped(evt);
@@ -234,6 +240,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         jLabel31.setText("Bonificaciones:");
 
         jTextBonificaciones1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextBonificaciones1.setText("0.0");
         jTextBonificaciones1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextBonificaciones1KeyTyped(evt);
@@ -241,6 +248,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         });
 
         jTextSanciones1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextSanciones1.setText("0.0");
         jTextSanciones1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextSanciones1KeyTyped(evt);
@@ -255,6 +263,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         jLabel32.setText("Varios:");
 
         jTextVarios1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextVarios1.setText("0.0");
         jTextVarios1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextVarios1KeyTyped(evt);
@@ -269,6 +278,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         jLabel34.setText("Lectura de Consumo:");
 
         jTextLectura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextLectura.setText("0.0");
         jTextLectura.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextLecturaKeyTyped(evt);
@@ -352,7 +362,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         btnGuardar.setBackground(new java.awt.Color(7, 82, 132));
@@ -366,34 +376,65 @@ public class lecturaConsumo extends javax.swing.JFrame {
             }
         });
 
+        jPanel9.setBackground(new java.awt.Color(9, 43, 96));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 17, Short.MAX_VALUE)
+        );
+
+        jPanel10.setBackground(new java.awt.Color(9, 43, 96));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 17, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout contenedor2Layout = new javax.swing.GroupLayout(contenedor2);
         contenedor2.setLayout(contenedor2Layout);
         contenedor2Layout.setHorizontalGroup(
             contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedor2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(34, 34, 34)
-                .addComponent(numUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283)
-                .addComponent(btnSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-            .addGroup(contenedor2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedor2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(otrosPAgos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(otrosPAgos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(contenedor2Layout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(otrosPAgos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedor2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedor2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(34, 34, 34)
+                                .addComponent(numUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(283, 283, 283)
+                                .addComponent(btnSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedor2Layout.createSequentialGroup()
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(189, 189, 189))))))
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenedor2Layout.setVerticalGroup(
             contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedor2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -401,11 +442,13 @@ public class lecturaConsumo extends javax.swing.JFrame {
                         .addComponent(numUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(otrosPAgos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otrosPAgos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(contenedor2Layout.createSequentialGroup()
+                        .addComponent(otrosPAgos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(otrosPAgos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -416,12 +459,11 @@ public class lecturaConsumo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(contenedor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(contenedor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir3ActionPerformed
@@ -461,7 +503,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
 
 //                    pintarColumnaTabla();
                 }else{
-//                    limpiarTabla();
+                    limpiarCampos();
                     JOptionPane.showMessageDialog(this, "El usuario no fue encontrado");
                     numUsuario2.setText("");
                 }
@@ -473,7 +515,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 }
             }
         }else{
-//            limpiarTabla();
+            limpiarCampos();
         }
     }//GEN-LAST:event_numUsuario2KeyReleased
 
@@ -490,54 +532,80 @@ public class lecturaConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_numUsuario2KeyTyped
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        try {            
-            conn = conecionBD.conexion();
-            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-            consumo c = new consumo();
-            Double numUser = Double.valueOf(numUsuario2.getText());
-            int periodo = jComboBoxPeriodo.getSelectedIndex() + 1;            
-            int anio = 2019;
-            Double lectura = Double.valueOf(jTextLectura.getText());     
-            int consumo = 50; //obtener el consumo anterior
-            int precio = 4;
-            Double importe = lectura * precio;       
-            Double cuota = Double.valueOf(jTextCuota1.getText()); 
-            Double recargo = Double.valueOf(jTextRecargo1.getText());
-            Double cooperacion = Double.valueOf(jTextCooperacion1.getText());
-            Double bonificacion = Double.valueOf(jTextBonificaciones1.getText());
-            Double sanciones = Double.valueOf(jTextSanciones1.getText());
-            Double varios = Double.valueOf(jTextVarios1.getText());
-            Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
-            String fecha = "";
-            String notas = jTextAreaMotivo1.getText();
-            String aviso = "";
-            int status = 0;
-            
-            System.out.println("Despues de asignar valores");
-            c.setNumUsuario(String.valueOf(numUser));
-            c.setPeriodo(periodo);
-            c.setAnio(anio);
-            c.setLecturaActual(lectura);
-            c.setConsumoMedidor(consumo);
-            c.setPrecio(precio);
-            c.setImporteConsumo(importe);
-            c.setCoutaFija(cuota);
-            c.setRecargos(recargo);
-            c.setCooperacion(cooperacion);
-            c.setBonificaciones(bonificacion);
-            c.setSanciones(sanciones);
-            c.setVarios(varios);
-            c.setTotalPagar(total);
-            c.setFechaPAgo(fecha);
-            c.setNotas(notas);
-            c.setAviso("");
-            c.setStatus(status);
 
-            daoConsumo.actualizar(c);
-        } catch (DAOException ex) {
-            Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            try {            
+                conn = conecionBD.conexion();
+                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+                consumo c = new consumo();
+
+                String numUser = numUsuario2.getText();
+                int periodo = jComboBoxPeriodo.getSelectedIndex() + 1;            
+                int anio = 2019;
+                int lectura = Integer.parseInt(jTextLectura.getText());     
+                int consumo = 50-lectura; //obtener el consumo anterior
+                Double precio = 4.0;
+                Double importe = consumo * precio;       
+                Double cuota = Double.valueOf(jTextCuota1.getText()); 
+                Double recargo = Double.valueOf(jTextRecargo1.getText());
+                Double cooperacion = Double.valueOf(jTextCooperacion1.getText());
+                Double bonificacion = Double.valueOf(jTextBonificaciones1.getText());
+                Double sanciones = Double.valueOf(jTextSanciones1.getText());
+                Double varios = Double.valueOf(jTextVarios1.getText());
+                Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
+                String fecha = null;
+                String notas = jTextAreaMotivo1.getText();
+                String aviso = "Sin aviso";
+                int status = 0;
+
+                System.out.println(numUser + "," + periodo + "," +anio+ "," +lectura+ "," +
+                        consumo+ "," +precio+ "," +importe+ "," +cuota+ "," +recargo+ "," +cooperacion+ "," +
+                        bonificacion+ "," +sanciones+ "," +varios+ "," +total+ "," +fecha+ "," +notas+ "," +aviso+ "," +
+                        status);
+
+                c.setNumUsuario(numUser);
+                c.setPeriodo(periodo);
+                c.setAnio(anio);
+                c.setLecturaActual(lectura);
+                c.setConsumoMedidor(consumo);
+                c.setPrecio(precio);
+                c.setImporteConsumo(importe);
+                c.setCoutaFija(cuota);
+                c.setRecargos(recargo);
+                c.setCooperacion(cooperacion);
+                c.setBonificaciones(bonificacion);
+                c.setSanciones(sanciones);
+                c.setVarios(varios);
+                c.setTotalPagar(total);
+                c.setFechaPAgo(fecha);
+                c.setNotas(notas);
+                c.setAviso(aviso);
+                c.setStatus(status);
+
+                daoConsumo.insertar(c);
+                numUsuario2.setText("");
+                limpiarCampos();
+
+            } catch (DAOException ex) {
+                Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnGuardarActionPerformed
+    
+    void limpiarCampos(){
+        jLabelNmedidor2.setText("####");
+        jLabelNombre2.setText("####");
+        jLabelDireccion2.setText("####");
+        jLabelManzana2.setText("####");
+        jLabelTelefono2.setText("####");
+        jTextLectura.setText("0.0");
+        jTextCuota1.setText("0.0");
+        jTextCuota1.setText("0.0");
+        jTextRecargo1.setText("0.0");
+        jTextCooperacion1.setText("0.0");
+        jTextBonificaciones1.setText("0.0");
+        jTextSanciones1.setText("0.0");
+        jTextVarios1.setText("0.0");
+        jTextAreaMotivo1.setText("0.0");
+    }
     
     private void jTextLecturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextLecturaKeyTyped
         char ch = evt.getKeyChar();
@@ -587,62 +655,6 @@ public class lecturaConsumo extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jTextVarios1KeyTyped
-
-    public void llenarPago(String usuario, int periodo, int anio) {
-        //System.out.println(numUsuario.getText().length());
-        //if (numUsuario.getText().length() == 3) {
-        try {
-
-            numUsuario.setText(usuario);
-            int numConsumidorTemp = Integer.parseInt(usuario);
-//                int periodo = 10;
-//                int anio = 2019;
-            conn = conecionBD.conexion();
-            consumidoresDAO dao = new consumidoresDAOImpl(conn);
-            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-            consumidores consumidor = dao.buscarConsumidor(numConsumidorTemp);
-            jLabelNmedidor.setText(String.valueOf(consumidor.getNumMedidor()));
-            jLabelNombre.setText(String.valueOf(consumidor.getNombreCompleto()));
-            jLabelDireccion.setText(String.valueOf(consumidor.getDireccion()));
-            jLabelManzana.setText(String.valueOf(consumidor.getManzana()));
-            jLabelTelefono.setText(String.valueOf(consumidor.getTelefono()));
-
-            //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
-            consumo consumo = daoConsumo.buscarConsumo(numConsumidorTemp, periodo, anio);
-
-            jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-            jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
-            jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
-            jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
-            jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
-            jTextVarios.setText(String.valueOf(consumo.getVarios()));
-            jTextAreaMotivo.setText(consumo.getAviso());
-
-//            totalConsumo = consumo.getTotalPagar();
-//            jLabelTotal.setText(String.valueOf(totalConsumo));
-//
-//            if (consumo.getStatus() == 1) {
-//                btnComprobante.enable(true);
-//                btnComprobante.show(true);
-//                btnCobrar.enable(false);
-//                btnCobrar.show(false);
-//                jLabel13.setText("PAGADO: " + consumo.getFechaPAgo());
-//                bloquearCajas();
-//            } else {
-//                btnComprobante.show(false);
-//            }
-//            calcularMonto();
-        } catch (DAOException ex) {
-            Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (conn != null) {
-                conecionBD.cerrarConexion();
-            }
-        }
-//        } else {
-//            System.out.println("cadena menor a 3");
-//        }
-    }
     /**
      * @param args the command line arguments
      */
@@ -681,32 +693,14 @@ public class lecturaConsumo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSalir2;
     private javax.swing.JButton btnSalir3;
-    private javax.swing.JPanel contenedor;
-    private javax.swing.JPanel contenedor1;
     private javax.swing.JPanel contenedor2;
     private javax.swing.JComboBox jComboBoxPeriodo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -717,50 +711,24 @@ public class lecturaConsumo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelDireccion;
-    private javax.swing.JLabel jLabelDireccion1;
     private javax.swing.JLabel jLabelDireccion2;
-    private javax.swing.JLabel jLabelManzana;
-    private javax.swing.JLabel jLabelManzana1;
     private javax.swing.JLabel jLabelManzana2;
-    private javax.swing.JLabel jLabelNmedidor;
-    private javax.swing.JLabel jLabelNmedidor1;
     private javax.swing.JLabel jLabelNmedidor2;
-    private javax.swing.JLabel jLabelNombre;
-    private javax.swing.JLabel jLabelNombre1;
     private javax.swing.JLabel jLabelNombre2;
-    private javax.swing.JLabel jLabelTelefono;
-    private javax.swing.JLabel jLabelTelefono1;
     private javax.swing.JLabel jLabelTelefono2;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextAreaMotivo;
     private javax.swing.JTextArea jTextAreaMotivo1;
-    private javax.swing.JTextField jTextBonificaciones;
     private javax.swing.JTextField jTextBonificaciones1;
-    private javax.swing.JTextField jTextCooperacion;
     private javax.swing.JTextField jTextCooperacion1;
-    private javax.swing.JTextField jTextCuota;
     private javax.swing.JTextField jTextCuota1;
     private javax.swing.JTextField jTextLectura;
-    private javax.swing.JTextField jTextRecargo;
     private javax.swing.JTextField jTextRecargo1;
-    private javax.swing.JTextField jTextSanciones;
     private javax.swing.JTextField jTextSanciones1;
-    private javax.swing.JTextField jTextVarios;
     private javax.swing.JTextField jTextVarios1;
-    private javax.swing.JTextField numUsuario;
-    private javax.swing.JTextField numUsuario1;
     private javax.swing.JTextField numUsuario2;
-    private javax.swing.JPanel otrosPAgos;
-    private javax.swing.JPanel otrosPAgos1;
     private javax.swing.JPanel otrosPAgos2;
-    private javax.swing.JPanel otrosPAgos3;
     private javax.swing.JPanel otrosPAgos4;
     // End of variables declaration//GEN-END:variables
 }
