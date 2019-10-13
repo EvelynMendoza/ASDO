@@ -1,191 +1,204 @@
-numUsuario,periodo,anio,lecturaActual,consumoMedidor,precio,importeConsumo,coutaFija,recargos,cooperacion,bonificaciones,sanciones,varios,totalPagar,fechaPAgo,notas,aviso,status
-001,4,2019,140,13,4,52,0,50,0,0,0,0,102,2019-07-28,"pago recibo atrasado",aviso,1
-002,4,2019,947,11,4,44,0,0,0,0,0,0,44,2019-07-28,,aviso,1
-005,4,2019,3489,43,4,172,0,0,0,0,0,0,172,2019-07-28,,aviso,1
-007,4,2019,1319,15,4,60,0,50,0,0,0,0,110,2019-07-28,"pago recibo atrasado",aviso,1
-008,4,2019,8498,32,4,128,0,0,0,0,0,0,128,2019-07-28,,aviso,1
-012,4,2019,434,27,4,108,0,0,0,0,0,0,108,2019-07-28,,aviso,1
-017,4,2019,4360,82,4,328,0,0,0,0,0,0,328,2019-07-28,,aviso,1
-020,4,2019,1318,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-021,4,2019,321,10,4,40,0,0,0,0,0,0,40,2019-07-28,,aviso,1
-023,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-024,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-026,4,2019,739,13,4,52,0,0,0,0,0,0,52,2019-07-28,,aviso,1
-028,4,2019,2268,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-029,4,2019,285,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-031,4,2019,2296,14,4,56,0,0,0,0,0,0,56,2019-07-28,,aviso,1
-032,4,2019,2743,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-033,4,2019,2135,15,4,60,0,0,0,0,0,0,60,2019-07-28,,aviso,1
-034,4,2019,861,41,4,164,0,0,0,0,0,0,164,2019-07-28,,aviso,1
-037,4,2019,721,21,4,84,0,0,0,0,0,0,84,2019-07-28,,aviso,1
-039,4,2019,220,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-040,4,2019,0,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-041,4,2019,588,11,4,44,0,0,0,0,0,0,44,2019-07-28,,aviso,1
-045,4,2019,1890,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-046,4,2019,631,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-048,4,2019,1666,63,4,252,0,0,0,0,0,0,252,2019-07-28,,aviso,1
-051,4,2019,1579,22,4,88,0,0,0,0,0,0,88,2019-07-28,,aviso,1
-065,4,2019,3636,38,4,152,0,0,0,0,0,0,152,2019-07-28,,aviso,1
-070,4,2019,1577,27,4,108,0,0,0,0,0,0,108,2019-07-28,,aviso,1
-071,4,2019,2915,21,4,84,0,0,0,0,0,0,84,2019-07-28,,aviso,1
-073,4,2019,2371,23,4,92,0,0,0,0,0,0,92,2019-07-28,,aviso,1
-076,4,2019,6409,216,4,864,0,0,0,0,0,0,864,2019-07-28,,aviso,1
-077,4,2019,665,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-078,4,2019,424,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-079,4,2019,3945,40,4,160,0,0,0,0,0,0,160,2019-07-28,,aviso,1
-081,4,2019,1719,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-082,4,2019,117,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-083,4,2019,2697,23,4,92,0,0,0,0,0,0,92,2019-07-28,,aviso,1
-085,4,2019,563,18,4,72,0,0,0,0,0,0,72,2019-07-28,,aviso,1
-088,4,2019,1466,14,4,56,0,0,0,0,0,0,56,2019-07-28,,aviso,1
-091,4,2019,27,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-096,4,2019,1324,26,4,104,0,50,0,0,0,0,154,2019-07-28,"pago recibo atrasado",aviso,1
-097,4,2019,1376,16,4,64,0,0,0,0,0,0,64,2019-07-28,,aviso,1
-098,4,2019,0,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-101,4,2019,1098,57,4,228,0,0,0,0,0,0,228,2019-07-28,,aviso,1
-102,4,2019,3592,50,4,200,0,0,0,0,0,0,200,2019-07-28,,aviso,1
-105,4,2019,989,34,4,136,0,0,0,0,0,0,136,2019-07-28,,aviso,1
-107,4,2019,2186,16,4,64,0,50,0,0,0,0,114,2019-07-28,"pago recibo atrasado",aviso,1
-108,4,2019,1463,28,4,112,0,50,0,0,0,0,162,2019-07-28,"pago recibo atrasado",aviso,1
-109,4,2019,2531,14,4,56,0,50,0,0,0,0,106,2019-07-28,"pago recibo atrasado",aviso,1
-110,4,2019,95,24,4,96,0,50,0,0,0,0,146,2019-07-28,"pago recibo atrasado",aviso,1
-114,4,2019,5315,66,4,264,0,0,0,0,0,0,264,2019-07-28,,aviso,1
-115,4,2019,4523,19,4,76,0,0,0,0,0,0,76,2019-07-28,,aviso,1
-116,4,2019,761,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-123,4,2019,6470,12,4,48,0,0,0,0,0,0,48,2019-07-28,,aviso,1
-124,4,2019,293,20,4,80,0,0,0,0,0,0,80,2019-07-28,,aviso,1
-125,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-127,4,2019,2572,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-128,4,2019,1223,13,4,52,0,0,0,0,0,0,52,2019-07-28,,aviso,1
-129,4,2019,2052,20,4,80,0,50,0,0,0,0,130,2019-07-28,"pago recibo atrasado",aviso,1
-132,4,2019,487,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-133,4,2019,2270,27,4,108,0,0,0,0,0,0,108,2019-07-28,,aviso,1
-135,4,2019,2690,28,4,112,0,0,0,0,0,0,112,2019-07-28,,aviso,1
-137,4,2019,1964,20,4,80,0,0,0,0,0,0,80,2019-07-28,,aviso,1
-138,4,2019,3226,27,4,108,0,0,0,0,0,0,108,2019-07-28,,aviso,1
-139,4,2019,1240,23,4,92,0,50,0,0,0,0,142,2019-07-28,"pago recibo atrasado",aviso,1
-141,4,2019,773,19,4,76,0,50,0,0,0,0,126,2019-07-28,"pago recibo atrasado",aviso,1
-143,4,2019,14919,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-144,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-149,4,2019,3173,26,4,104,0,0,0,0,0,0,104,2019-07-28,,aviso,1
-155,4,2019,3769,23,4,92,0,0,0,0,0,0,92,2019-07-28,,aviso,1
-158,4,2019,854,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-160,4,2019,380,38,4,152,0,50,0,0,0,0,202,2019-07-28,"pago recibo atrasado",aviso,1
-162,4,2019,2851,36,4,144,0,0,0,0,0,0,144,2019-07-28,,aviso,1
-166,4,2019,132,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-167,4,2019,6082,37,4,148,0,0,0,0,0,0,148,2019-07-28,,aviso,1
-168,4,2019,802,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-173,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-179,4,2019,940,18,4,72,0,0,0,0,0,0,72,2019-07-28,,aviso,1
-184,4,2019,4441,41,4,164,0,0,0,0,0,0,164,2019-07-28,,aviso,1
-188,4,2019,1112,36,4,144,0,0,0,0,0,0,144,2019-07-28,,aviso,1
-189,4,2019,1,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-191,4,2019,636,12,4,48,0,50,0,0,0,0,98,2019-07-28,"pago recibo atrasado",aviso,1
-201,4,2019,2462,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-203,4,2019,4525,43,4,172,0,50,0,0,0,0,222,2019-07-28,"pago recibo atrasado",aviso,1
-204,4,2019,3002,35,4,140,0,50,0,0,0,0,190,2019-07-28,"pago recibo atrasado",aviso,1
-205,4,2019,611,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-206,4,2019,3705,29,4,116,0,0,0,0,0,0,116,2019-07-28,,aviso,1
-207,4,2019,5869,31,4,124,0,0,0,0,0,0,124,2019-07-28,,aviso,1
-208,4,2019,2932,21,4,84,0,0,0,0,0,0,84,2019-07-28,,aviso,1
-209,4,2019,697,10,4,40,0,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-211,4,2019,1956,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-212,4,2019,2647,48,4,192,0,0,0,0,0,0,192,2019-07-28,,aviso,1
-215,4,2019,942,21,4,84,0,50,0,0,0,0,134,2019-07-28,"pago recibo atrasado",aviso,1
-216,4,2019,107,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-218,4,2019,843,20,4,80,0,0,0,0,0,0,80,2019-07-28,,aviso,1
-219,4,2019,465,20,4,80,0,0,0,0,0,0,80,2019-07-28,,aviso,1
-221,4,2019,1305,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-223,4,2019,1861,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-224,4,2019,1373,53,4,212,0,0,0,0,0,0,212,2019-07-28,,aviso,1
-225,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-226,4,2019,1263,20,4,80,0,50,0,0,0,0,130,2019-07-28,"pago recibo atrasado",aviso,1
-230,4,2019,1376,21,4,84,0,0,0,0,0,0,84,2019-07-28,,aviso,1
-231,4,2019,2264,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-232,4,2019,4145,32,4,128,0,0,0,0,0,0,128,2019-07-28,,aviso,1
-236,4,2019,435,23,4,92,0,50,0,0,0,0,142,2019-07-28,"pago recibo atrasado",aviso,1
-237,4,2019,157,14,4,56,0,0,0,0,0,0,56,2019-07-28,,aviso,1
-239,4,2019,1388,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-240,4,2019,0,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-241,4,2019,1996,19,4,76,0,0,0,0,0,0,76,2019-07-28,,aviso,1
-243,4,2019,561,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-244,4,2019,1259,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-245,4,2019,1846,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-246,4,2019,153,23,4,92,0,0,0,0,0,0,92,2019-07-28,,aviso,1
-249,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-250,4,2019,207,10,4,40,0,0,0,0,0,0,40,2019-07-28,,aviso,1
-251,4,2019,887,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-252,4,2019,1289,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-253,4,2019,2936,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-257,4,2019,3210,10,4,40,0,0,0,0,0,0,40,2019-07-28,,aviso,1
-258,4,2019,1210,25,4,100,0,0,0,0,0,0,100,2019-07-28,,aviso,1
-260,4,2019,103,44,4,176,0,0,0,0,0,0,176,2019-07-28,,aviso,1
-261,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-266,4,2019,2180,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-267,4,2019,4506,12,4,48,0,50,0,0,0,0,98,2019-07-28,"pago recibo atrasado",aviso,1
-271,4,2019,3294,34,4,136,0,0,0,0,0,0,136,2019-07-28,,aviso,1
-272,4,2019,791,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-273,4,2019,294,32,4,128,0,50,0,0,0,0,178,2019-07-28,"pago recibo atrasado",aviso,1
-275,4,2019,1167,39,4,156,0,0,0,0,0,0,156,2019-07-28,,aviso,1
-277,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-281,4,2019,1760,13,4,52,0,0,0,0,0,0,52,2019-07-28,,aviso,1
-293,4,2019,3127,13,4,52,0,0,0,0,0,0,52,2019-07-28,,aviso,1
-295,4,2019,3600,36,4,144,0,0,0,0,0,0,144,2019-07-28,,aviso,1
-296,4,2019,2970,25,4,100,0,0,0,0,0,0,100,2019-07-28,,aviso,1
-297,4,2019,179,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-298,4,2019,2899,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-299,4,2019,1408,19,4,76,0,0,0,0,0,0,76,2019-07-28,,aviso,1
-300,4,2019,1345,27,4,108,0,0,0,0,0,0,108,2019-07-28,,aviso,1
-302,4,2019,3549,28,4,112,0,0,0,0,0,0,112,2019-07-28,,aviso,1
-304,4,2019,2136,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-305,4,2019,19,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-306,4,2019,1911,13,4,52,0,50,0,0,0,0,102,2019-07-28,"pago recibo atrasado",aviso,1
-307,4,2019,1681,17,4,68,0,50,0,0,0,0,118,2019-07-28,"pago recibo atrasado",aviso,1
-308,4,2019,429,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-314,4,2019,383,20,4,80,0,50,0,0,0,0,130,2019-07-28,"pago recibo atrasado",aviso,1
-315,4,2019,62,20,4,80,0,0,0,0,0,0,80,2019-07-28,,aviso,1
-319,4,2019,639,13,4,52,0,0,0,0,0,0,52,2019-07-28,,aviso,1
-320,4,2019,212,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-321,4,2019,1503,21,4,84,0,50,0,0,0,0,134,2019-07-28,"pago recibo atrasado",aviso,1
-322,4,2019,2000,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-323,4,2019,3910,26,4,104,0,0,0,0,0,0,104,2019-07-28,,aviso,1
-327,4,2019,4651,23,4,92,0,0,0,0,0,0,92,2019-07-28,,aviso,1
-329,4,2019,1189,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-333,4,2019,344,12,4,48,0,50,0,0,0,0,98,2019-07-28,"pago recibo atrasado",aviso,1
-336,4,2019,4765,11,4,44,0,0,0,0,0,0,44,2019-07-28,,aviso,1
-337,4,2019,26,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-339,4,2019,833,25,4,100,0,50,0,0,0,0,150,2019-07-28,"pago recibo atrasado",aviso,1
-341,4,2019,2240,22,4,88,0,0,0,0,0,0,88,2019-07-28,,aviso,1
-342,4,2019,2914,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-343,4,2019,250,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-345,4,2019,2246,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-348,4,2019,1324,52,4,208,0,0,0,0,0,0,208,2019-07-28,,aviso,1
-349,4,2019,1248,28,4,112,0,0,0,0,0,0,112,2019-07-28,,aviso,1
-353,4,2019,1992,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-354,4,2019,2062,14,4,56,0,0,0,0,0,0,56,2019-07-28,,aviso,1
-355,4,2019,68,22,4,88,0,50,0,0,0,0,138,2019-07-28,"pago recibo atrasado",aviso,1
-356,4,2019,1314,23,4,92,0,50,0,0,0,0,142,2019-07-28,"pago recibo atrasado",aviso,1
-359,4,2019,1,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-360,4,2019,123,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-361,4,2019,256,15,4,60,0,50,0,0,0,0,110,2019-07-28,"pago recibo atrasado",aviso,1
-363,4,2019,15,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-365,4,2019,0,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-367,4,2019,1048,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-371,4,2019,93,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-372,4,2019,23,12,4,48,0,0,0,0,0,0,48,2019-07-28,,aviso,1
-373,4,2019,277,0,4,0,40,0,0,0,0,0,40,2019-07-28,,aviso,1
-375,4,2019,384,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-378,4,2019,210,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-379,4,2019,1237,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-380,4,2019,1074,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-382,4,2019,6197,43,4,172,0,50,0,0,0,0,222,2019-07-28,"pago recibo atrasado",aviso,1
-384,4,2019,3448,23,4,92,0,50,0,0,0,0,142,2019-07-28,"pago recibo atrasado",aviso,1
-392,4,2019,1882,18,4,72,0,0,0,0,0,0,72,2019-07-28,,aviso,1
-394,4,2019,1322,21,4,84,0,0,0,0,0,0,84,2019-07-28,,aviso,1
-397,4,2019,42,11,4,44,0,0,0,0,0,0,44,2019-07-28,,aviso,1
-398,4,2019,3189,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-399,4,2019,295,31,4,124,0,0,0,0,0,0,124,2019-07-28,,aviso,1
-400,4,2019,2764,25,4,100,0,50,0,0,0,0,150,2019-07-28,"pago recibo atrasado",aviso,1
-408,4,2019,2164,17,4,68,0,0,0,0,0,0,68,2019-07-28,,aviso,1
-409,4,2019,311,0,4,0,40,50,0,0,0,0,90,2019-07-28,"pago recibo atrasado",aviso,1
-410,4,2019,1417,29,4,116,0,50,0,0,0,0,166,2019-07-28,"pago recibo atrasado",aviso,1
+/*
+-- Query: select * from consumo
+LIMIT 0, 1000
+
+-- Date: 2019-10-13 10:17
+*/
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('',2,2019,25,25,4,100,0,0,0,0,0,0,100,NULL,'prueba 6','Sin aviso',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('001',4,2019,140,13,4,52,0,50,0,0,0,0,102,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('002',4,2019,947,11,4,44,0,0,0,0,0,0,44,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('003',1,2019,25,25,4,100,6,6,6,6,6,6,136,NULL,'prueba5','Sin aviso',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('003',3,2019,25,25,4,100,0,0,0,0,0,0,100,NULL,'bh    hbbhb','Sin aviso',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('003',4,2019,30,20,4,80,0,0,0,0,0,0,80,NULL,'prueba 4','Sin aviso',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('003',5,2019,40,10,4,40,1,1,1,1,1,1,52,'2019-10-13','x','x',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('003',6,2019,23,27,4,108,76,67,7,7,7,7,279,'2019-09-19','prueba3','x',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('005',4,2019,3489,43,4,172,0,0,0,0,0,0,172,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('007',4,2019,1319,15,4,60,0,50,0,0,0,0,110,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('008',4,2019,8498,32,4,128,0,0,0,0,0,0,128,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('012',4,2019,434,27,4,108,0,0,0,0,0,0,108,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('017',4,2019,4360,82,4,328,0,0,0,0,0,0,328,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('020',4,2019,1318,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('021',4,2019,321,10,4,40,0,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('023',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('024',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('026',4,2019,739,13,4,52,0,0,0,0,0,0,52,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('028',4,2019,2268,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('029',4,2019,285,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('031',4,2019,2296,14,4,56,0,0,0,0,0,0,56,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('032',4,2019,2743,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('033',1,2019,30,20,4,80,0,0,0,0,0,0,80,NULL,'Prueba 5','Sin aviso',0);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('033',4,2019,2135,15,4,60,0,0,0,0,0,0,60,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('034',4,2019,861,41,4,164,0,0,0,0,0,0,164,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('037',4,2019,721,21,4,84,0,0,0,0,0,0,84,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('039',4,2019,220,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('040',4,2019,0,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('041',4,2019,588,11,4,44,0,0,0,0,0,0,44,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('045',4,2019,1890,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('046',4,2019,631,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('048',4,2019,1666,63,4,252,0,0,0,0,0,0,252,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('051',4,2019,1579,22,4,88,0,0,0,0,0,0,88,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('065',4,2019,3636,38,4,152,0,0,0,0,0,0,152,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('070',4,2019,1577,27,4,108,0,0,0,0,0,0,108,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('071',4,2019,2915,21,4,84,0,0,0,0,0,0,84,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('073',4,2019,2371,23,4,92,0,0,0,0,0,0,92,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('076',4,2019,6409,216,4,864,0,0,0,0,0,0,864,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('077',4,2019,665,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('078',4,2019,424,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('079',4,2019,3945,40,4,160,0,0,0,0,0,0,160,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('081',4,2019,1719,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('082',4,2019,117,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('083',4,2019,2697,23,4,92,0,0,0,0,0,0,92,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('085',4,2019,563,18,4,72,0,0,0,0,0,0,72,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('088',4,2019,1466,14,4,56,0,0,0,0,0,0,56,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('091',4,2019,27,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('096',4,2019,1324,26,4,104,0,50,0,0,0,0,154,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('097',4,2019,1376,16,4,64,0,0,0,0,0,0,64,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('098',4,2019,0,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('101',4,2019,1098,57,4,228,0,0,0,0,0,0,228,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('102',4,2019,3592,50,4,200,0,0,0,0,0,0,200,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('105',4,2019,989,34,4,136,0,0,0,0,0,0,136,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('107',4,2019,2186,16,4,64,0,50,0,0,0,0,114,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('108',4,2019,1463,28,4,112,0,50,0,0,0,0,162,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('109',4,2019,2531,14,4,56,0,50,0,0,0,0,106,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('110',4,2019,95,24,4,96,0,50,0,0,0,0,146,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('114',4,2019,5315,66,4,264,0,0,0,0,0,0,264,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('115',4,2019,4523,19,4,76,0,0,0,0,0,0,76,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('116',4,2019,761,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('123',4,2019,6470,12,4,48,0,0,0,0,0,0,48,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('124',4,2019,293,20,4,80,0,0,0,0,0,0,80,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('125',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('127',4,2019,2572,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('128',4,2019,1223,13,4,52,0,0,0,0,0,0,52,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('129',4,2019,2052,20,4,80,0,50,0,0,0,0,130,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('132',4,2019,487,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('133',4,2019,2270,27,4,108,0,0,0,0,0,0,108,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('135',4,2019,2690,28,4,112,0,0,0,0,0,0,112,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('137',4,2019,1964,20,4,80,0,0,0,0,0,0,80,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('138',4,2019,3226,27,4,108,0,0,0,0,0,0,108,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('139',4,2019,1240,23,4,92,0,50,0,0,0,0,142,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('141',4,2019,773,19,4,76,0,50,0,0,0,0,126,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('143',4,2019,14919,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('144',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('149',4,2019,3173,26,4,104,0,0,0,0,0,0,104,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('155',4,2019,3769,23,4,92,0,0,0,0,0,0,92,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('158',4,2019,854,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('160',4,2019,380,38,4,152,0,50,0,0,0,0,202,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('162',4,2019,2851,36,4,144,0,0,0,0,0,0,144,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('166',4,2019,132,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('167',4,2019,6082,37,4,148,0,0,0,0,0,0,148,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('168',4,2019,802,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('173',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('179',4,2019,940,18,4,72,0,0,0,0,0,0,72,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('184',4,2019,4441,41,4,164,0,0,0,0,0,0,164,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('188',4,2019,1112,36,4,144,0,0,0,0,0,0,144,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('189',4,2019,1,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('191',4,2019,636,12,4,48,0,50,0,0,0,0,98,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('201',4,2019,2462,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('203',4,2019,4525,43,4,172,0,50,0,0,0,0,222,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('204',4,2019,3002,35,4,140,0,50,0,0,0,0,190,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('205',4,2019,611,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('206',4,2019,3705,29,4,116,0,0,0,0,0,0,116,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('207',4,2019,5869,31,4,124,0,0,0,0,0,0,124,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('208',4,2019,2932,21,4,84,0,0,0,0,0,0,84,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('209',4,2019,697,10,4,40,0,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('211',4,2019,1956,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('212',4,2019,2647,48,4,192,0,0,0,0,0,0,192,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('215',4,2019,942,21,4,84,0,50,0,0,0,0,134,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('216',4,2019,107,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('218',4,2019,843,20,4,80,0,0,0,0,0,0,80,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('219',4,2019,465,20,4,80,0,0,0,0,0,0,80,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('221',4,2019,1305,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('223',4,2019,1861,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('224',4,2019,1373,53,4,212,0,0,0,0,0,0,212,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('225',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('226',4,2019,1263,20,4,80,0,50,0,0,0,0,130,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('230',4,2019,1376,21,4,84,0,0,0,0,0,0,84,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('231',4,2019,2264,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('232',4,2019,4145,32,4,128,0,0,0,0,0,0,128,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('236',4,2019,435,23,4,92,0,50,0,0,0,0,142,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('237',4,2019,157,14,4,56,0,0,0,0,0,0,56,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('239',4,2019,1388,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('240',4,2019,0,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('241',4,2019,1996,19,4,76,0,0,0,0,0,0,76,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('243',4,2019,561,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('244',4,2019,1259,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('245',4,2019,1846,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('246',4,2019,153,23,4,92,0,0,0,0,0,0,92,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('249',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('250',4,2019,207,10,4,40,0,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('251',4,2019,887,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('252',4,2019,1289,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('253',4,2019,2936,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('257',4,2019,3210,10,4,40,0,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('258',4,2019,1210,25,4,100,0,0,0,0,0,0,100,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('260',4,2019,103,44,4,176,0,0,0,0,0,0,176,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('261',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('266',4,2019,2180,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('267',4,2019,4506,12,4,48,0,50,0,0,0,0,98,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('271',4,2019,3294,34,4,136,0,0,0,0,0,0,136,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('272',4,2019,791,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('273',4,2019,294,32,4,128,0,50,0,0,0,0,178,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('275',4,2019,1167,39,4,156,0,0,0,0,0,0,156,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('277',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('281',4,2019,1760,13,4,52,0,0,0,0,0,0,52,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('293',4,2019,3127,13,4,52,0,0,0,0,0,0,52,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('295',4,2019,3600,36,4,144,0,0,0,0,0,0,144,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('296',4,2019,2970,25,4,100,0,0,0,0,0,0,100,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('297',4,2019,179,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('298',4,2019,2899,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('299',4,2019,1408,19,4,76,0,0,0,0,0,0,76,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('300',4,2019,1345,27,4,108,0,0,0,0,0,0,108,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('302',4,2019,3549,28,4,112,0,0,0,0,0,0,112,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('304',4,2019,2136,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('305',4,2019,19,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('306',4,2019,1911,13,4,52,0,50,0,0,0,0,102,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('307',4,2019,1681,17,4,68,0,50,0,0,0,0,118,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('308',4,2019,429,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('314',4,2019,383,20,4,80,0,50,0,0,0,0,130,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('315',4,2019,62,20,4,80,0,0,0,0,0,0,80,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('319',4,2019,639,13,4,52,0,0,0,0,0,0,52,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('320',4,2019,212,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('321',4,2019,1503,21,4,84,0,50,0,0,0,0,134,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('322',4,2019,2000,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('323',4,2019,3910,26,4,104,0,0,0,0,0,0,104,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('327',4,2019,4651,23,4,92,0,0,0,0,0,0,92,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('329',4,2019,1189,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('333',0,0,344,12,4,48,0,50,0,0,0,0,98,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('333',4,2019,344,12,4,48,0,50,0,0,0,0,98,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('336',4,2019,4765,11,4,44,0,0,0,0,0,0,44,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('337',4,2019,26,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('339',4,2019,833,25,4,100,0,50,0,0,0,0,150,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('341',4,2019,2240,22,4,88,0,0,0,0,0,0,88,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('342',4,2019,2914,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('343',4,2019,250,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('345',4,2019,2246,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('348',4,2019,1324,52,4,208,0,0,0,0,0,0,208,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('349',4,2019,1248,28,4,112,0,0,0,0,0,0,112,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('353',4,2019,1992,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('354',4,2019,2062,14,4,56,0,0,0,0,0,0,56,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('355',4,2019,68,22,4,88,0,50,0,0,0,0,138,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('356',4,2019,1314,23,4,92,0,50,0,0,0,0,142,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('359',4,2019,1,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('360',4,2019,123,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('361',4,2019,256,15,4,60,0,50,0,0,0,0,110,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('363',4,2019,15,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('365',4,2019,0,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('367',4,2019,1048,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('371',4,2019,93,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('372',4,2019,23,12,4,48,0,0,0,0,0,0,48,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('373',4,2019,277,0,4,0,40,0,0,0,0,0,40,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('375',4,2019,384,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('378',4,2019,210,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('379',4,2019,1237,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('380',4,2019,1074,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('382',4,2019,6197,43,4,172,0,50,0,0,0,0,222,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('384',4,2019,3448,23,4,92,0,50,0,0,0,0,142,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('392',4,2019,1882,18,4,72,0,0,0,0,0,0,72,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('394',4,2019,1322,21,4,84,0,0,0,0,0,0,84,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('397',4,2019,42,11,4,44,0,0,0,0,0,0,44,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('398',4,2019,3189,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('399',4,2019,295,31,4,124,0,0,0,0,0,0,124,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('400',4,2019,2764,25,4,100,0,50,0,0,0,0,150,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('408',4,2019,2164,17,4,68,0,0,0,0,0,0,68,'2019-07-28','','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('409',4,2019,311,0,4,0,40,50,0,0,0,0,90,'2019-07-28','pago recibo atrasado','aviso',1);
+INSERT INTO `consumo` (`numUsuario`,`periodo`,`anio`,`lecturaActual`,`consumoMedidor`,`precio`,`importeConsumo`,`coutaFija`,`recargos`,`cooperacion`,`bonificaciones`,`sanciones`,`varios`,`totalPagar`,`fechaPAgo`,`notas`,`aviso`,`status`) VALUES ('410',4,2019,1417,29,4,116,0,50,0,0,0,0,166,'2019-07-28','pago recibo atrasado','aviso',1);

@@ -28,6 +28,7 @@ public class consumoDAOImpl implements consumoDAO {
 "  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n" +
 "  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
+    final String GETPERIODO = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
     final String GETALL = "select * from consumo;";
     final String DELETE = "DELETE FROM consumo WHERE numUsuario=? and periodo=? and anio=?;";
     final String UPDATE = "UPDATE consumo SET  lecturaActual=?, consumoMedidor=?, precio=?, importeConsumo=?,"
@@ -250,5 +251,42 @@ public class consumoDAOImpl implements consumoDAO {
         consumo.setStatus(rs.getInt("status"));
 
         return consumo;
+    }
+
+    @Override
+    public consumo buscarPerantConsumo(int IdUser, int periodo, int anio) throws DAOException {
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        consumo c = null;
+        try {
+            stat = conn.prepareStatement(GETONE);
+            stat.setInt(1,IdUser );
+            stat.setInt(2, periodo);
+            stat.setInt(3, anio);
+            rs = stat.executeQuery();
+            if (rs.next()) {
+                c = convertir(rs);
+            } else {
+                throw new DAOException("No se ha encontrado ese registro");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+        return c;
     }
 }
