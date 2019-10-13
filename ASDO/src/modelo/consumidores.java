@@ -92,11 +92,5 @@ public class consumidores {
     @Override
     public String toString() {
         return "consumidores{" + "idConsumidor=" + idConsumidor + ", numUsuario=" + numUsuario + ", numMedidor=" + numMedidor + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", manzana=" + manzana + ", telefono=" + telefono + '}';
-    }
-  
-
-   
-   
-   
-    
+    }   
 }

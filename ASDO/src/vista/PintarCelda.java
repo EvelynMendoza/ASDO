@@ -5,38 +5,42 @@
  */
 package vista;
 
+
 import java.awt.Color;
 import java.awt.Component;
-import javax.swing.JLabel;
+import java.awt.Font;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
  * @author octavio
  */
-public class PintarCelda extends DefaultTableCellRenderer {
+public class PintarCelda extends DefaultTableCellRenderer{
 
-    private int columna;
+    private final int columna_patron;
 
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
-        JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+    public PintarCelda(int Colpatron) {
+        this.columna_patron = Colpatron;
+    }
 
-        if (value instanceof String) {
-            String valor = String.valueOf(value);
-            cell.setBackground(Color.green);
-                    cell.setForeground(Color.BLACK);
-            if (column == 3) {
-                if (valor.equals("Pendiente")) {
-                    cell.setBackground(Color.red);
-                    cell.setForeground(Color.WHITE);
-                }else{
-                    cell.setBackground(Color.green);
-                    cell.setForeground(Color.BLACK);
-                }
-            }
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean Selected, boolean hasFocus, int row, int col) {
+        Font font = new Font("Courier", Font.BOLD, 16);
+        switch (table.getValueAt(row, columna_patron).toString()) {
+            
+            case "PAGADO":              
+                setForeground(Color.BLUE);
+                setFont(font);
+                break;
+            case "PENDIENTE":
+                setForeground(Color.RED);
+                setFont(font);
+                break;
+            default:
+                break;
         }
-        return cell;
+        super.getTableCellRendererComponent(table, value, Selected, hasFocus, row, col);
+        return this;
     }
 }

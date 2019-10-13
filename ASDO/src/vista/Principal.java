@@ -82,7 +82,7 @@ public class Principal extends javax.swing.JFrame {
         btnConsumidores.setBackground(new java.awt.Color(7, 82, 132));
         btnConsumidores.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnConsumidores.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsumidores.setText("CONSUMIDORES");
+        btnConsumidores.setText("REGISTRO DE CONSUMO");
         btnConsumidores.setName("btnReportes"); // NOI18N
         btnConsumidores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +142,7 @@ public class Principal extends javax.swing.JFrame {
         pago.setVisible(true);*/
         BuscarUsuarioPago buscarUserPag= new BuscarUsuarioPago();
         buscarUserPag.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnPagoActionPerformed
     
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
@@ -158,8 +159,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnConsumidoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumidoresActionPerformed
         this.dispose();
-        ConsumidorCRUD consumidor = new ConsumidorCRUD();
-        consumidor.setVisible(true);
+        lecturaConsumo registro = new lecturaConsumo();
+        registro.setVisible(true);
     }//GEN-LAST:event_btnConsumidoresActionPerformed
 
     /**

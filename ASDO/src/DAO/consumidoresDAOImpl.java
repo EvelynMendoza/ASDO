@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
 import java.sql.Connection;
@@ -132,7 +128,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             if (rs.next()) {
                 c = convertir(rs);
             } else {
-                System.out.println("No hay registors");
+                System.out.println("No hay registros");
             }
         } catch (SQLException e) {
             throw new DAOException("Error SQL" + e);

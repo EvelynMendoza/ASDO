@@ -111,7 +111,7 @@ public class Pago extends javax.swing.JFrame {
         btnSalir.setBackground(new java.awt.Color(7, 82, 132));
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setLabel("SALIR");
+        btnSalir.setText("REGRESAR");
         btnSalir.setName("btnSalir"); // NOI18N
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,19 +120,11 @@ public class Pago extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("BUSCAR USUARIO:");
+        jLabel1.setText("Usuario");
 
         numUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         numUsuario.setForeground(new java.awt.Color(0, 51, 204));
         numUsuario.setEnabled(false);
-        numUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                numUsuarioKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                numUsuarioKeyReleased(evt);
-            }
-        });
 
         otrosPAgos.setBackground(new java.awt.Color(255, 255, 255));
         otrosPAgos.setBorder(javax.swing.BorderFactory.createTitledBorder("INFORMACIÓN DEL CONSUMIDOR"));
@@ -355,9 +347,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextCuota.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextCuota.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextCuotaKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextCuotaKeyReleased(evt);
             }
@@ -365,9 +354,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextRecargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextRecargo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextRecargoKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextRecargoKeyReleased(evt);
             }
@@ -375,9 +361,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextCooperacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextCooperacion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextCooperacionKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextCooperacionKeyReleased(evt);
             }
@@ -400,9 +383,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextBonificaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextBonificaciones.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextBonificacionesKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextBonificacionesKeyReleased(evt);
             }
@@ -410,9 +390,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextSanciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextSanciones.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextSancionesKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextSancionesKeyReleased(evt);
             }
@@ -427,9 +404,6 @@ public class Pago extends javax.swing.JFrame {
 
         jTextVarios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextVarios.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextVariosKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextVariosKeyReleased(evt);
             }
@@ -504,26 +478,24 @@ public class Pago extends javax.swing.JFrame {
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(305, 305, 305)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+            .addGroup(contenedorLayout.createSequentialGroup()
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(numUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(263, 263, 263)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorLayout.createSequentialGroup()
-                        .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contenedorLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(contenedorLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(otrosPAgos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(otrosPAgos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 4, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(6, 6, 6)
+                        .addComponent(otrosPAgos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(otrosPAgos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -612,45 +584,9 @@ public class Pago extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
-        Principal prin = new Principal();
-        prin.setVisible(true);
+        BuscarUsuarioPago buscar = new BuscarUsuarioPago();
+        buscar.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void numUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyReleased
-
-    }//GEN-LAST:event_numUsuarioKeyReleased
-
-    private void jTextCuotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCuotaKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextCuotaKeyPressed
-
-    private void jTextRecargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextRecargoKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextRecargoKeyPressed
-
-    private void jTextCooperacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCooperacionKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextCooperacionKeyPressed
-
-    private void jTextBonificacionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextBonificacionesKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextBonificacionesKeyPressed
-
-    private void jTextSancionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSancionesKeyPressed
-
-    }//GEN-LAST:event_jTextSancionesKeyPressed
-
-    private void jTextVariosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextVariosKeyPressed
-
-    }//GEN-LAST:event_jTextVariosKeyPressed
-
-    private void numUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuarioKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numUsuarioKeyPressed
 
     private void jTextCuotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCuotaKeyReleased
         // TODO add your handling code here:

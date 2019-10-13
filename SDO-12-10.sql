@@ -89,4 +89,4 @@ select * from consumo;
 select * from consumo where status=2;
 select * from consumo where numUsuario=409;
 
-select * from consumidores;
+select * from consumo;

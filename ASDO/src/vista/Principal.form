@@ -167,7 +167,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CONSUMIDORES"/>
+            <Property name="text" type="java.lang.String" value="REGISTRO DE CONSUMO"/>
             <Property name="name" type="java.lang.String" value="btnReportes" noResource="true"/>
           </Properties>
           <Events>
