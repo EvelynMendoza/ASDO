@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.consumo;
 
 /**
@@ -43,7 +44,7 @@ public class consumoDAOImpl implements consumoDAO {
         try {
             stat = conn.prepareStatement(INSERT);
             //stat.setInt(1, c.getIdConsumidor());
-           stat.setString(1, c.getNumUsuario());
+            stat.setString(1, c.getNumUsuario());
             stat.setInt(2, c.getPeriodo());
             stat.setInt(3, c.getAnio());
             stat.setDouble(4, c.getLecturaActual());
@@ -61,11 +62,11 @@ public class consumoDAOImpl implements consumoDAO {
             stat.setString(16, c.getNotas());
             stat.setString(17, c.getAviso());
             stat.setInt(18, c.getStatus());
-
+            
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
-                System.out.println("Los datos se han guardado");
+                JOptionPane.showMessageDialog(null, "Los datos han sido guardados");
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
