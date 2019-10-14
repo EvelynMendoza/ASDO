@@ -20,9 +20,8 @@ public interface consumoDAO {
     consumo buscarPerantConsumo(int IdUser, int periodo, int anio)throws DAOException;
     consumo buscarConsumo(int IdUser, int periodo, int anio)throws DAOException;
     List<consumo> buscarTodos()throws DAOException;
-<<<<<<< HEAD
+
     List<consumo> buscarConsumoPorUser(int IdUser, int anio)throws DAOException;
     
-=======
->>>>>>> 3f20d56261d47cf4ccc6b409dfc607f1c4cfd837
+
 }

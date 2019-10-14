@@ -28,11 +28,11 @@ public class consumoDAOImpl implements consumoDAO {
 "  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n" +
 "  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
-<<<<<<< HEAD
+
     final String GETONEUSER = "select * from consumo WHERE numUsuario=? and anio=?;";
-=======
+
     final String GETPERIODO = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
->>>>>>> 3f20d56261d47cf4ccc6b409dfc607f1c4cfd837
+
     final String GETALL = "select * from consumo;";
     final String DELETE = "DELETE FROM consumo WHERE numUsuario=? and periodo=? and anio=?;";
     final String UPDATE = "UPDATE consumo SET  lecturaActual=?, consumoMedidor=?, precio=?, importeConsumo=?,"
@@ -292,8 +292,7 @@ public class consumoDAOImpl implements consumoDAO {
         return consumo;
     }
 
-<<<<<<< HEAD
-=======
+
     @Override
     public consumo buscarPerantConsumo(int IdUser, int periodo, int anio) throws DAOException {
         PreparedStatement stat = null;
@@ -330,5 +329,5 @@ public class consumoDAOImpl implements consumoDAO {
         }
         return c;
     }
->>>>>>> 3f20d56261d47cf4ccc6b409dfc607f1c4cfd837
+
 }
