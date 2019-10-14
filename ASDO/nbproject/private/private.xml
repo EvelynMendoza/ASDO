@@ -6,10 +6,9 @@
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAO.java</file>
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAOImpl.java</file>
         <group>
-            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumoDAOImpl.java</file>
-            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/vista/PintarCelda.java</file>
             <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/vista/BuscarUsuarioPago.java</file>
-            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAOImpl.java</file>
+            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/ConexionCloseBD/ConexionBD.java</file>
+            <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/vista/Pago.java</file>
         </group>
     </open-files>
 </project-private>

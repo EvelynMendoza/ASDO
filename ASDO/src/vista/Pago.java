@@ -749,6 +749,7 @@ bloquearCajas();        // TODO add your handling code here:
                         }
                         matriz[0][i] = (per);
                         matriz[1][i] = String.valueOf(c.getConsumoMedidor());
+                        //System.err.println("sdsd"+c.getConsumoMedidor());
                         
                         i++;
                         System.out.println(i);

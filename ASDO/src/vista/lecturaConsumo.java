@@ -538,11 +538,15 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
                 consumo c = new consumo();
 
-                String numUser = numUsuario2.getText();
+                String numUser = numUsuario2.getText();                
                 int periodo = jComboBoxPeriodo.getSelectedIndex() + 1;            
                 int anio = 2019;
-                int lectura = Integer.parseInt(jTextLectura.getText());     
-                int consumo = 50-lectura; //obtener el consumo anterior
+                
+                consumo con=daoConsumo.buscarPerantConsumo(Integer.parseInt(numUser), periodo-1 , 2019);
+                Double lecturaAnt = con.getLecturaActual();
+                
+                Double lecturaAct = Double.parseDouble(jTextLectura.getText());     
+                Double consumo = lecturaAct-lecturaAnt; //obtener el consumo anterior
                 Double precio = 4.0;
                 Double importe = consumo * precio;       
                 Double cuota = Double.valueOf(jTextCuota1.getText()); 
@@ -557,7 +561,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 String aviso = "Sin aviso";
                 int status = 0;
 
-                System.out.println(numUser + "," + periodo + "," +anio+ "," +lectura+ "," +
+                System.out.println(numUser + "," + periodo + "," +anio+ "," +lecturaAct+ "," +
                         consumo+ "," +precio+ "," +importe+ "," +cuota+ "," +recargo+ "," +cooperacion+ "," +
                         bonificacion+ "," +sanciones+ "," +varios+ "," +total+ "," +fecha+ "," +notas+ "," +aviso+ "," +
                         status);
@@ -565,7 +569,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 c.setNumUsuario(numUser);
                 c.setPeriodo(periodo);
                 c.setAnio(anio);
-                c.setLecturaActual(lectura);
+                c.setLecturaActual(lecturaAct);
                 c.setConsumoMedidor(consumo);
                 c.setPrecio(precio);
                 c.setImporteConsumo(importe);
