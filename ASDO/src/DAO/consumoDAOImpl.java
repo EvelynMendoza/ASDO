@@ -330,4 +330,37 @@ public class consumoDAOImpl implements consumoDAO {
         return c;
     }
 
+    @Override
+    public List<consumo> busquedaGenerico(String consulta) throws DAOException {
+        List<consumo> consumo = new ArrayList<>();
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        try {
+            stat = conn.prepareStatement(consulta);
+            rs = stat.executeQuery();
+            while (rs.next()) {
+                consumo.add(convertir(rs));
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+
+        return consumo;
+    }
+
 }

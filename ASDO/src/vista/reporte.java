@@ -5,15 +5,28 @@
  */
 package vista;
 
+import ConexionCloseBD.ConexionBD;
+import DAO.DAOException;
+import DAO.consumidoresDAO;
+import DAO.consumidoresDAOImpl;
+import DAO.consumoDAOImpl;
+import java.sql.Connection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.consumo;
+
 /**
  *
  * @author Evelyn
  */
 public class reporte extends javax.swing.JFrame {
 
-    /**
-     * Creates new form reporte
-     */
+    
+    Connection conn = null;
+    ConexionBD conecionBD = new ConexionBD();
     public reporte() {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
@@ -301,11 +314,148 @@ public class reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnAdeudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdeudoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdeudoActionPerformed
+          conn = conecionBD.conexion();
+                consumidoresDAO dao = new consumidoresDAOImpl(conn);
+                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+                String query="select * from consumo where status=0;";
+                List<consumo> consumo;
+        try {
+            consumo = daoConsumo.busquedaGenerico(query);
+             int toalRegistro = consumo.size();
+                    int i = 0;
+                    String matriz[][] = new String[toalRegistro][5];
+                    String status = "";
 
+                    for (consumo c : consumo) {
+                        // System.out.println(c.toString());
+                        if (c.getStatus() == 1) {
+                            status = "PAGADO";
+                        } else {
+                            status = "PENDIENTE";
+
+                        }
+                        
+                        String per = String.valueOf(c.getPeriodo());
+                        switch(per){
+                            case "1":
+                                per = "DICIEMBRE - ENERO";
+                                break;
+                            case "2":
+                                per = "FEBRERO - MARZO";
+                                break;
+                            case "3":
+                                per = "ABRIL - MAYO";
+                                break;
+                            case "4":
+                                per = "JUNIO - JULIO";
+                                break;
+                            case "5":
+                                per = "AGOSTO - SEPTIEMBRE";
+                                break;
+                            case "6":
+                                per = "OCTUBRE - NOVIEMBRE";
+                                break;
+                        }
+                        matriz[i][0] = String.valueOf(i+1);
+                        matriz[i][1] = c.getNumUsuario();
+                         matriz[i][2] = (per); 
+                        
+                        matriz[i][3] = status;           
+                        matriz[i][4] = (String.valueOf(c.getAnio()));                        
+                                            
+                        i++;
+                        System.out.println(i);
+                    }
+
+                    jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                            matriz,
+                            new String[]{
+                               ".", "NUM. USUARIO", "PERIODO", "ESTADO", "AÑO"
+                            }
+                    ));
+                    
+                    pintarColumnaTabla();
+        } catch (DAOException ex) {
+            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    //System.err.println("tamaño:  " + consumo.size());
+                   
+
+    }//GEN-LAST:event_btnAdeudoActionPerformed
+ void pintarColumnaTabla(){
+       
+         jTableConsumos.setDefaultRenderer(Object.class, new PintarCelda());
+    }
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
-        // TODO add your handling code here:
+         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            String fechaformateada = formato.format(new Date());
+            
+            conn = conecionBD.conexion();
+                consumidoresDAO dao = new consumidoresDAOImpl(conn);
+                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+                String query=" select * from consumo where status=1  and fechaPAgo ='"+fechaformateada+"';";
+                System.err.println("consulta de hoy"+query);
+                List<consumo> consumo;
+        try {
+            consumo = daoConsumo.busquedaGenerico(query);
+             int toalRegistro = consumo.size();
+                    int i = 0;
+                    String matriz[][] = new String[toalRegistro][6];
+                    String status = "";
+
+                    for (consumo c : consumo) {
+                        // System.out.println(c.toString());
+                        if (c.getStatus() == 1) {
+                            status = "PAGADO";
+                        } else {
+                            status = "PENDIENTE";
+
+                        }
+                        
+                        String per = String.valueOf(c.getPeriodo());
+                        switch(per){
+                            case "1":
+                                per = "DICIEMBRE - ENERO";
+                                break;
+                            case "2":
+                                per = "FEBRERO - MARZO";
+                                break;
+                            case "3":
+                                per = "ABRIL - MAYO";
+                                break;
+                            case "4":
+                                per = "JUNIO - JULIO";
+                                break;
+                            case "5":
+                                per = "AGOSTO - SEPTIEMBRE";
+                                break;
+                            case "6":
+                                per = "OCTUBRE - NOVIEMBRE";
+                                break;
+                        }
+                        matriz[i][0] = String.valueOf(i+1);
+                        matriz[i][1] = c.getNumUsuario();
+                        matriz[i][2] = (per);
+                        matriz[i][3] = (String.valueOf(c.getAnio()));                        
+                        matriz[i][4] = status;                         
+                        matriz[i][5] ="$"+ String.valueOf(c.getTotalPagar());
+                        i++;                        
+                    }
+
+                    jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                            matriz,
+                            new String[]{
+                               ".", "NUM. USUARIO", "PERIODO", "AÑO", "ESTADO", "Total Pagado"
+                            }
+                    ));
+                    
+                    pintarColumnaTabla();
+        } catch (DAOException ex) {
+            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    //System.err.println("tamaño:  " + consumo.size());
+                   
+
     }//GEN-LAST:event_btnPagosActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed

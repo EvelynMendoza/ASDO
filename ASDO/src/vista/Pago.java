@@ -42,13 +42,12 @@ public class Pago extends javax.swing.JFrame {
         periodox = periodo;
 
         numUsuarioConsulta = usuario;
-
         llenarPago(usuario, periodo, anio);
 
     }
 
     private Pago() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     /**
@@ -716,7 +715,7 @@ bloquearCajas();        // TODO add your handling code here:
               int toalRegistro = consumoPeriodo.size();
                     int i = 0;
                     String status = "";
-                    String matriz[][] = new String[toalRegistro][toalRegistro];
+                    String matriz[][] = new String[2][toalRegistro];
                     for (consumo c : consumoPeriodo) {
                         // System.out.println(c.toString());
                         if (c.getStatus() == 1) {
@@ -749,7 +748,6 @@ bloquearCajas();        // TODO add your handling code here:
                         }
                         matriz[0][i] = (per);
                         matriz[1][i] = String.valueOf(c.getConsumoMedidor());
-                        //System.err.println("sdsd"+c.getConsumoMedidor());
                         
                         i++;
                         System.out.println(i);
