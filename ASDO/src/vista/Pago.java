@@ -360,6 +360,7 @@ public class Pago extends javax.swing.JFrame {
         });
 
         jTextRecargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextRecargo.setEnabled(false);
         jTextRecargo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextRecargoKeyReleased(evt);
@@ -698,9 +699,17 @@ bloquearCajas();        // TODO add your handling code here:
             jTextVarios.setText(String.valueOf(consumo.getVarios()));
             jTextAreaMotivo.setText(consumo.getAviso());
 
-            totalConsumo = consumo.getTotalPagar();
-            jLabelTotal.setText(String.valueOf(totalConsumo));
+//            totalConsumo = consumo.getTotalPagar();
             jLabelConsumo.setText(String.valueOf((consumo.getConsumoMedidor())));
+                        
+            if(consumo.getConsumoMedidor() <= 10){
+                totalConsumo = 0;
+            }else{
+                totalConsumo = consumo.getConsumoMedidor()*4;
+            }
+            
+            jLabelTotal.setText(String.valueOf(totalConsumo));  //calcular el total por consumo 
+
             if (consumo.getStatus() == 1) {
                 btnComprobante.enable(true);
                 btnComprobante.show(true);
@@ -774,20 +783,20 @@ bloquearCajas();        // TODO add your handling code here:
     }
 
     public void calcularMonto() {
-        double couata = 0;
+        double cuota = 0;
         double recargos = 0;
         double cooperacion = 0;
         double bonifi = 0;
         double sancion = 0;
         double varios = 0;
         try {
-            couata = Double.valueOf(jTextCuota.getText());
+            cuota = Double.valueOf(jTextCuota.getText());
             recargos = Double.valueOf(jTextRecargo.getText());
             cooperacion = Double.valueOf(jTextCooperacion.getText());
             bonifi = Double.valueOf(jTextBonificaciones.getText());
             sancion = Double.valueOf(jTextSanciones.getText());
             varios = Double.valueOf(jTextVarios.getText());
-            totalAPagar = totalConsumo + couata + recargos + cooperacion + bonifi + sancion + varios;
+            totalAPagar = totalConsumo + cuota + recargos + cooperacion + bonifi + sancion + varios;
             totalPago.setText(String.valueOf(totalAPagar));
         } catch (Exception e) {
 
@@ -880,11 +889,6 @@ bloquearCajas();        // TODO add your handling code here:
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelTotal;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
