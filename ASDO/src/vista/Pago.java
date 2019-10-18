@@ -47,7 +47,7 @@ public class Pago extends javax.swing.JFrame {
     }
 
     private Pago() {
-        
+
     }
 
     /**
@@ -360,7 +360,6 @@ public class Pago extends javax.swing.JFrame {
         });
 
         jTextRecargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextRecargo.setEnabled(false);
         jTextRecargo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextRecargoKeyReleased(evt);
@@ -619,7 +618,7 @@ public class Pago extends javax.swing.JFrame {
             btnComprobante.show(true);
             btnCobrar.enable(false);
             btnCobrar.show(false);
-            
+
         } catch (DAOException ex) {
             Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -666,7 +665,7 @@ public class Pago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
     private void btnCobrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCobrarKeyReleased
-bloquearCajas();        // TODO add your handling code here:
+        bloquearCajas();        // TODO add your handling code here:
     }//GEN-LAST:event_btnCobrarKeyReleased
 
     public void llenarPago(String usuario, int periodo, int anio) {
@@ -690,9 +689,10 @@ bloquearCajas();        // TODO add your handling code here:
 
             //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
             consumo consumo = daoConsumo.buscarConsumo(numConsumidorTemp, periodo, anio);
-
+            int sancion = obtenerSancion(periodo);
             jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-            jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
+            jTextRecargo.setText(String.valueOf(consumo.getRecargos()+sancion));
+
             jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
             jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
             jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
@@ -701,13 +701,13 @@ bloquearCajas();        // TODO add your handling code here:
 
 //            totalConsumo = consumo.getTotalPagar();
             jLabelConsumo.setText(String.valueOf((consumo.getConsumoMedidor())));
-                        
-            if(consumo.getConsumoMedidor() <= 10){
+
+            if (consumo.getConsumoMedidor() <= 10) {
                 totalConsumo = 0;
-            }else{
-                totalConsumo = consumo.getConsumoMedidor()*4;
+            } else {
+                totalConsumo = consumo.getConsumoMedidor() * 4;
             }
-            
+
             jLabelTotal.setText(String.valueOf(totalConsumo));  //calcular el total por consumo 
 
             if (consumo.getStatus() == 1) {
@@ -721,54 +721,53 @@ bloquearCajas();        // TODO add your handling code here:
                 btnComprobante.show(false);
             }
             List<consumo> consumoPeriodo = daoConsumo.buscarConsumoPorUser(numConsumidorTemp, anio);
-              int toalRegistro = consumoPeriodo.size();
-                    int i = 0;
-                    String status = "";
-                    String matriz[][] = new String[2][toalRegistro];
-                    for (consumo c : consumoPeriodo) {
-                        // System.out.println(c.toString());
-                        if (c.getStatus() == 1) {
-                            status = "PAGADO";
-                        } else {
-                            status = "PENDIENTE";
+            int toalRegistro = consumoPeriodo.size();
+            int i = 0;
+            String status = "";
+            String matriz[][] = new String[2][toalRegistro];
+            for (consumo c : consumoPeriodo) {
+                // System.out.println(c.toString());
+                if (c.getStatus() == 1) {
+                    status = "PAGADO";
+                } else {
+                    status = "PENDIENTE";
 
-                        }
-                        
-                        String per = String.valueOf(c.getPeriodo());
-                        switch(per){
-                            case "1":
-                                per = "DIC-ENE";
-                                break;
-                            case "2":
-                                per = "FEB-MAR";
-                                break;
-                            case "3":
-                                per = "ABR-MAY";
-                                break;
-                            case "4":
-                                per = "JUN-JUL";
-                                break;
-                            case "5":
-                                per = "AGO-SEP";
-                                break;
-                            case "6":
-                                per = "OCT-NOV";
-                                break;
-                        }
-                        matriz[0][i] = (per);
-                        matriz[1][i] = String.valueOf(c.getConsumoMedidor());
-                        
-                        i++;
-                        System.out.println(i);
-                    }
-                    
+                }
+
+                String per = String.valueOf(c.getPeriodo());
+                switch (per) {
+                    case "1":
+                        per = "DIC-ENE";
+                        break;
+                    case "2":
+                        per = "FEB-MAR";
+                        break;
+                    case "3":
+                        per = "ABR-MAY";
+                        break;
+                    case "4":
+                        per = "JUN-JUL";
+                        break;
+                    case "5":
+                        per = "AGO-SEP";
+                        break;
+                    case "6":
+                        per = "OCT-NOV";
+                        break;
+                }
+                matriz[0][i] = (per);
+                matriz[1][i] = String.valueOf(c.getConsumoMedidor());
+
+                i++;
+            }
+
             jTablePeriodo.setModel(new javax.swing.table.DefaultTableModel(
-                            matriz,
-                            new String[]{
-                                "","","","","",""
-                            }
-                    ));
-            
+                    matriz,
+                    new String[]{
+                        "", "", "", "", "", ""
+                    }
+            ));
+
             calcularMonto();
         } catch (DAOException ex) {
             Logger.getLogger(Pago.class.getName()).log(Level.SEVERE, null, ex);
@@ -780,6 +779,36 @@ bloquearCajas();        // TODO add your handling code here:
 //        } else {
 //            System.out.println("cadena menor a 3");
 //        }
+    }
+
+    public int obtenerSancion(int periodopago) {
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaformateada = formato.format(new Date());
+        int anio = Integer.parseInt(fechaformateada.substring(0, 4));
+        int mes = Integer.parseInt(fechaformateada.substring(5, 7));
+        int periodoActual = 0;
+        if (mes == 12 || mes == 1) {
+            periodoActual = 0;
+        } else if (mes == 2 || mes == 3) {
+            periodoActual = 1;
+        } else if (mes == 4 || mes == 5) {
+            periodoActual = 2;
+        } else if (mes == 6 || mes == 7) {
+            periodoActual = 3;
+        } else if (mes == 8 || mes == 9) {
+            periodoActual = 4;
+        } else if (mes == 10 || mes == 11) {
+            periodoActual = 5;
+        }
+        
+        if(periodopago!=periodoActual)
+        {
+            return 50;
+        }else{
+            return 0;
+        }
+
+        
     }
 
     public void calcularMonto() {

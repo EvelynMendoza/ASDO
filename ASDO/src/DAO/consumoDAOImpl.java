@@ -29,7 +29,7 @@ public class consumoDAOImpl implements consumoDAO {
 "  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
 
-    final String GETONEUSER = "select * from consumo WHERE numUsuario=? and anio=?;";
+    final String GETONEUSER = "select * from consumo WHERE numUsuario=? and anio=? LIMIT 5;";
 
     final String GETPERIODO = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
 
