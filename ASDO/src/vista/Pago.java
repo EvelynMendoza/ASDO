@@ -724,7 +724,7 @@ public class Pago extends javax.swing.JFrame {
             int toalRegistro = consumoPeriodo.size();
             int i = 0;
             String status = "";
-            String matriz[][] = new String[2][toalRegistro];
+            String matriz[][] = new String[3][toalRegistro];
             for (consumo c : consumoPeriodo) {
                 // System.out.println(c.toString());
                 if (c.getStatus() == 1) {
@@ -756,8 +756,8 @@ public class Pago extends javax.swing.JFrame {
                         break;
                 }
                 matriz[0][i] = (per);
-                matriz[1][i] = String.valueOf(c.getConsumoMedidor());
-
+                matriz[1][i] = String.valueOf(c.getConsumoMedidor() +"mtrs");
+                matriz[2][i] =String.valueOf("$ "+ c.getTotalPagar());
                 i++;
             }
 

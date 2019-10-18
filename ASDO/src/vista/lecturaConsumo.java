@@ -673,7 +673,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                 c.setNotas(notas);
                 c.setAviso(aviso);
                 c.setStatus(status);
-
+                System.out.println("Tostring"+c.toString());
                 daoConsumo.insertar(c);
                 numUsuario2.setText("");
                 limpiarCampos();
