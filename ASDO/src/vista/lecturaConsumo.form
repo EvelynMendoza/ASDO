@@ -348,7 +348,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabelPeriodo" pref="277" max="32767" attributes="0"/>
+                              <Component id="jLabelPeriodo" pref="288" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="53" max="32767" attributes="0"/>

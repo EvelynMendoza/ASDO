@@ -16,6 +16,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import modelo.consumidores;
 import modelo.consumo;
 
 /**
@@ -57,9 +59,21 @@ public class reporte extends javax.swing.JFrame {
         jLabelPersonasadeudan = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabelPersonaspagado = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLsanciones = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jrecargos = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLtotalAgua = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLcuotafija = new javax.swing.JLabel();
         btnPagos1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
+        anioConsulta = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jcPerido = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -154,13 +168,37 @@ public class reporte extends javax.swing.JFrame {
         jLabelPersonaspagado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPersonaspagado.setText("###");
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setText("Total de sanción : ");
+
+        jLsanciones.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLsanciones.setText("###");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel19.setText("Total de recargos: ");
+
+        jrecargos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jrecargos.setText("###");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel20.setText("Total por cosumo de agua: ");
+
+        jLtotalAgua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLtotalAgua.setText("###");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setText("Total de cuota fija : ");
+
+        jLcuotafija.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLcuotafija.setText("###");
+
         javax.swing.GroupLayout pagoLayout = new javax.swing.GroupLayout(pago);
         pago.setLayout(pagoLayout);
         pagoLayout.setHorizontalGroup(
             pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pagoLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pagoLayout.createSequentialGroup()
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pagoLayout.createSequentialGroup()
@@ -175,14 +213,36 @@ public class reporte extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabelPersonaspagado)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56))
-                    .addGroup(pagoLayout.createSequentialGroup()
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pagoLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(30, 30, 30)
                         .addComponent(jLabelPersonas)
-                        .addGap(959, 959, 959))))
+                        .addGap(49, 49, 49)))
+                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pagoLayout.createSequentialGroup()
+                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pagoLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addGap(30, 30, 30)
+                                .addComponent(jrecargos))
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(pagoLayout.createSequentialGroup()
+                                    .addComponent(jLabel21)
+                                    .addGap(30, 30, 30)
+                                    .addComponent(jLcuotafija))
+                                .addGroup(pagoLayout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addGap(30, 30, 30)
+                                    .addComponent(jLsanciones))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 431, Short.MAX_VALUE)
+                        .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(pagoLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLtotalAgua)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pagoLayout.setVerticalGroup(
             pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,24 +250,37 @@ public class reporte extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jLabelPersonas))
+                    .addComponent(jLabelPersonas)
+                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(jLcuotafija)))
                 .addGap(13, 13, 13)
                 .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pagoLayout.createSequentialGroup()
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(jLabelPersonasadeudan))
+                            .addComponent(jLabelPersonasadeudan)
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel18)
+                                .addComponent(jLsanciones)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jLabelPersonaspagado))
+                            .addComponent(jLabelPersonaspagado)
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel19)
+                                .addComponent(jrecargos)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17))
-                            .addComponent(jLabelDinero))))
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelDinero)
+                                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLtotalAgua))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -249,46 +322,69 @@ public class reporte extends javax.swing.JFrame {
             .addGap(0, 17, Short.MAX_VALUE)
         );
 
+        jLabel1.setText("Año a consultar");
+
+        jcPerido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DICIEMBRE - ENERO                 ", "FEBRERO - MARZO                ", "ABRIL - MAYO                  ", "JUNIO - JULIO", "AGOSTO - SEPTIEMBRE                  ", "OCTUBRE - NOVIEMBRE" }));
+
+        jLabel2.setText("Periodo a consultar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(jScrollPane1))
+            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
+                .addComponent(pago, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(btnAdeudo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(btnPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(btnPagos1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                        .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))
+                        .addContainerGap()
+                        .addComponent(jcPerido, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1130, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(anioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAdeudo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(btnPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btnPagos1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdeudo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPagos1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcPerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -314,88 +410,102 @@ public class reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnAdeudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdeudoActionPerformed
-        conn = conecionBD.conexion();
-        consumidoresDAO dao = new consumidoresDAOImpl(conn);
-        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-        String query = "select * from consumo where status=0;";
-        String queryPagado = "select * from consumo where status=1;";
-
-        List<consumo> consumo;
-        List<consumo> consumoPagado;
-        int totalPersonasSinPagar = 0;
-
+        int mostrar = 0;
+        int anioQuery = 0;
+        int periodoqury = 0;
         try {
-            consumo = daoConsumo.busquedaGenerico(query);
-            consumoPagado = daoConsumo.busquedaGenerico(queryPagado);
+            anioQuery = Integer.parseInt(anioConsulta.getText());
+            periodoqury = jcPerido.getSelectedIndex() + 1;
 
-            int toalRegistro = consumo.size();
-            int i = 0;
+            mostrar = 1;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Favor de ingresar el año a consultar");
+        }
+        if (mostrar == 1) {
+            conn = conecionBD.conexion();
+            consumidoresDAO dao = new consumidoresDAOImpl(conn);
+            consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+            String query = "select * from consumo where anio=" + anioQuery + " and periodo=" + periodoqury + " and status=0;";
+            String queryPagado = "select * from consumo where anio=" + anioQuery + " and periodo=" + periodoqury + "  and status=1;";
 
-            String matriz[][] = new String[toalRegistro][5];
-            String status = "";
+            List<consumo> consumo;
+            List<consumo> consumoPagado;
+            int totalPersonasSinPagar = 0;
 
-            for (consumo c : consumo) {
+            try {
+                consumo = daoConsumo.busquedaGenerico(query);
+                consumoPagado = daoConsumo.busquedaGenerico(queryPagado);
 
-                totalPersonasSinPagar = totalPersonasSinPagar + 1;
+                int toalRegistro = consumo.size();
+                int i = 0;
 
-                if (c.getStatus() == 1) {
-                    status = "PAGADO";
-                } else {
-                    status = "PENDIENTE";
+                String matriz[][] = new String[toalRegistro][5];
+                String status = "";
 
+                for (consumo c : consumo) {
+
+                    totalPersonasSinPagar = totalPersonasSinPagar + 1;
+
+                    if (c.getStatus() == 1) {
+                        status = "PAGADO";
+                    } else {
+                        status = "PENDIENTE";
+
+                    }
+
+                    String per = String.valueOf(c.getPeriodo());
+                    switch (per) {
+                        case "1":
+                            per = "DICIEMBRE - ENERO";
+                            break;
+                        case "2":
+                            per = "FEBRERO - MARZO";
+                            break;
+                        case "3":
+                            per = "ABRIL - MAYO";
+                            break;
+                        case "4":
+                            per = "JUNIO - JULIO";
+                            break;
+                        case "5":
+                            per = "AGOSTO - SEPTIEMBRE";
+                            break;
+                        case "6":
+                            per = "OCTUBRE - NOVIEMBRE";
+                            break;
+                    }
+                    matriz[i][0] = String.valueOf(i + 1);
+                    matriz[i][1] = c.getNumUsuario();
+                    matriz[i][2] = (per);
+
+                    matriz[i][3] = status;
+                    matriz[i][4] = (String.valueOf(c.getAnio()));
+
+                    i++;
+                    System.out.println(i);
                 }
 
-                String per = String.valueOf(c.getPeriodo());
-                switch (per) {
-                    case "1":
-                        per = "DICIEMBRE - ENERO";
-                        break;
-                    case "2":
-                        per = "FEBRERO - MARZO";
-                        break;
-                    case "3":
-                        per = "ABRIL - MAYO";
-                        break;
-                    case "4":
-                        per = "JUNIO - JULIO";
-                        break;
-                    case "5":
-                        per = "AGOSTO - SEPTIEMBRE";
-                        break;
-                    case "6":
-                        per = "OCTUBRE - NOVIEMBRE";
-                        break;
-                }
-                matriz[i][0] = String.valueOf(i + 1);
-                matriz[i][1] = c.getNumUsuario();
-                matriz[i][2] = (per);
-
-                matriz[i][3] = status;
-                matriz[i][4] = (String.valueOf(c.getAnio()));
-
-                i++;
-                System.out.println(i);
+                jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                        matriz,
+                        new String[]{
+                            ".", "NUM. USUARIO", "PERIODO", "ESTADO", "AÑO"
+                        }
+                ));
+                jLabelPersonasadeudan.setText(String.valueOf(totalPersonasSinPagar));
+                jLabel15.show(true);
+                jLabelPersonasadeudan.show(true);
+                obtenerDetallar(consumoPagado);
+                pintarColumnaTabla();
+            } catch (DAOException ex) {
+                Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
-                    matriz,
-                    new String[]{
-                        ".", "NUM. USUARIO", "PERIODO", "ESTADO", "AÑO"
-                    }
-            ));
-            jLabelPersonasadeudan.setText(String.valueOf(totalPersonasSinPagar));
-            obtenerDetallar(consumoPagado);
-            pintarColumnaTabla();
-        } catch (DAOException ex) {
-            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //System.err.println("tamaño:  " + consumo.size());
-
-
     }//GEN-LAST:event_btnAdeudoActionPerformed
     void pintarColumnaTabla() {
 
         jTableConsumos.setDefaultRenderer(Object.class, new PintarCelda());
+
     }
 
     void obtenerDetallar(List<consumo> consumoPagado) {
@@ -420,6 +530,7 @@ public class reporte extends javax.swing.JFrame {
             bonificaciones = bonificaciones + cp.getBonificaciones();
             sanciones = sanciones + cp.getSanciones();
             varios = varios + cp.getSanciones();
+            importeConsumo=importeConsumo+cp.getImporteConsumo();
             totalPersonasPagado = totalPersonasPagado + 1;
         }
 
@@ -428,6 +539,12 @@ public class reporte extends javax.swing.JFrame {
 
         jLabelPersonaspagado.setText(String.valueOf(totalPersonasPagado));
         jLabelDinero.setText(String.valueOf(totalDinero));
+        
+        jLsanciones.setText(String.valueOf(sanciones));
+        jrecargos.setText(String.valueOf(recargos));
+        jLtotalAgua.setText(String.valueOf(importeConsumo));
+       jLcuotafija.setText(String.valueOf(coutaFija));
+        //jlmultas.setText(String.valueOf());
     }
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
@@ -491,9 +608,10 @@ public class reporte extends javax.swing.JFrame {
                         ".", "NUM. USUARIO", "PERIODO", "AÑO", "ESTADO", "Total Pagado"
                     }
             ));
-            
+
             jLabelPersonasadeudan.setText(String.valueOf(0));
-           
+            jLabel15.show(false);
+            jLabelPersonasadeudan.show(false);
             obtenerDetallar(consumo);
             pintarColumnaTabla();
         } catch (DAOException ex) {
@@ -548,24 +666,36 @@ public class reporte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField anioConsulta;
     private javax.swing.JButton btnAdeudo;
     private javax.swing.JButton btnPagos;
     private javax.swing.JButton btnPagos1;
     private javax.swing.JButton btnReporte;
     private javax.swing.JButton btnSalir1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabelDinero;
     private javax.swing.JLabel jLabelPersonas;
     private javax.swing.JLabel jLabelPersonasadeudan;
     private javax.swing.JLabel jLabelPersonaspagado;
+    private javax.swing.JLabel jLcuotafija;
+    private javax.swing.JLabel jLsanciones;
+    private javax.swing.JLabel jLtotalAgua;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableConsumos;
+    private javax.swing.JComboBox<String> jcPerido;
+    private javax.swing.JLabel jrecargos;
     private javax.swing.JPanel pago;
     // End of variables declaration//GEN-END:variables
 }
