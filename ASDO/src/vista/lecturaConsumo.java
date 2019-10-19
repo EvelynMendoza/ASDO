@@ -65,7 +65,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
             periodo = 5;
             jLabelPeriodo.setText("Agosto-Septiembre");            
         }else if(mes == 10 || mes == 11){
-            periodo = 6;
+            periodo = 5;
             jLabelPeriodo.setText("Octubre-Noviembre");            
         }
     }
@@ -129,7 +129,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         btnSalir3.setBackground(new java.awt.Color(7, 82, 132));
         btnSalir3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalir3.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir3.setLabel("SALIR");
+        btnSalir3.setText("REGRESAR");
         btnSalir3.setName("btnSalir"); // NOI18N
         btnSalir3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -492,8 +492,8 @@ public class lecturaConsumo extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(34, 34, 34)
                         .addComponent(numUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(283, 283, 283)
-                        .addComponent(btnSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(240, 240, 240)
+                        .addComponent(btnSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25))))
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -568,7 +568,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                     
                     System.out.println(numUsuario2.getText() + "-" + periodo + "-" + anio);
                     
-                    consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-2, anio);
+                    consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-1, anio);
 
                     jLabelLecturaAnterior.setText(String.valueOf((consumo.getLecturaActual())));
                     jLabelConsumoAnterior.setText(String.valueOf((consumo.getConsumoMedidor())));
@@ -641,7 +641,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                         Double bonificacion = Double.valueOf(jTextBonificaciones1.getText());
                         Double sanciones = Double.valueOf(jTextSanciones1.getText());
                         Double varios = Double.valueOf(jTextVarios1.getText());
-                        Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
+                        importe = (lecturaAct-Double.parseDouble(jLabelLecturaAnterior.getText()))*precio;
                         String fecha = null;
                         String notas = jTextAreaMotivo1.getText();
                         String aviso = "Sin aviso";
@@ -650,7 +650,12 @@ public class lecturaConsumo extends javax.swing.JFrame {
                         if(consumoLectura < 10){
                             cuota = 40.0;
                         }
+                        
+                        System.out.println("consumo: " + consumoLectura);
 
+                        Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
+
+                                                
                         System.out.println(numUser + "," + periodo + "," +anio+ "," +lecturaAct+ "," +
                                 consumoLectura+ "," +precio+ "," +importe+ "," +cuota+ "," +recargo+ "," +cooperacion+ "," +
                                 bonificacion+ "," +sanciones+ "," +varios+ "," +total+ "," +fecha+ "," +notas+ "," +aviso+ "," +
@@ -677,16 +682,18 @@ public class lecturaConsumo extends javax.swing.JFrame {
 
                         System.out.println("Valor del modelo antes de insertar"+ c.toString());
                         
-                        consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo, anio);
-                        if(consumo == null){
-                            System.out.println(consumo);
+//                        consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo, anio);
+                        
+//                        if(consumo == null){
+//                            System.out.println(consumo);
                             daoConsumo.insertar(c);
                             numUsuario2.setText("");
+                            numUsuario2.requestFocus();
                             limpiarCampos();
-                        }else{
-                            JOptionPane.showMessageDialog(null,"Este registro ya EXISTE");
-                            System.out.println(consumo);
-                        }
+//                        }else{
+//                            JOptionPane.showMessageDialog(null,"Este registro ya EXISTE");
+//                            System.out.println(consumo);
+//                        }
                     } catch (DAOException ex) {
                         Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -739,7 +746,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
         jTextBonificaciones1.setText("0.0");
         jTextSanciones1.setText("0.0");
         jTextVarios1.setText("0.0");
-        jTextAreaMotivo1.setText("0.0");
+        jTextAreaMotivo1.setText("");
         jLabelLecturaAnterior.setText("####");
         jLabelConsumoAnterior.setText("####");
     }

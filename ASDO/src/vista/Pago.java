@@ -689,15 +689,16 @@ public class Pago extends javax.swing.JFrame {
 
             //consumo consumo = daoConsumo.buscarConsumo(numConsumidor, periodo, anio);
             consumo consumo = daoConsumo.buscarConsumo(numConsumidorTemp, periodo, anio);
-            int sancion = obtenerSancion(periodo);
+//            int sancion = obtenerSancion(periodo);
             jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-            jTextRecargo.setText(String.valueOf(consumo.getRecargos()+sancion));
+//            jTextRecargo.setText(String.valueOf(consumo.getRecargos()+sancion));
+            jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
 
             jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
             jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
             jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
             jTextVarios.setText(String.valueOf(consumo.getVarios()));
-            jTextAreaMotivo.setText(consumo.getAviso());
+            jTextAreaMotivo.setText(consumo.getNotas());
 
 //            totalConsumo = consumo.getTotalPagar();
             jLabelConsumo.setText(String.valueOf((consumo.getConsumoMedidor())));
