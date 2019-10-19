@@ -65,7 +65,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
             periodo = 5;
             jLabelPeriodo.setText("Agosto-Septiembre");            
         }else if(mes == 10 || mes == 11){
-            periodo = 5;
+            periodo = 6;
             jLabelPeriodo.setText("Octubre-Noviembre");            
         }
     }
