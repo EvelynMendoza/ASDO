@@ -691,6 +691,38 @@ public class lecturaConsumo extends javax.swing.JFrame {
                         Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
+              
+                System.out.println(numUser + "," + periodo + "," +anio+ "," +lecturaAct+ "," +
+                        consumoLectura+ "," +precio+ "," +importe+ "," +cuota+ "," +recargo+ "," +cooperacion+ "," +
+                        bonificacion+ "," +sanciones+ "," +varios+ "," +total+ "," +fecha+ "," +notas+ "," +aviso+ "," +
+                        status);
+
+                c.setNumUsuario(numUser);
+                c.setPeriodo(periodo);
+                c.setAnio(anio);
+                c.setLecturaActual(lecturaAct);
+                c.setConsumoMedidor(consumoLectura);
+                c.setPrecio(precio);
+                c.setImporteConsumo(importe);
+                c.setCoutaFija(cuota);
+                c.setRecargos(recargo);
+                c.setCooperacion(cooperacion);
+                c.setBonificaciones(bonificacion);
+                c.setSanciones(sanciones);
+                c.setVarios(varios);
+                c.setTotalPagar(total);
+                c.setFechaPAgo(fecha);
+                c.setNotas(notas);
+                c.setAviso(aviso);
+                c.setStatus(status);
+                System.out.println("Tostring"+c.toString());
+                daoConsumo.insertar(c);
+                numUsuario2.setText("");
+                limpiarCampos();
+
+            } catch (DAOException ex) {
+                Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
+
             }
         }
     }//GEN-LAST:event_btnGuardarActionPerformed

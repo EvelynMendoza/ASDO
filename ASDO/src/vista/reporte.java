@@ -24,9 +24,9 @@ import modelo.consumo;
  */
 public class reporte extends javax.swing.JFrame {
 
-    
     Connection conn = null;
     ConexionBD conecionBD = new ConexionBD();
+
     public reporte() {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
@@ -54,9 +54,9 @@ public class reporte extends javax.swing.JFrame {
         jLabelDinero = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabelPersonas1 = new javax.swing.JLabel();
+        jLabelPersonasadeudan = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabelPersonas2 = new javax.swing.JLabel();
+        jLabelPersonaspagado = new javax.swing.JLabel();
         btnPagos1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -145,14 +145,14 @@ public class reporte extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("N° personas adeudan: ");
 
-        jLabelPersonas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPersonas1.setText("###");
+        jLabelPersonasadeudan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelPersonasadeudan.setText("###");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("N° personas pagaron: ");
 
-        jLabelPersonas2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPersonas2.setText("###");
+        jLabelPersonaspagado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelPersonaspagado.setText("###");
 
         javax.swing.GroupLayout pagoLayout = new javax.swing.GroupLayout(pago);
         pago.setLayout(pagoLayout);
@@ -170,11 +170,11 @@ public class reporte extends javax.swing.JFrame {
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelPersonas1))
+                                .addComponent(jLabelPersonasadeudan))
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelPersonas2)))
+                                .addComponent(jLabelPersonaspagado)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))
@@ -197,18 +197,18 @@ public class reporte extends javax.swing.JFrame {
                     .addGroup(pagoLayout.createSequentialGroup()
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(jLabelPersonas1))
+                            .addComponent(jLabelPersonasadeudan))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jLabelPersonas2))
+                            .addComponent(jLabelPersonaspagado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17))
                             .addComponent(jLabelDinero))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnPagos1.setBackground(new java.awt.Color(7, 82, 132));
@@ -269,7 +269,7 @@ public class reporte extends javax.swing.JFrame {
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1130, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -314,147 +314,193 @@ public class reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnAdeudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdeudoActionPerformed
-          conn = conecionBD.conexion();
-                consumidoresDAO dao = new consumidoresDAOImpl(conn);
-                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-                String query="select * from consumo where status=0;";
-                List<consumo> consumo;
+        conn = conecionBD.conexion();
+        consumidoresDAO dao = new consumidoresDAOImpl(conn);
+        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+        String query = "select * from consumo where status=0;";
+        String queryPagado = "select * from consumo where status=1;";
+
+        List<consumo> consumo;
+        List<consumo> consumoPagado;
+        int totalPersonasSinPagar = 0;
+
         try {
             consumo = daoConsumo.busquedaGenerico(query);
-             int toalRegistro = consumo.size();
-                    int i = 0;
-                    String matriz[][] = new String[toalRegistro][5];
-                    String status = "";
+            consumoPagado = daoConsumo.busquedaGenerico(queryPagado);
 
-                    for (consumo c : consumo) {
-                        // System.out.println(c.toString());
-                        if (c.getStatus() == 1) {
-                            status = "PAGADO";
-                        } else {
-                            status = "PENDIENTE";
+            int toalRegistro = consumo.size();
+            int i = 0;
 
-                        }
-                        
-                        String per = String.valueOf(c.getPeriodo());
-                        switch(per){
-                            case "1":
-                                per = "DICIEMBRE - ENERO";
-                                break;
-                            case "2":
-                                per = "FEBRERO - MARZO";
-                                break;
-                            case "3":
-                                per = "ABRIL - MAYO";
-                                break;
-                            case "4":
-                                per = "JUNIO - JULIO";
-                                break;
-                            case "5":
-                                per = "AGOSTO - SEPTIEMBRE";
-                                break;
-                            case "6":
-                                per = "OCTUBRE - NOVIEMBRE";
-                                break;
-                        }
-                        matriz[i][0] = String.valueOf(i+1);
-                        matriz[i][1] = c.getNumUsuario();
-                         matriz[i][2] = (per); 
-                        
-                        matriz[i][3] = status;           
-                        matriz[i][4] = (String.valueOf(c.getAnio()));                        
-                                            
-                        i++;
-                        System.out.println(i);
+            String matriz[][] = new String[toalRegistro][5];
+            String status = "";
+
+            for (consumo c : consumo) {
+
+                totalPersonasSinPagar = totalPersonasSinPagar + 1;
+
+                if (c.getStatus() == 1) {
+                    status = "PAGADO";
+                } else {
+                    status = "PENDIENTE";
+
+                }
+
+                String per = String.valueOf(c.getPeriodo());
+                switch (per) {
+                    case "1":
+                        per = "DICIEMBRE - ENERO";
+                        break;
+                    case "2":
+                        per = "FEBRERO - MARZO";
+                        break;
+                    case "3":
+                        per = "ABRIL - MAYO";
+                        break;
+                    case "4":
+                        per = "JUNIO - JULIO";
+                        break;
+                    case "5":
+                        per = "AGOSTO - SEPTIEMBRE";
+                        break;
+                    case "6":
+                        per = "OCTUBRE - NOVIEMBRE";
+                        break;
+                }
+                matriz[i][0] = String.valueOf(i + 1);
+                matriz[i][1] = c.getNumUsuario();
+                matriz[i][2] = (per);
+
+                matriz[i][3] = status;
+                matriz[i][4] = (String.valueOf(c.getAnio()));
+
+                i++;
+                System.out.println(i);
+            }
+
+            jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                    matriz,
+                    new String[]{
+                        ".", "NUM. USUARIO", "PERIODO", "ESTADO", "AÑO"
                     }
-
-                    jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
-                            matriz,
-                            new String[]{
-                               ".", "NUM. USUARIO", "PERIODO", "ESTADO", "AÑO"
-                            }
-                    ));
-                    
-                    pintarColumnaTabla();
+            ));
+            jLabelPersonasadeudan.setText(String.valueOf(totalPersonasSinPagar));
+            obtenerDetallar(consumoPagado);
+            pintarColumnaTabla();
         } catch (DAOException ex) {
             Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
         }
-                    //System.err.println("tamaño:  " + consumo.size());
-                   
+        //System.err.println("tamaño:  " + consumo.size());
+
 
     }//GEN-LAST:event_btnAdeudoActionPerformed
- void pintarColumnaTabla(){
-       
-         jTableConsumos.setDefaultRenderer(Object.class, new PintarCelda());
+    void pintarColumnaTabla() {
+
+        jTableConsumos.setDefaultRenderer(Object.class, new PintarCelda());
+    }
+
+    void obtenerDetallar(List<consumo> consumoPagado) {
+        int totalPersonas = 0;
+
+        int totalPersonasPagado = 0;
+        double totalDinero = 0;
+        double importeConsumo = 0;
+        double coutaFija = 0;
+        double recargos = 0;
+        double cooperacion = 0;
+        double bonificaciones = 0;
+        double sanciones = 0;
+        double varios = 0;
+
+        for (consumo cp : consumoPagado) {
+            totalDinero = totalDinero + cp.getTotalPagar();
+            //  importeConsumo=importeConsumo+cp.getTotalPagar();
+            coutaFija = coutaFija + cp.getCoutaFija();
+            recargos = recargos + cp.getRecargos();
+            cooperacion = cooperacion + cp.getCooperacion();
+            bonificaciones = bonificaciones + cp.getBonificaciones();
+            sanciones = sanciones + cp.getSanciones();
+            varios = varios + cp.getSanciones();
+            totalPersonasPagado = totalPersonasPagado + 1;
+        }
+
+        totalPersonas = Integer.valueOf(jLabelPersonasadeudan.getText()) + totalPersonasPagado;
+        jLabelPersonas.setText(String.valueOf(totalPersonas));
+
+        jLabelPersonaspagado.setText(String.valueOf(totalPersonasPagado));
+        jLabelDinero.setText(String.valueOf(totalDinero));
     }
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
-         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            String fechaformateada = formato.format(new Date());
-            
-            conn = conecionBD.conexion();
-                consumidoresDAO dao = new consumidoresDAOImpl(conn);
-                consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-                String query=" select * from consumo where status=1  and fechaPAgo ='"+fechaformateada+"';";
-                System.err.println("consulta de hoy"+query);
-                List<consumo> consumo;
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaformateada = formato.format(new Date());
+
+        conn = conecionBD.conexion();
+        consumidoresDAO dao = new consumidoresDAOImpl(conn);
+        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+        String query = " select * from consumo where status=1  and fechaPAgo ='" + fechaformateada + "';";
+
+        List<consumo> consumo;
         try {
             consumo = daoConsumo.busquedaGenerico(query);
-             int toalRegistro = consumo.size();
-                    int i = 0;
-                    String matriz[][] = new String[toalRegistro][6];
-                    String status = "";
+            int toalRegistro = consumo.size();
+            int i = 0;
+            String matriz[][] = new String[toalRegistro][6];
+            String status = "";
 
-                    for (consumo c : consumo) {
-                        // System.out.println(c.toString());
-                        if (c.getStatus() == 1) {
-                            status = "PAGADO";
-                        } else {
-                            status = "PENDIENTE";
+            for (consumo c : consumo) {
+                // System.out.println(c.toString());
+                if (c.getStatus() == 1) {
+                    status = "PAGADO";
+                } else {
+                    status = "PENDIENTE";
 
-                        }
-                        
-                        String per = String.valueOf(c.getPeriodo());
-                        switch(per){
-                            case "1":
-                                per = "DICIEMBRE - ENERO";
-                                break;
-                            case "2":
-                                per = "FEBRERO - MARZO";
-                                break;
-                            case "3":
-                                per = "ABRIL - MAYO";
-                                break;
-                            case "4":
-                                per = "JUNIO - JULIO";
-                                break;
-                            case "5":
-                                per = "AGOSTO - SEPTIEMBRE";
-                                break;
-                            case "6":
-                                per = "OCTUBRE - NOVIEMBRE";
-                                break;
-                        }
-                        matriz[i][0] = String.valueOf(i+1);
-                        matriz[i][1] = c.getNumUsuario();
-                        matriz[i][2] = (per);
-                        matriz[i][3] = (String.valueOf(c.getAnio()));                        
-                        matriz[i][4] = status;                         
-                        matriz[i][5] ="$"+ String.valueOf(c.getTotalPagar());
-                        i++;                        
+                }
+
+                String per = String.valueOf(c.getPeriodo());
+                switch (per) {
+                    case "1":
+                        per = "DICIEMBRE - ENERO";
+                        break;
+                    case "2":
+                        per = "FEBRERO - MARZO";
+                        break;
+                    case "3":
+                        per = "ABRIL - MAYO";
+                        break;
+                    case "4":
+                        per = "JUNIO - JULIO";
+                        break;
+                    case "5":
+                        per = "AGOSTO - SEPTIEMBRE";
+                        break;
+                    case "6":
+                        per = "OCTUBRE - NOVIEMBRE";
+                        break;
+                }
+                matriz[i][0] = String.valueOf(i + 1);
+                matriz[i][1] = c.getNumUsuario();
+                matriz[i][2] = (per);
+                matriz[i][3] = (String.valueOf(c.getAnio()));
+                matriz[i][4] = status;
+                matriz[i][5] = "$" + String.valueOf(c.getTotalPagar());
+                i++;
+            }
+
+            jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                    matriz,
+                    new String[]{
+                        ".", "NUM. USUARIO", "PERIODO", "AÑO", "ESTADO", "Total Pagado"
                     }
-
-                    jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
-                            matriz,
-                            new String[]{
-                               ".", "NUM. USUARIO", "PERIODO", "AÑO", "ESTADO", "Total Pagado"
-                            }
-                    ));
-                    
-                    pintarColumnaTabla();
+            ));
+            
+            jLabelPersonasadeudan.setText(String.valueOf(0));
+           
+            obtenerDetallar(consumo);
+            pintarColumnaTabla();
         } catch (DAOException ex) {
             Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
         }
-                    //System.err.println("tamaño:  " + consumo.size());
-                   
+        //System.err.println("tamaño:  " + consumo.size());
+
 
     }//GEN-LAST:event_btnPagosActionPerformed
 
@@ -513,8 +559,8 @@ public class reporte extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabelDinero;
     private javax.swing.JLabel jLabelPersonas;
-    private javax.swing.JLabel jLabelPersonas1;
-    private javax.swing.JLabel jLabelPersonas2;
+    private javax.swing.JLabel jLabelPersonasadeudan;
+    private javax.swing.JLabel jLabelPersonaspagado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
