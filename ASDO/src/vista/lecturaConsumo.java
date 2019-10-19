@@ -695,7 +695,8 @@ public class lecturaConsumo extends javax.swing.JFrame {
 //                            System.out.println(consumo);
 //                        }
                     } catch (DAOException ex) {
-                        Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
+                        //Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
+                        JOptionPane.showMessageDialog(null,"Este registro ya EXISTE");
                     }
                 }
               
