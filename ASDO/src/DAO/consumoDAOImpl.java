@@ -73,7 +73,7 @@ public class consumoDAOImpl implements consumoDAO {
                 JOptionPane.showMessageDialog(null, "Los datos han sido guardados");
             }
         } catch (SQLException e) {
-            throw new DAOException("Error sql" + e);
+            throw new DAOException("Error sql " + e);
         } finally {
             if (stat != null) {
                 try {
