@@ -692,7 +692,7 @@ public class reporte extends javax.swing.JFrame {
 
         conn = conecionBD.conexion();
         consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-        String query = "select periodo, anio,sum(consumoMedidor) as total from consumo GROUP BY periodo, anio ;;";
+        String query = "select periodo, anio,sum(consumoMedidor) as total from consumo GROUP BY periodo, anio order by anio desc,periodo asc;";
        
         List<String> consumoAgua;
         consumoAgua = daoConsumo.obtenerTotalConsumoAgua(query);
