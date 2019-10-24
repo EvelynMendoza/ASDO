@@ -23,6 +23,7 @@ public interface consumoDAO {
     List<consumo> busquedaGenerico(String consulta)throws DAOException;
 
     List<consumo> buscarConsumoPorUser(int IdUser, int anio)throws DAOException;
+    List<String> obtenerTotalConsumoAgua(String consulta);
     
 
 }

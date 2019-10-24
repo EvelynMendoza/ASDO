@@ -700,16 +700,11 @@ public class Pago extends javax.swing.JFrame {
             jTextVarios.setText(String.valueOf(consumo.getVarios()));
             jTextAreaMotivo.setText(consumo.getNotas());
 
-//            totalConsumo = consumo.getTotalPagar();
+            totalConsumo = consumo.getTotalPagar();
             jLabelConsumo.setText(String.valueOf((consumo.getConsumoMedidor())));
 
-            if (consumo.getConsumoMedidor() <= 10) {
-                totalConsumo = 0;
-            } else {
-                totalConsumo = consumo.getConsumoMedidor() * 4;
-            }
 
-            jLabelTotal.setText(String.valueOf(totalConsumo));  //calcular el total por consumo 
+            jLabelTotal.setText(String.valueOf(consumo.getImporteConsumo()));  //calcular el total por consumo 
 
             if (consumo.getStatus() == 1) {
                 btnComprobante.enable(true);

@@ -67,6 +67,12 @@ public class reporte extends javax.swing.JFrame {
         jLtotalAgua = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLcuotafija = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLcoperacion = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLBonificacion = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLVarios = new javax.swing.JLabel();
         btnPagos1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -192,6 +198,24 @@ public class reporte extends javax.swing.JFrame {
         jLcuotafija.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLcuotafija.setText("###");
 
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setText("Total de cooperacion : ");
+
+        jLcoperacion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLcoperacion.setText("###");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("Total de bonificacion : ");
+
+        jLBonificacion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLBonificacion.setText("###");
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setText("Total de varios : ");
+
+        jLVarios.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLVarios.setText("###");
+
         javax.swing.GroupLayout pagoLayout = new javax.swing.GroupLayout(pago);
         pago.setLayout(pagoLayout);
         pagoLayout.setHorizontalGroup(
@@ -219,69 +243,101 @@ public class reporte extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jLabelPersonas)
                         .addGap(49, 49, 49)))
-                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pagoLayout.createSequentialGroup()
-                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pagoLayout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addGap(30, 30, 30)
-                                .addComponent(jrecargos))
-                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(pagoLayout.createSequentialGroup()
-                                    .addComponent(jLabel21)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jLcuotafija))
-                                .addGroup(pagoLayout.createSequentialGroup()
-                                    .addComponent(jLabel18)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jLsanciones))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 431, Short.MAX_VALUE)
+                        .addComponent(jLabel19)
+                        .addGap(30, 30, 30)
+                        .addComponent(jrecargos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
                         .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))
                     .addGroup(pagoLayout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLtotalAgua)
+                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pagoLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLtotalAgua))
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(pagoLayout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(30, 30, 30)
+                                    .addComponent(jLVarios))
+                                .addGroup(pagoLayout.createSequentialGroup()
+                                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(pagoLayout.createSequentialGroup()
+                                            .addComponent(jLabel21)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(jLcuotafija))
+                                        .addGroup(pagoLayout.createSequentialGroup()
+                                            .addComponent(jLabel18)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(jLsanciones)))
+                                    .addGap(43, 43, 43)
+                                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(pagoLayout.createSequentialGroup()
+                                            .addComponent(jLabel22)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(jLcoperacion))
+                                        .addGroup(pagoLayout.createSequentialGroup()
+                                            .addComponent(jLabel23)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(jLBonificacion))))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pagoLayout.setVerticalGroup(
             pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pagoLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabelPersonas)
+                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21)
-                        .addComponent(jLcuotafija)))
-                .addGap(13, 13, 13)
+                        .addComponent(jLcuotafija)
+                        .addComponent(jLabel22)
+                        .addComponent(jLcoperacion))
+                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(jLabelPersonas)))
                 .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pagoLayout.createSequentialGroup()
-                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabelPersonasadeudan)
-                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel18)
-                                .addComponent(jLsanciones)))
+                        .addGap(13, 13, 13)
+                        .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pagoLayout.createSequentialGroup()
+                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pagoLayout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jLsanciones))
+                                    .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel15)
+                                        .addComponent(jLabelPersonasadeudan))))
+                            .addGroup(pagoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLBonificacion))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabelPersonaspagado)
+                        .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel19)
-                                .addComponent(jrecargos)))
+                                .addComponent(jrecargos))
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel16)
+                                .addComponent(jLabelPersonaspagado))
+                            .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLVarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pagoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17))
                             .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabelDinero)
-                                .addGroup(pagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLtotalAgua))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel20)
+                                .addComponent(jLtotalAgua))
+                            .addComponent(jLabelDinero))))
+                .addContainerGap())
         );
 
         btnPagos1.setBackground(new java.awt.Color(7, 82, 132));
@@ -373,13 +429,14 @@ public class reporte extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdeudo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPagos1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcPerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdeudo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcPerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPagos1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(anioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -530,7 +587,7 @@ public class reporte extends javax.swing.JFrame {
             bonificaciones = bonificaciones + cp.getBonificaciones();
             sanciones = sanciones + cp.getSanciones();
             varios = varios + cp.getSanciones();
-            importeConsumo=importeConsumo+cp.getImporteConsumo();
+            importeConsumo = importeConsumo + cp.getImporteConsumo();
             totalPersonasPagado = totalPersonasPagado + 1;
         }
 
@@ -539,11 +596,14 @@ public class reporte extends javax.swing.JFrame {
 
         jLabelPersonaspagado.setText(String.valueOf(totalPersonasPagado));
         jLabelDinero.setText(String.valueOf(totalDinero));
-        
+
         jLsanciones.setText(String.valueOf(sanciones));
         jrecargos.setText(String.valueOf(recargos));
         jLtotalAgua.setText(String.valueOf(importeConsumo));
-       jLcuotafija.setText(String.valueOf(coutaFija));
+        jLcuotafija.setText(String.valueOf(coutaFija));
+        jLcoperacion.setText(String.valueOf(cooperacion));
+        jLBonificacion.setText(String.valueOf(bonificaciones));
+        jLVarios.setText(String.valueOf(varios));
         //jlmultas.setText(String.valueOf());
     }
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
@@ -554,7 +614,7 @@ public class reporte extends javax.swing.JFrame {
         consumidoresDAO dao = new consumidoresDAOImpl(conn);
         consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
         String query = " select * from consumo where status=1  and fechaPAgo ='" + fechaformateada + "';";
-
+        System.err.println("query" + query);
         List<consumo> consumo;
         try {
             consumo = daoConsumo.busquedaGenerico(query);
@@ -627,7 +687,61 @@ public class reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReporteActionPerformed
 
     private void btnPagos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagos1ActionPerformed
-        // TODO add your handling code here:
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaformateada = formato.format(new Date());
+
+        conn = conecionBD.conexion();
+        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+        String query = "select periodo, anio,sum(consumoMedidor) as total from consumo GROUP BY periodo, anio ;;";
+       
+        List<String> consumoAgua;
+        consumoAgua = daoConsumo.obtenerTotalConsumoAgua(query);
+        String matriz[][] = new String[consumoAgua.size()][6];
+            String status = "";
+            int j=1;
+        for(int i=0; i<=consumoAgua.size()-1;i=i+3, j++){
+             System.err.println("consumoAgua"+consumoAgua.get(i)+" "+consumoAgua.get(i+1)+" "+consumoAgua.get(i+2));
+       
+             String per = String.valueOf(consumoAgua.get(i));
+                switch (per) {
+                    case "1":
+                        per = "DICIEMBRE - ENERO";
+                        break;
+                    case "2":
+                        per = "FEBRERO - MARZO";
+                        break;
+                    case "3":
+                        per = "ABRIL - MAYO";
+                        break;
+                    case "4":
+                        per = "JUNIO - JULIO";
+                        break;
+                    case "5":
+                        per = "AGOSTO - SEPTIEMBRE";
+                        break;
+                    case "6":
+                        per = "OCTUBRE - NOVIEMBRE";
+                        break;
+                }
+                matriz[i][0] = String.valueOf(j);
+                matriz[i][1] = (per);
+                matriz[i][2] = consumoAgua.get(i+1);
+                matriz[i][3] = consumoAgua.get(i+2)+ " mts";
+                jTableConsumos.setModel(new javax.swing.table.DefaultTableModel(
+                    matriz,
+                    new String[]{
+                        ".","PERIODO", "AÑO", "TOTAL EN METROS"
+                    }
+            ));
+
+            jLabelPersonasadeudan.setText(String.valueOf(0));
+            jLabel15.show(false);
+            jLabelPersonasadeudan.show(false);
+           
+            pintarColumnaTabla();
+        
+        }
+       
     }//GEN-LAST:event_btnPagos1ActionPerformed
 
     /**
@@ -672,6 +786,8 @@ public class reporte extends javax.swing.JFrame {
     private javax.swing.JButton btnPagos1;
     private javax.swing.JButton btnReporte;
     private javax.swing.JButton btnSalir1;
+    private javax.swing.JLabel jLBonificacion;
+    private javax.swing.JLabel jLVarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -682,10 +798,14 @@ public class reporte extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabelDinero;
     private javax.swing.JLabel jLabelPersonas;
     private javax.swing.JLabel jLabelPersonasadeudan;
     private javax.swing.JLabel jLabelPersonaspagado;
+    private javax.swing.JLabel jLcoperacion;
     private javax.swing.JLabel jLcuotafija;
     private javax.swing.JLabel jLsanciones;
     private javax.swing.JLabel jLtotalAgua;
