@@ -1,12 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
+import ConexionCloseBD.ConexionBD;
+import DAO.DAOException;
 import DAO.consumidoresDAO;
+import DAO.consumidoresDAOImpl;
+import DAO.consumoDAOImpl;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.consumidores;
 
 /**
  *
@@ -14,9 +18,9 @@ import javax.swing.JOptionPane;
  */
 public class Consumidor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Consumidor
-     */
+    Connection conn = null;
+    ConexionBD conecionBD = new ConexionBD();
+    
     public Consumidor() {
         initComponents();
     }
@@ -472,23 +476,7 @@ public class Consumidor extends javax.swing.JFrame {
                     jLabelManzana2.setText(String.valueOf(consumidor.getManzana()));
                     jLabelTelefono2.setText(String.valueOf(consumidor.getTelefono()));
 
-                    System.out.println(numUsuario2.getText() + "-" + periodo + "-" + anio);
-
-                    consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-1, anio);
-
-                    jLabelLecturaAnterior.setText(String.valueOf((consumo.getLecturaActual())));
-                    jLabelConsumoAnterior.setText(String.valueOf((consumo.getConsumoMedidor())));
-
-                    //                    jTextCuota.setText(String.valueOf((consumo.getCoutaFija())));
-                    //                    jTextRecargo.setText(String.valueOf(consumo.getRecargos()));
-                    //                    jTextCooperacion.setText(String.valueOf(consumo.getCooperacion()));
-                    //                    jTextBonificaciones.setText(String.valueOf(consumo.getBonificaciones()));
-                    //                    jTextSanciones.setText(String.valueOf(consumo.getSanciones()));
-                    //                    jTextVarios.setText(String.valueOf(consumo.getVarios()));
-                    //                    jTextAreaMotivo.setText(consumo.getAviso());
-
-                    //                    pintarColumnaTabla();
-                }else{
+                    }else{
                     limpiarCampos();
                     JOptionPane.showMessageDialog(this, "El usuario no fue encontrado");
                     numUsuario2.setText("");
@@ -542,6 +530,15 @@ public class Consumidor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
+    void limpiarCampos(){
+        jLabelNmedidor2.setText("####");
+        jLabelNombre2.setText("####");
+        jLabelDireccion2.setText("####");
+        jLabelManzana2.setText("####");
+        jLabelTelefono2.setText("####");
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
