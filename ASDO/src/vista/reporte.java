@@ -614,7 +614,7 @@ public class reporte extends javax.swing.JFrame {
         consumidoresDAO dao = new consumidoresDAOImpl(conn);
         consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
         String query = " select * from consumo where status=1  and fechaPAgo ='" + fechaformateada + "';";
-        System.err.println("query" + query);
+        
         List<consumo> consumo;
         try {
             consumo = daoConsumo.busquedaGenerico(query);
@@ -700,7 +700,6 @@ public class reporte extends javax.swing.JFrame {
             String status = "";
             int j=1;
         for(int i=0; i<=consumoAgua.size()-1;i=i+3, j++){
-             System.err.println("consumoAgua"+consumoAgua.get(i)+" "+consumoAgua.get(i+1)+" "+consumoAgua.get(i+2));
        
              String per = String.valueOf(consumoAgua.get(i));
                 switch (per) {
@@ -741,6 +740,18 @@ public class reporte extends javax.swing.JFrame {
             pintarColumnaTabla();
         
         }
+         jLabelPersonas.setText(" ");
+
+        jLabelPersonaspagado.setText(" ");
+        jLabelDinero.setText(" ");
+
+        jLsanciones.setText(" ");
+        jrecargos.setText(" ");
+        jLtotalAgua.setText(" ");
+        jLcuotafija.setText(" ");
+        jLcoperacion.setText(" ");
+        jLBonificacion.setText(" ");
+        jLVarios.setText(" ");
        
     }//GEN-LAST:event_btnPagos1ActionPerformed
 
