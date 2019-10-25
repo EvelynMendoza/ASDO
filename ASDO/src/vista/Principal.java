@@ -257,7 +257,6 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
         int seleccion = JOptionPane.showConfirmDialog(null, "¿Realmente desea salir del programa?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        System.out.println(seleccion);
         if(seleccion == 0){
             this.dispose();
         }

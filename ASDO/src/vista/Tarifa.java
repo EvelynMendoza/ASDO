@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evelyn
@@ -168,7 +170,10 @@ public class Tarifa extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        int seleccion = JOptionPane.showConfirmDialog(null, "¿Está seguro de guardar cambios?", "Confirmar cambio", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(seleccion == 0){//si acepta
+            //Guardar cambios
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
