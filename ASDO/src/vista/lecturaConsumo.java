@@ -347,7 +347,7 @@ public class lecturaConsumo extends javax.swing.JFrame {
                     .addGroup(otrosPAgos4Layout.createSequentialGroup()
                         .addComponent(jLabel35)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelPeriodo, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)))
+                        .addComponent(jLabelPeriodo, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         otrosPAgos4Layout.setVerticalGroup(
