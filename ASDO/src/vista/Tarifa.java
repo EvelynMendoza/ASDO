@@ -5,7 +5,17 @@
  */
 package vista;
 
+import ConexionCloseBD.ConexionBD;
+import DAO.CoutaDAO;
+import DAO.CoutaDAOImpl;
+import DAO.DAOException;
+import java.sql.Connection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.Couta;
 
 /**
  *
@@ -16,8 +26,19 @@ public class Tarifa extends javax.swing.JFrame {
     /**
      * Creates new form Tarifa
      */
-    public Tarifa() {
+    Connection conn = null;
+    ConexionBD conecionBD = new ConexionBD();
+    CoutaDAO couta;
+    Couta couata;
+    int idCouta=0;
+    public Tarifa() throws DAOException {
         initComponents();
+        conn = conecionBD.conexion();
+         couta= new CoutaDAOImpl(conn);
+         couata= couta.buscarCoua();
+        idCouta=couata.getID_CUOTA();
+        jTextTarifa.setText(String.valueOf(couata.getPRECIO()));
+        
     }
 
     /**
@@ -199,8 +220,21 @@ public class Tarifa extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         int seleccion = JOptionPane.showConfirmDialog(null, "¿Está seguro de guardar cambios?", "Confirmar cambio", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaformateada = formato.format(new Date());
+       String anio = (fechaformateada.substring(0, 4));
         if(seleccion == 0){//si acepta
-            //Guardar cambios
+            try {
+                double tarifaNueva=Double.valueOf(jTextTarifa.getText());
+                Couta datos = new Couta();
+                datos.setID_CUOTA(idCouta);
+                datos.setPRECIO(tarifaNueva);
+                datos.setANIO(anio);
+                couta.actualizar(datos);
+               
+            } catch (Exception e) {
+                System.err.println("e:   "+e);
+            }
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -235,7 +269,11 @@ public class Tarifa extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tarifa().setVisible(true);
+                try {
+                    new Tarifa().setVisible(true);
+                } catch (DAOException ex) {
+                    Logger.getLogger(Tarifa.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

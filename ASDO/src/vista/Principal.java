@@ -5,6 +5,9 @@
  */
 package vista;
 
+import DAO.DAOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -270,8 +273,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnTarifaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarifaActionPerformed
         this.dispose();
-        Tarifa registro = new Tarifa();
-        registro.setVisible(true);
+        Tarifa registro;
+        try {
+            registro = new Tarifa();
+            registro.setVisible(true);
+        } catch (DAOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnTarifaActionPerformed
 
     /**

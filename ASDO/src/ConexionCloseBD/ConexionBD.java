@@ -19,7 +19,7 @@ public class ConexionBD {
 
     public Connection conexion() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/SDO", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/SDO", "octavio", "octavio");
         } catch (SQLException ex) {
             System.out.println(ex);
         }

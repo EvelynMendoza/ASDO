@@ -16,6 +16,6 @@ public interface CoutaDAO {
        void insertar(Couta c) throws DAOException;
     void elimnar(int c)throws DAOException;
     void actualizar(Couta c)throws DAOException;
-    Couta buscarCoua(int id)throws DAOException;
+    Couta buscarCoua()throws DAOException;
     List<Couta> buscarTodos()throws DAOException;
 }
