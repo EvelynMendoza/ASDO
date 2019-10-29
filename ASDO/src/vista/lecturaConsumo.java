@@ -7,6 +7,8 @@ package vista;
  */
 
 import ConexionCloseBD.ConexionBD;
+import DAO.CoutaDAO;
+import DAO.CoutaDAOImpl;
 import DAO.DAOException;
 import DAO.consumidoresDAO;
 import DAO.consumidoresDAOImpl;
@@ -18,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.Couta;
 import modelo.consumidores;
 import modelo.consumo;
 
@@ -25,25 +28,32 @@ public class lecturaConsumo extends javax.swing.JFrame {
 
     Connection conn = null;
     ConexionBD conecionBD = new ConexionBD();
+    
     DefaultTableModel modelo = new DefaultTableModel();
     
+    
+         
     public Double importe = 0.0;
     public int anio = 0;
     public int mes = 0;
     public double cuota = 0;
     
-    public Double precio = 4.0;
+    public Double precio = 0.0;
     public Double lecturaAct = 0.0;
     public Double consumoLectura = 0.0;
     
     public int periodo = 0;
     
-    public lecturaConsumo() {
+    public lecturaConsumo() throws DAOException {
         initComponents();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         String fechaformateada = formato.format(new Date());
         anio = Integer.parseInt(fechaformateada.substring(0, 4));
         mes = Integer.parseInt(fechaformateada.substring(5, 7));
+        conn = conecionBD.conexion();
+    CoutaDAO  couta= new CoutaDAOImpl(conn);
+    Couta  couata= couta.buscarCoua();
+    precio=couata.getPRECIO();
         
         if(mes == 12 || mes == 1){
             periodo = 1;
@@ -821,7 +831,11 @@ public class lecturaConsumo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new lecturaConsumo().setVisible(true);
+                try {
+                    new lecturaConsumo().setVisible(true);
+                } catch (DAOException ex) {
+                    Logger.getLogger(lecturaConsumo.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

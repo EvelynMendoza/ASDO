@@ -20,7 +20,8 @@ import modelo.Couta;
 public class CoutaDAOImpl implements CoutaDAO{
     
     final String INSERT = "INSERT INTO CUOTA (PRECIO, ANIO) VALUES (?, ?);";
-    final String GETONE = "select * from CUOTA where ID_CUOTA=?;";
+    //final String GETONE = "select * from CUOTA where ID_CUOTA=?;";
+    final String GETONE = "select * from CUOTA LIMIT 1;";
     final String GETALL = "select * from CUOTA;";
     final String DELETE = "DELETE FROM CUOTA WHERE ID_CUOTA=?";
     final String UPDATE = "UPDATE CUOTA SET PRECIO=?, ANIO=? WHERE ID_CUOTA=?;";
@@ -112,13 +113,13 @@ public class CoutaDAOImpl implements CoutaDAO{
     }
 
     @Override
-    public Couta buscarCoua(int id) throws DAOException {
+    public Couta buscarCoua() throws DAOException {
        PreparedStatement stat = null;
         ResultSet rs = null;
         Couta c = null;        
         try {            
             stat = conn.prepareStatement(GETONE);            
-            stat.setInt(1, id);            
+            //stat.setInt(1, id);            
             rs = stat.executeQuery();
             if (rs.next()) {
                 c = convertir(rs);

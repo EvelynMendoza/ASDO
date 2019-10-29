@@ -49,9 +49,9 @@ public class ASDO {
                 // eliminar 
                 // dao.elimnar(2);
                 //consulta por id
-                Couta consumidor =dao.buscarCoua(2); 
+                //Couta consumidor =dao.buscarCoua(2); 
               
-               System.out.println(consumidor.toString());
+               //System.out.println(consumidor.toString());
  /*Insert*/
  /*consumidores consu=new consumidores("410","11028358","PEDRO GARCÍA LÓPEZ","PRIV. MORELOS#2",2,"951 128 00 98");
             dao.insertar(consu);*/
