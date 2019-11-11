@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.Couta;
 
 /**
@@ -91,13 +92,13 @@ public class CoutaDAOImpl implements CoutaDAO{
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(UPDATE);
-          stat.setDouble(1, c.getPRECIO());
+            stat.setDouble(1, c.getPRECIO());
             stat.setString(2, c.getANIO());
             stat.setInt(3, c.getID_CUOTA());
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
-                System.out.println("Los datos se han guardado");
+                JOptionPane.showMessageDialog(null, "La CUOTA a sido Actualizado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
@@ -113,7 +114,7 @@ public class CoutaDAOImpl implements CoutaDAO{
     }
 
     @Override
-    public Couta buscarCoua() throws DAOException {
+    public Couta buscarCuota() throws DAOException {
        PreparedStatement stat = null;
         ResultSet rs = null;
         Couta c = null;        

@@ -31,14 +31,14 @@ public class Tarifa extends javax.swing.JFrame {
     CoutaDAO couta;
     Couta couata;
     int idCouta=0;
+    
     public Tarifa() throws DAOException {
         initComponents();
         conn = conecionBD.conexion();
-         couta= new CoutaDAOImpl(conn);
-         couata= couta.buscarCoua();
+        couta= new CoutaDAOImpl(conn);
+        couata= couta.buscarCuota();
         idCouta=couata.getID_CUOTA();
         jTextTarifa.setText(String.valueOf(couata.getPRECIO()));
-        
     }
 
     /**
@@ -177,11 +177,11 @@ public class Tarifa extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextTarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(57, 57, 57)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -202,7 +202,7 @@ public class Tarifa extends javax.swing.JFrame {
 
     private void jTextTarifaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextTarifaKeyTyped
         char ch = evt.getKeyChar();
-        if(!Character.isDigit(ch)){
+        if(!Character.isDigit(ch) && ch!='.'){//si no es numero borrar
             evt.consume();
         }
     }//GEN-LAST:event_jTextTarifaKeyTyped
@@ -216,13 +216,15 @@ public class Tarifa extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         jTextTarifa.setEnabled(true);
         btnGuardar.setEnabled(true);
+        btnActualizar.setEnabled(false);
+        jTextTarifa.requestFocus();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         int seleccion = JOptionPane.showConfirmDialog(null, "¿Está seguro de guardar cambios?", "Confirmar cambio", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         String fechaformateada = formato.format(new Date());
-       String anio = (fechaformateada.substring(0, 4));
+        String anio = (fechaformateada.substring(0, 4));
         if(seleccion == 0){//si acepta
             try {
                 double tarifaNueva=Double.valueOf(jTextTarifa.getText());
@@ -231,7 +233,9 @@ public class Tarifa extends javax.swing.JFrame {
                 datos.setPRECIO(tarifaNueva);
                 datos.setANIO(anio);
                 couta.actualizar(datos);
-               
+                btnGuardar.setEnabled(false);
+                btnActualizar.setEnabled(true);
+                jTextTarifa.setEnabled(false);
             } catch (Exception e) {
                 System.err.println("e:   "+e);
             }

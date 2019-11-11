@@ -2,12 +2,13 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.consumidores;
 
 /**
@@ -18,11 +19,13 @@ public class consumidoresDAOImpl implements consumidoresDAO {
 
     final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) values(?,?,?,?,?,?);";
     final String GETONE = "select * from consumidores where numUsuario=?;";
+    final String GETMEDIDOR = "select * from consumidores where numMedidor=?;";
     final String GETALL = "select * from consumidores;";
+    final String GETMAX = "select * from consumidores order by numUsuario desc limit 0,1";
     final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
-    final String UPDATE = "UPDATE consumidores SET numUsuario =?, numMedidor =?, nombreCompleto =?,  direccion =?, manzana =?, telefono=? WHERE idConsumidor= ?;";
+    final String UPDATE = "UPDATE consumidores SET numMedidor=?, nombreCompleto=?,  direccion=?, manzana=?, telefono=? WHERE numUsuario=?;";
 
-    private Connection conn;
+    private final Connection conn;
 
     public consumidoresDAOImpl(Connection conn) {
         this.conn = conn;
@@ -33,7 +36,6 @@ public class consumidoresDAOImpl implements consumidoresDAO {
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(INSERT);
-            //stat.setInt(1, c.getIdConsumidor());
             stat.setString(1, c.getNumUsuario());
             stat.setString(2, c.getNumMedidor());
             stat.setString(3, c.getNombreCompleto());
@@ -44,7 +46,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
-                System.out.println("Los datos se han guardado");
+                JOptionPane.showMessageDialog(null, "Registro exitoso", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
@@ -69,7 +71,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se ha podido elimiar el registro");
             } else {
-                System.out.println("Los datos se han borrado");
+                JOptionPane.showMessageDialog(null, "Los datos se han borrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
@@ -86,22 +88,20 @@ public class consumidoresDAOImpl implements consumidoresDAO {
 
     @Override
     public void actualizar(consumidores c) throws DAOException {
-
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(UPDATE);
-
-            stat.setString(1, c.getNumUsuario());
-            stat.setString(2, c.getNumMedidor());
-            stat.setString(3, c.getNombreCompleto());
-            stat.setString(4, c.getDireccion());
-            stat.setString(5, c.getManzana());
-            stat.setString(6, c.getTelefono());
-            stat.setInt(7, c.getIdConsumidor());
+//            stat.setString(1, c.getNumUsuario());
+            stat.setString(1, c.getNumMedidor());
+            stat.setString(2, c.getNombreCompleto());
+            stat.setString(3, c.getDireccion());
+            stat.setString(4, c.getManzana());
+            stat.setString(5, c.getTelefono());
+            stat.setString(6, c.getNumUsuario());
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
-                System.out.println("Los datos se han guardado");
+                JOptionPane.showMessageDialog(null, "Los datos se han Actualizado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
@@ -128,7 +128,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             if (rs.next()) {
                 c = convertir(rs);
             } else {
-                System.out.println("No hay registros");
+                JOptionPane.showMessageDialog(null, "El usuario no fue encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             throw new DAOException("Error SQL" + e);
@@ -199,7 +199,75 @@ public class consumidoresDAOImpl implements consumidoresDAO {
         consumidor.setTelefono(rs.getString("telefono"));
 
         return consumidor;
+    }  
+
+    @Override
+    public consumidores obtenerNumusuario() throws DAOException {
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        consumidores c = null;        
+        try {   
+            stat = conn.prepareStatement(GETMAX);            
+//            stat.setInt(1, id);  
+            rs = stat.executeQuery();
+            if (rs.next()) {
+                c = convertir(rs);                
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario no fue encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL var stat: " + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL var rs: " + e);
+                }
+            }
+        }
+        return c;
     }
 
-   
+    @Override
+    public consumidores buscarNconsumidor(int nConsumidor) throws DAOException {
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        consumidores c = null;        
+        try {            
+            stat = conn.prepareStatement(GETMEDIDOR);            
+            stat.setInt(1, nConsumidor);            
+            rs = stat.executeQuery();
+            if (rs.next()) {
+                c = convertir(rs);
+            } else {
+//                JOptionPane.showMessageDialog(null, "El usuario no fue encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+        return c;
+    }
 }
