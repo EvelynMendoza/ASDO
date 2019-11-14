@@ -21,8 +21,9 @@ CREATE TABLE consumidores (
   direccion varchar(100),
   manzana varchar(10),
   telefono varchar(30),
+  status int, -- IDENTIFICAR AL TIPO DE USUARIO
   primary key(idConsumidor)
-   );
+);
 
 CREATE TABLE consumo(
  -- idConsumo int AUTO_INCREMENT,

@@ -19,24 +19,26 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class PintarCelda extends DefaultTableCellRenderer {
 
-    private int columna;
+//    private int columna;
 
+    @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
         JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value, selected, focused, row, column);
 
         if (value instanceof String) {
             String valor = String.valueOf(value);
-            cell.setBackground(Color.GRAY);
-                    cell.setForeground(Color.BLACK);
-            if (column == 3) {
+//            cell.setBackground(Color.white);
+//            cell.setForeground(Color.BLUE);
+//            if (column == 3) {
                 if (valor.equals("PENDIENTE")) {
-                    cell.setBackground(Color.red);
-                    cell.setForeground(Color.BLACK);
-                }else{
-                    cell.setBackground(Color.GRAY);
-                    cell.setForeground(Color.BLACK);
+                    cell.setBackground(Color.WHITE);
+                    cell.setForeground(Color.RED);
                 }
-            }
+//                }else{
+//                    cell.setBackground(Color.white);
+//                    cell.setForeground(Color.BLUE);
+//                }
+//            }
         }
         return cell;
     }

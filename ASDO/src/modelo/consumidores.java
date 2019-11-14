@@ -16,22 +16,30 @@ public class consumidores {
    String numMedidor;
    String nombreCompleto;
    String direccion;
-    String manzana;
+   String manzana;
    String telefono;
+   int status;
 
-    public consumidores(String numUsuario, String numMedidor, String nombreCompleto, String direccion, String manzana, String telefono) {
+    public consumidores(String numUsuario, String numMedidor, String nombreCompleto, String direccion, String manzana, String telefono, int status) {
         this.numUsuario = numUsuario;
         this.numMedidor = numMedidor;
         this.nombreCompleto = nombreCompleto;
         this.direccion = direccion;
         this.manzana = manzana;
         this.telefono = telefono;
+        this.status = status;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
    
     public consumidores() {
     }
-
    
     public int getIdConsumidor() {
         return idConsumidor;
@@ -91,6 +99,6 @@ public class consumidores {
 
     @Override
     public String toString() {
-        return "consumidores{" + "idConsumidor=" + idConsumidor + ", numUsuario=" + numUsuario + ", numMedidor=" + numMedidor + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", manzana=" + manzana + ", telefono=" + telefono + '}';
+        return "consumidores{" + "idConsumidor=" + idConsumidor + ", numUsuario=" + numUsuario + ", numMedidor=" + numMedidor + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", manzana=" + manzana + ", telefono=" + telefono + ", status=" + status + '}';
     }   
 }

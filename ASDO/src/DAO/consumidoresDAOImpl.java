@@ -17,13 +17,13 @@ import modelo.consumidores;
  */
 public class consumidoresDAOImpl implements consumidoresDAO {
 
-    final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono) values(?,?,?,?,?,?);";
+    final String INSERT = "insert into consumidores(numUsuario, numMedidor, nombreCompleto,  direccion, manzana, telefono, status) values(?,?,?,?,?,?,?);";
     final String GETONE = "select * from consumidores where numUsuario=?;";
     final String GETMEDIDOR = "select * from consumidores where numMedidor=?;";
     final String GETALL = "select * from consumidores;";
     final String GETMAX = "select * from consumidores order by numUsuario desc limit 0,1";
     final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
-    final String UPDATE = "UPDATE consumidores SET numMedidor=?, nombreCompleto=?,  direccion=?, manzana=?, telefono=? WHERE numUsuario=?;";
+    final String UPDATE = "UPDATE consumidores SET numMedidor=?, nombreCompleto=?,  direccion=?, manzana=?, telefono=?, status=? WHERE numUsuario=?;";
 
     private final Connection conn;
 
@@ -42,6 +42,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             stat.setString(4, c.getDireccion());
             stat.setString(5, c.getManzana());
             stat.setString(6, c.getTelefono());
+            stat.setInt(7, c.getStatus());
 
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
@@ -97,7 +98,8 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             stat.setString(3, c.getDireccion());
             stat.setString(4, c.getManzana());
             stat.setString(5, c.getTelefono());
-            stat.setString(6, c.getNumUsuario());
+            stat.setInt(6, c.getStatus());
+            stat.setString(7, c.getNumUsuario());
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
@@ -197,6 +199,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
         consumidor.setDireccion(rs.getString("direccion"));
         consumidor.setManzana(rs.getString("manzana"));
         consumidor.setTelefono(rs.getString("telefono"));
+        consumidor.setStatus(rs.getInt("status"));
 
         return consumidor;
     }  

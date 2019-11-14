@@ -234,7 +234,7 @@ public class Principal extends javax.swing.JFrame {
         /*this.dispose();
         Pago pago = new Pago();
         pago.setVisible(true);*/
-        BuscarUsuarioPago buscarUserPag= new BuscarUsuarioPago();
+        buscarConsumidor buscarUserPag= new buscarConsumidor();
         buscarUserPag.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPagoActionPerformed
@@ -246,9 +246,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnConsumidoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumidoresActionPerformed
-        this.dispose();
-        ConsumidorCRUD cons = new ConsumidorCRUD();
-        cons.setVisible(true);
+         this.dispose();
+        registrarConsumo registro;
+        try {
+            registro = new registrarConsumo();
+            registro.setVisible(true);
+        } catch (DAOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnConsumidoresActionPerformed
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
@@ -273,7 +278,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnAdmconsumidoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmconsumidoresActionPerformed
         this.dispose();
         try {
-            Consumidor consumidor = new Consumidor();
+            consumidorCRUD consumidor = new consumidorCRUD();
             
             consumidor.setVisible(true);
         } catch (DAOException ex) {
