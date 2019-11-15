@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4692df9e-4a42-476c-a2a2-3fa13be07924">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="241"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     consumo.`numUsuario` AS consumo_numUsuario,
+     consumo.`periodo` AS consumo_periodo,
+     consumo.`anio` AS consumo_anio,
+     consumo.`lecturaActual` AS consumo_lecturaActual,
+     consumo.`consumoMedidor` AS consumo_consumoMedidor,
+     consumo.`precio` AS consumo_precio,
+     consumo.`importeConsumo` AS consumo_importeConsumo,
+     consumo.`coutaFija` AS consumo_coutaFija,
+     consumo.`recargos` AS consumo_recargos,
+     consumo.`cooperacion` AS consumo_cooperacion,
+     consumo.`bonificaciones` AS consumo_bonificaciones,
+     consumo.`sanciones` AS consumo_sanciones,
+     consumo.`varios` AS consumo_varios,
+     consumo.`totalPagar` AS consumo_totalPagar,
+     consumo.`fechaPAgo` AS consumo_fechaPAgo,
+     consumo.`notas` AS consumo_notas,
+     consumo.`aviso` AS consumo_aviso,
+     consumo.`status` AS consumo_status,
+     CONSUMIDORES.`idConsumidor` AS CONSUMIDORES_idConsumidor,
+     CONSUMIDORES.`numUsuario` AS CONSUMIDORES_numUsuario,
+     CONSUMIDORES.`numMedidor` AS CONSUMIDORES_numMedidor,
+     CONSUMIDORES.`nombreCompleto` AS CONSUMIDORES_nombreCompleto,
+     CONSUMIDORES.`direccion` AS CONSUMIDORES_direccion,
+     CONSUMIDORES.`manzana` AS CONSUMIDORES_manzana,
+     CONSUMIDORES.`telefono` AS CONSUMIDORES_telefono,
+     CONSUMIDORES.`status` AS CONSUMIDORES_status
+FROM
+     `CONSUMIDORES` CONSUMIDORES INNER JOIN `consumo` consumo ON CONSUMIDORES.`numUsuario` = consumo.`numUsuario`
+WHERE
+     IDCONSUMIDOR = 1]]>
+	</queryString>
+	<field name="idConsumidor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numUsuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numMedidor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreCompleto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="manzana" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lecturaActual" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consumoMedidor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="importeConsumo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="coutaFija" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recargos" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cooperacion" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bonificaciones" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sanciones" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="varios" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalPagar" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaPAgo" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="notas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aviso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consumo_numUsuario" class="java.lang.String"/>
+	<field name="consumo_periodo" class="java.lang.Integer"/>
+	<field name="consumo_anio" class="java.lang.Integer"/>
+	<field name="consumo_lecturaActual" class="java.lang.Double"/>
+	<field name="consumo_consumoMedidor" class="java.lang.Double"/>
+	<field name="consumo_precio" class="java.lang.Double"/>
+	<field name="consumo_importeConsumo" class="java.lang.Double"/>
+	<field name="consumo_coutaFija" class="java.lang.Double"/>
+	<field name="consumo_recargos" class="java.lang.Double"/>
+	<field name="consumo_cooperacion" class="java.lang.Double"/>
+	<field name="consumo_bonificaciones" class="java.lang.Double"/>
+	<field name="consumo_sanciones" class="java.lang.Double"/>
+	<field name="consumo_varios" class="java.lang.Double"/>
+	<field name="consumo_totalPagar" class="java.lang.Double"/>
+	<field name="consumo_fechaPAgo" class="java.sql.Date"/>
+	<field name="consumo_notas" class="java.lang.String"/>
+	<field name="consumo_aviso" class="java.lang.String"/>
+	<field name="consumo_status" class="java.lang.Integer"/>
+	<field name="CONSUMIDORES_idConsumidor" class="java.lang.Integer"/>
+	<field name="CONSUMIDORES_numUsuario" class="java.lang.String"/>
+	<field name="CONSUMIDORES_numMedidor" class="java.lang.String"/>
+	<field name="CONSUMIDORES_nombreCompleto" class="java.lang.String"/>
+	<field name="CONSUMIDORES_direccion" class="java.lang.String"/>
+	<field name="CONSUMIDORES_manzana" class="java.lang.String"/>
+	<field name="CONSUMIDORES_telefono" class="java.lang.String"/>
+	<field name="CONSUMIDORES_status" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<image>
+				<reportElement x="-18" y="7" width="76" height="68" uuid="898c6150-d5e8-44e7-8b3a-1459946e3a38"/>
+				<imageExpression><![CDATA["C:\\xampp\\htdocs\\ASDO\\ASDO\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="58" y="0" width="286" height="40" uuid="85652dc3-854c-41c9-8720-01ef371af2ce"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[COMISIÓN COORDINADORA DE LOS SISTEMAS DE OBRAS Y SERVICIOS DE AGUA POTABLE DEL ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="40" width="286" height="35" uuid="059dfc45-7c09-4540-a7d5-cd695505d2da"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[JUNTA LOCAL DEL SISTEMA DE AGUA POTABLE DE SAN DIONISIO OCOTEPEC, TLAC.,OAX.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="75" width="286" height="20" uuid="794ba3f6-a3a4-4888-bda7-03beeb1fa544"/>
+				<textElement textAlignment="Center">
+					<font size="9" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SISTEMA DE AGUA POTABLE DEL BARRIO CENTRO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="-18" y="0" width="362" height="1" forecolor="#0000CC" uuid="9c21874e-2268-4900-8a2f-bcfac6056611"/>
+			</line>
+			<textField>
+				<reportElement x="158" y="15" width="100" height="20" forecolor="#CC0000" uuid="de4d1edb-3705-41b8-890e-bc6ca32dcdfe"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numUsuario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="431" splitType="Stretch">
+			<textField>
+				<reportElement x="158" y="1" width="100" height="20" uuid="584b6830-64fe-40a4-aac3-51d7e1ae3be0"/>
+				<textFieldExpression><![CDATA[$F{numMedidor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="58" y="1" width="100" height="20" uuid="f4abff28-0296-49ed-99d2-31486824e59e"/>
+				<text><![CDATA[N° MEDIDOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="21" width="100" height="20" uuid="04a8e48c-d095-4816-b2d7-04e3b15c98af"/>
+				<textFieldExpression><![CDATA[$F{nombreCompleto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="41" width="100" height="20" uuid="e11d4229-43f8-4155-a634-cc64c36e2d70"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="61" width="100" height="20" uuid="ce188eab-3e11-42d1-93d1-15469a5c94f2"/>
+				<textFieldExpression><![CDATA[$F{manzana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="85" width="100" height="20" uuid="9f231050-95dc-4498-9faf-6551f84a5a2a"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="58" y="41" width="100" height="20" uuid="c5a834db-59c3-4869-9674-ff7d83257181"/>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="21" width="100" height="20" uuid="ec252416-2eed-44e7-bacc-3cc18b668a81"/>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="65" width="100" height="20" uuid="ea41d8b8-1f04-4f0a-98be-05a77216c0c8"/>
+				<text><![CDATA[MANZANA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="85" width="100" height="20" uuid="65f9fc35-9aaf-4a6d-af41-2f6b5b747585"/>
+				<text><![CDATA[TELEFONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="146" width="100" height="20" uuid="d86606d5-551e-4ba1-a044-d24f59ba8c70"/>
+				<textFieldExpression><![CDATA[$F{consumoMedidor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="174" width="100" height="20" uuid="2f88a6a8-478d-4612-a2ca-08c7a9fb0b7f"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="194" width="100" height="20" uuid="78c41f90-efbb-49d0-bc7f-e579ab740bff"/>
+				<textFieldExpression><![CDATA[$F{importeConsumo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="214" width="100" height="20" uuid="bb1d6d59-669d-4e86-92a0-8f6525cd5b14"/>
+				<textFieldExpression><![CDATA[$F{coutaFija}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="234" width="100" height="20" uuid="e02cb37e-dffb-4a16-ae86-53961c205b92"/>
+				<textFieldExpression><![CDATA[$F{recargos}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-18" y="105" width="362" height="1" forecolor="#0000CC" uuid="79949967-61d0-4e23-8d38-3d9bd0a5e373"/>
+			</line>
+			<textField>
+				<reportElement x="230" y="253" width="100" height="20" uuid="4a4abda3-af17-4fc4-847b-0fd4f6fafb1f"/>
+				<textFieldExpression><![CDATA[$F{cooperacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="273" width="100" height="20" uuid="77f28602-06d7-4126-8987-fe96dfb5b89b"/>
+				<textFieldExpression><![CDATA[$F{bonificaciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="372" width="142" height="31" uuid="9cf8cd1c-0e92-42ba-83d5-489494bf0387"/>
+				<textFieldExpression><![CDATA[$F{notas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="162" y="174" width="58" height="11" uuid="5de37d34-e282-47ab-af61-019995111704"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[PRECIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="145" width="68" height="29" uuid="d0549272-169d-4c87-8f41-909539eb8004"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CONSUMO MEDIDOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="293" width="100" height="20" uuid="600b0c9c-d756-4a5f-a9af-7674edd3c559"/>
+				<textFieldExpression><![CDATA[$F{sanciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="312" width="100" height="20" uuid="6998ad84-998e-4bf9-bd56-d36f5be79f6d"/>
+				<textFieldExpression><![CDATA[$F{varios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="332" width="100" height="20" forecolor="#000099" uuid="1f0f412b-da24-4e0c-8915-13617fbbb2b2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPagar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="352" width="100" height="20" uuid="7f425583-a36b-4b56-a0a4-2edb274970fb"/>
+				<textFieldExpression><![CDATA[$F{fechaPAgo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="162" y="194" width="58" height="11" uuid="eea21b48-488c-428b-94cf-be217bc48acd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[IMPORTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="214" width="58" height="11" uuid="db3b44b1-a329-4666-959a-d0f6844576d0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CUOTA FIJA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="234" width="58" height="11" uuid="aa513ee7-63f1-4e0b-8ae6-5ec1e983b0e3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RECARGOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="253" width="58" height="11" uuid="0da3e310-5edb-432a-9d62-90e92d68436d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[COOPERACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="273" width="58" height="11" uuid="a4babc00-3a30-4050-9a9b-5f444b2a73be"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[BONIFICACIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="293" width="58" height="11" uuid="c857078b-bdb2-49e2-957e-d77a32d2e5c9"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SANCIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="313" width="58" height="11" uuid="852b739f-b5db-4bac-bf52-2009e97a9635"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VARIOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="332" width="71" height="20" uuid="9f18328c-d225-4338-9d59-97fedba8f7f4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL A PAGAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="352" width="71" height="11" uuid="a4c4ff01-b331-4991-8b14-4900ee1c75c6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA DE PAGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="372" width="58" height="11" uuid="2d5dc900-b86e-4630-9b80-c518757f1358"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOTAS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="125" height="238" uuid="5ed2fab2-800c-4e8e-917d-ec88e14d664b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[A V I S O
+*A PARTIR DEL 1 DE ABRIL DEL 2014 ENTRÓ EN VIGOR LA REGLAMENTACIÓN DEL COMITE DE AGUA POTABLE.
+
+*REVISE QUE SU MEDIDOR NO TENGA FUGAS TANTO EN LAS UNIONES COMO EN LAS LLAVES DE PASO.
+
+*SI SU MEDIDOR ESTA OPACO O MARCA MAL HAY QUE HACER EL CAMBIO DEL MISMO.
+
+HABRÁ CORTE DE SERVICIO POR:
+A)FUGAS DE AGUA EN MEDIDOR Y UNIONES Ó LLAVES DE PASO.
+B) FUGA DE AGUA HACIA LA CALLE.
+C) MEDIDOR DESCOMPUESTO.
+D)TENER LLAVES DE PASO EN MAL ESTADO.
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="130" y="144" width="1" height="239" uuid="32ca48e2-2913-4c46-8980-23098ba6488a"/>
+			</line>
+			<line>
+				<reportElement x="-18" y="402" width="362" height="1" forecolor="#0000CC" uuid="7f87050a-50f9-4a93-9500-f53ff2119c5a"/>
+			</line>
+			<staticText>
+				<reportElement x="30" y="119" width="180" height="20" uuid="6466a27c-6f46-4164-bbb2-ff4eaf8936e9"/>
+				<text><![CDATA[LECTURA PERIODO ACTUAL (mtrs):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="205" y="119" width="100" height="20" uuid="748b47b5-15c3-44bb-99d6-83db434475ef"/>
+				<textFieldExpression><![CDATA[$F{lecturaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

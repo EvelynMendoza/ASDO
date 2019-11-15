@@ -46,6 +46,8 @@ public class registrarConsumo extends javax.swing.JFrame {
     public int periodo = 0;
     public int p = 0;
     
+    public int estadoUser = 0;
+    
 //    consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
 
     public registrarConsumo() throws DAOException {
@@ -85,6 +87,7 @@ public class registrarConsumo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel10 = new javax.swing.JPanel();
         contenedor2 = new javax.swing.JPanel();
         btnSalir3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -123,12 +126,24 @@ public class registrarConsumo extends javax.swing.JFrame {
         comboPeriodo = new javax.swing.JComboBox();
         actualizar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabelLecturaAnterior = new javax.swing.JLabel();
         jLabelConsumoAnterior = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+
+        jPanel10.setBackground(new java.awt.Color(9, 43, 96));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 17, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -467,19 +482,6 @@ public class registrarConsumo extends javax.swing.JFrame {
             .addGap(0, 17, Short.MAX_VALUE)
         );
 
-        jPanel10.setBackground(new java.awt.Color(9, 43, 96));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 17, Short.MAX_VALUE)
-        );
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("LECTURA ANTERIOR"));
 
@@ -533,7 +535,6 @@ public class registrarConsumo extends javax.swing.JFrame {
         contenedor2Layout.setHorizontalGroup(
             contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(contenedor2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(contenedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -567,8 +568,7 @@ public class registrarConsumo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(otrosPAgos4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(25, 25, 25)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -609,7 +609,7 @@ public class registrarConsumo extends javax.swing.JFrame {
                     jLabelManzana2.setText(String.valueOf(consumidor.getManzana()));
                     jLabelTelefono2.setText(String.valueOf(consumidor.getTelefono()));
                     estado.setSelectedIndex(consumidor.getStatus());
-                    
+                    estadoUser = consumidor.getStatus();
                     if(consumidor.getStatus()==4){//si es igual a cancelado o pendiente
                         JOptionPane.showMessageDialog(this, "No puede registrar el consumo de este usuario\nEste usuario está Cancelado");
                         limpiarCampos();
@@ -751,7 +751,13 @@ public class registrarConsumo extends javax.swing.JFrame {
                         String notas = jTextAreaMotivo1.getText();
                         String aviso = "Sin aviso";
                         int status = 0;
-
+                        
+                        if(estadoUser == 3){//si usuario no paga status =1
+                            status = 1;
+                            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+                            String fechaformateada = formato.format(new Date());
+                            fecha = fechaformateada;
+                        }
                         if(consumoLectura > 10){
                             importe = (lecturaAct-Double.parseDouble(jLabelLecturaAnterior.getText()))*precio;
                         }else{
@@ -777,6 +783,10 @@ public class registrarConsumo extends javax.swing.JFrame {
                         c.setFechaPAgo(fecha);
                         c.setNotas(notas);
                         c.setAviso(aviso);
+                        //si no paga poner status en 1
+//                        if(){
+//                            
+//                        }
                         c.setStatus(status);
                         System.out.println("PERIODO:" + periodo);
                         daoConsumo.insertar(c);
@@ -792,6 +802,7 @@ public class registrarConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarActionPerformed
     
     void limpiarCampos(){
+        estadoUser = 0;
         jLabelNmedidor2.setText("####");
         jLabelNombre2.setText("####");
         jLabelDireccion2.setText("####");

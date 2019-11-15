@@ -10,7 +10,6 @@ import DAO.DAOException;
 import DAO.consumidoresDAO;
 import DAO.consumidoresDAOImpl;
 import DAO.consumoDAOImpl;
-import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,8 +17,15 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import modelo.consumidores;
 import modelo.consumo;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -708,7 +714,24 @@ public class pagoConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
-        // TODO add your handling code here:
+        conn = conecionBD.conexion();
+//         consumidoresDAO dao = new consumidoresDAOImpl(conn);
+         
+         JasperReport reporte = null;
+         String path = "src\\reportes\\report1.jasper";
+         
+        try {
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);
+//            crear vista d ereporte
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+            
+        } catch (JRException ex) {
+//            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showConfirmDialog(null, "No se generó el reporte");
+        }        
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
     private void btnCobrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCobrarKeyReleased

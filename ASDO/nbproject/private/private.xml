@@ -5,6 +5,9 @@
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/asdo/ASDO.java</file>
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAO.java</file>
         <file>file:/home/octavio/Música/Proyecto%20Moni/ASDO/ASDO/src/DAO/consumidoresDAOImpl.java</file>
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/vista/pagoConsumo.java</file>
+            <file>file:/C:/xampp/htdocs/GitHub/ASDO/ASDO/src/reportes/report1.jrxml</file>
+        </group>
     </open-files>
 </project-private>

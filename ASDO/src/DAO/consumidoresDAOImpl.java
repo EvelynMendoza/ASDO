@@ -21,6 +21,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
     final String GETONE = "select * from consumidores where numUsuario=?;";
     final String GETMEDIDOR = "select * from consumidores where numMedidor=?;";
     final String GETALL = "select * from consumidores;";
+    final String GETNUMUSER = "select * from consumidores where status=4 or status=5;";
     final String GETMAX = "select * from consumidores order by numUsuario desc limit 0,1";
     final String DELETE = "DELETE FROM consumidores WHERE idConsumidor=?";
     final String UPDATE = "UPDATE consumidores SET numMedidor=?, nombreCompleto=?,  direccion=?, manzana=?, telefono=?, status=? WHERE numUsuario=?;";
@@ -188,7 +189,7 @@ public class consumidoresDAOImpl implements consumidoresDAO {
         return consumidores;
 
     }
-
+     
     private consumidores convertir(ResultSet rs) throws SQLException {
         //String nombreCompleto=rs.getString("nombreCompleto");
         consumidores consumidor = new consumidores();
@@ -272,5 +273,39 @@ public class consumidoresDAOImpl implements consumidoresDAO {
             }
         }
         return c;
+    }
+
+    @Override
+    public List<consumidores> buscarNumUsuario() throws DAOException {
+        List<consumidores> consumidores = new ArrayList<>();
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+//        consumidores c = null;
+        try {
+            stat = conn.prepareStatement(GETNUMUSER);
+            rs = stat.executeQuery();
+            while (rs.next()) {
+                consumidores.add(convertir(rs));
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error SQL" + e);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    throw new DAOException("Error en SQL" + e);
+                }
+            }
+        }
+
+        return consumidores;
     }
 }

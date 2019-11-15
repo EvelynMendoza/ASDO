@@ -20,6 +20,5 @@ public interface consumidoresDAO {
     consumidores buscarNconsumidor(int id)throws DAOException;
     consumidores obtenerNumusuario()throws DAOException;
     List<consumidores> buscarTodos()throws DAOException;
-    
-    
+    List<consumidores> buscarNumUsuario()throws DAOException;
 }
