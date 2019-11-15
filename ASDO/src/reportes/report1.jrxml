@@ -3,6 +3,9 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="241"/>
+	<parameter name="idUser" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT
      *,
@@ -35,7 +38,7 @@
 FROM
      `CONSUMIDORES` CONSUMIDORES INNER JOIN `consumo` consumo ON CONSUMIDORES.`numUsuario` = consumo.`numUsuario`
 WHERE
-     IDCONSUMIDOR = 1]]>
+     IDCONSUMIDOR = $P{idUser}]]>
 	</queryString>
 	<field name="idConsumidor" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>

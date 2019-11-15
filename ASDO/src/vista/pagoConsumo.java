@@ -13,7 +13,9 @@ import DAO.consumoDAOImpl;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -715,19 +717,25 @@ public class pagoConsumo extends javax.swing.JFrame {
 
     private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
         conn = conecionBD.conexion();
-//         consumidoresDAO dao = new consumidoresDAOImpl(conn);
-         
-         JasperReport reporte = null;
-         String path = "src\\reportes\\report1.jasper";
          
         try {
+            JasperReport reporte = null;
+            String path = "src\\reportes\\report1.jasper";
+//            JasperReport reporte = (JasperReport) JRLoader.loadObject("report1.jasper");
+            Map  parametro = new HashMap();
+            
+            parametro.put("idUser",Integer.parseInt(numUsuario1.getText()));
+            
+//            JasperPrint j = JasperFillManager.fillReport(reporte, parametro,conn);
+            
+            
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
-            JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);
-//            crear vista d ereporte
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, conn);
+////            crearr vista d ereporte
             JasperViewer view = new JasperViewer(jprint, false);
             view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             view.setVisible(true);
-            
+//            
         } catch (JRException ex) {
 //            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showConfirmDialog(null, "No se generó el reporte");
