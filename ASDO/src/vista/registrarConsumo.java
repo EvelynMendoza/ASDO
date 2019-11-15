@@ -44,10 +44,10 @@ public class registrarConsumo extends javax.swing.JFrame {
     public Double consumoLectura = 0.0;
     
     public int periodo = 0;
+    public int p = 0;
     
 //    consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
 
-    
     public registrarConsumo() throws DAOException {
         initComponents();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
@@ -60,24 +60,25 @@ public class registrarConsumo extends javax.swing.JFrame {
         precio=couata.getPRECIO();
         
         if(mes == 12 || mes == 1){
-            periodo = 1;
+            p = 1;
             comboPeriodo.setSelectedIndex(0);
         }else if(mes == 2 || mes == 3){
-            periodo = 2;
+            p = 2;
             comboPeriodo.setSelectedIndex(1);
         }else if(mes == 4 || mes == 5){
-            periodo = 3;
+            p = 3;
             comboPeriodo.setSelectedIndex(2);
         }else if(mes == 6 || mes == 7){
-            periodo = 4;
+            p = 4;
             comboPeriodo.setSelectedIndex(3);
         }else if(mes == 8 || mes == 9){
-            periodo = 5;
+            p = 5;
             comboPeriodo.setSelectedIndex(4);          
         }else if(mes == 10 || mes == 11){
-            periodo = 6;
+            p = 6;
             comboPeriodo.setSelectedIndex(5);           
         }
+        periodo = p;
     }
 
     @SuppressWarnings("unchecked")
@@ -118,8 +119,9 @@ public class registrarConsumo extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jTextLectura = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
+        guardar = new javax.swing.JButton();
         comboPeriodo = new javax.swing.JComboBox();
+        actualizar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -346,61 +348,74 @@ public class registrarConsumo extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel35.setText("Periodo:");
 
-        btnGuardar.setBackground(new java.awt.Color(7, 82, 132));
-        btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setText("Guardar");
-        btnGuardar.setName("btnSalir"); // NOI18N
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        guardar.setBackground(new java.awt.Color(7, 82, 132));
+        guardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        guardar.setForeground(new java.awt.Color(255, 255, 255));
+        guardar.setText("Guardar");
+        guardar.setName("btnSalir"); // NOI18N
+        guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                guardarActionPerformed(evt);
             }
         });
 
         comboPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DICIEMBRE-ENERO", "FEBRERO-MARZO", "ABRIL-MAYO", "JUNIO-JULIO", "AGOSTO-SEPTIEMBRE", "OCTUBRE-NOVIEMBRE" }));
+
+        actualizar.setBackground(new java.awt.Color(7, 82, 132));
+        actualizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        actualizar.setForeground(new java.awt.Color(255, 255, 255));
+        actualizar.setText("ACTUALIZAR");
+        actualizar.setEnabled(false);
+        actualizar.setName("btnSalir"); // NOI18N
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout otrosPAgos4Layout = new javax.swing.GroupLayout(otrosPAgos4);
         otrosPAgos4.setLayout(otrosPAgos4Layout);
         otrosPAgos4Layout.setHorizontalGroup(
             otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otrosPAgos4Layout.createSequentialGroup()
-                .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextVarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextSanciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextBonificaciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCooperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextVarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextSanciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextBonificaciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextCooperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(otrosPAgos4Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTextRecargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, otrosPAgos4Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel32)
-                                    .addComponent(jScrollPane5)
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(otrosPAgos4Layout.createSequentialGroup()
-                                        .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(30, 30, 30)
-                                        .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(comboPeriodo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextLectura, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)))))))
-                    .addGroup(otrosPAgos4Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(otrosPAgos4Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jTextRecargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, otrosPAgos4Layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otrosPAgos4Layout.createSequentialGroup()
+                                    .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(38, 38, 38)
+                                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(30, 30, 30))
+                                .addComponent(jLabel30)
+                                .addComponent(jLabel28)
+                                .addComponent(jLabel31)
+                                .addComponent(jLabel29)
+                                .addComponent(jLabel32)
+                                .addComponent(jScrollPane5)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(otrosPAgos4Layout.createSequentialGroup()
+                                    .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(comboPeriodo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextLectura, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)))))))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         otrosPAgos4Layout.setVerticalGroup(
             otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otrosPAgos4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(comboPeriodo)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -433,7 +448,9 @@ public class registrarConsumo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(otrosPAgos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -577,24 +594,23 @@ public class registrarConsumo extends javax.swing.JFrame {
 
     private void numUsuario2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numUsuario2KeyReleased
         int tam = numUsuario2.getText().length();
-        if (tam == 3) {
+        if (tam == 3) {//VALIDAR QUE EL TAMAÑO DEL NUM.USER ES IGUAL A 3
             try {
                 int numConsumidor = Integer.parseInt(numUsuario2.getText());
                 
                 conn = conecionBD.conexion();
                 consumidoresDAO dao = new consumidoresDAOImpl(conn);
-                
                 consumidores consumidor = dao.buscarConsumidor(numConsumidor);
                 
-                if(consumidor != null){
+                if(consumidor != null){//SI EXISTE EL USUARIO
                     jLabelNmedidor2.setText(String.valueOf(consumidor.getNumMedidor()));
                     jLabelNombre2.setText(String.valueOf(consumidor.getNombreCompleto()));
                     jLabelDireccion2.setText(String.valueOf(consumidor.getDireccion()));
                     jLabelManzana2.setText(String.valueOf(consumidor.getManzana()));
                     jLabelTelefono2.setText(String.valueOf(consumidor.getTelefono()));
                     estado.setSelectedIndex(consumidor.getStatus());
-//                    System.out.println(numUsuario2.getText() + "-" + periodo + "-" + anio);
-                    if(consumidor.getStatus()==4){ //si es igual a cancelado o pendiente
+                    
+                    if(consumidor.getStatus()==4){//si es igual a cancelado o pendiente
                         JOptionPane.showMessageDialog(this, "No puede registrar el consumo de este usuario\nEste usuario está Cancelado");
                         limpiarCampos();
                         numUsuario2.setText("");
@@ -602,28 +618,68 @@ public class registrarConsumo extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "No puede registrar el consumo de este usuario\nEste usuario está Pediente");
                         limpiarCampos();
                         numUsuario2.setText("");
-                    }else{
+                    }else{//si el usuario está activo o paga anual
+                        
+                        try{
+                            consumoDAO daoConsumo = new consumoDAOImpl(conn);
+                            consumo consumoAct = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo, anio);
+
+    //                        if(consumoAct != null){//SI EL PERIODO ACTUAL YA HA SIDO REGISTRADO
+                            jTextLectura.setText(String.valueOf(consumoAct.getLecturaActual()));
+                            jTextRecargo1.setText(String.valueOf(consumoAct.getRecargos()));
+                            jTextCooperacion1.setText(String.valueOf(consumoAct.getCooperacion()));
+                            jTextBonificaciones1.setText(String.valueOf(consumoAct.getBonificaciones()));
+                            jTextSanciones1.setText(String.valueOf(consumoAct.getSanciones()));
+                            jTextVarios1.setText(String.valueOf(consumoAct.getVarios()));
+                            jTextAreaMotivo1.setText(String.valueOf(consumoAct.getNotas()));
+                            jTextLectura.setFocusable(true);
+
+                            consumo consumoAnt = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-1, anio);
+                            if(consumoAnt != null){
+                                jLabelLecturaAnterior.setText(String.valueOf((consumoAnt.getLecturaActual())));
+                                jLabelConsumoAnterior.setText(String.valueOf((consumoAnt.getConsumoMedidor())));
+                                comboPeriodo.setSelectedIndex(periodo-1);
+                            }
+
+                            if(consumoAct.getStatus()==1){//si ya ha sido pagado no se puede editar
+                                JOptionPane.showMessageDialog(null, "ESTE REGISTRO YA HA SIDO PAGADO\nNo puede actualizar");
+                                limpiarCampos();
+                                numUsuario2.setText("");
+                                numUsuario2.setFocusable(true);
+                            }else{//si no ha sido pagado se puede editar
+                                int seleccion = JOptionPane.showConfirmDialog(null, "ESTE PERIODO YA HA SIDO REGISTRADO\n¿Decea actualizar los datos de este registro?", "Registro existente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                                if(seleccion == 1){//si no se actualizan los datos limpiar campos 
+                                    limpiarCampos();
+                                    numUsuario2.setText("");
+                                    numUsuario2.setFocusable(true);
+                                }else{//si se actualizan los datos
+                                    guardar.setEnabled(false);
+                                    actualizar.setEnabled(true);
+                                    jTextLectura.setFocusable(true);
+                                }
+                            }
+                        }catch(DAOException ex){
                         //OBTENER DATOS DE LECTURA ANTERIOR
-                        consumoDAO daoConsumo = new consumoDAOImpl(conn);
-                        consumo consumo = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-1, anio);
-//                        if(consumo==null){
-//                            
-//                        }else{
-                            jLabelLecturaAnterior.setText(String.valueOf((consumo.getLecturaActual())));
-                            jLabelConsumoAnterior.setText(String.valueOf((consumo.getConsumoMedidor())));
-                            comboPeriodo.setSelectedIndex(5);
-//                        }
-                                   
+                            System.out.println("NO EXISTE EL REGISTRO PERIODO ACTUAL");
+                            consumoDAO daoConsumo = new consumoDAOImpl(conn);
+                            consumo consumoAnt = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario2.getText()), periodo-1, anio);
+                            if(consumoAnt != null){
+                                jLabelLecturaAnterior.setText(String.valueOf((consumoAnt.getLecturaActual())));
+                                jLabelConsumoAnterior.setText(String.valueOf((consumoAnt.getConsumoMedidor())));
+                                comboPeriodo.setSelectedIndex(periodo-1);
+//                                perio0do=periodo-1;
+                            }
+                        }
                     }
                 }
                 else{
                     limpiarCampos();
                     numUsuario2.setText("");
                 }
-            } catch (DAOException ex){          
+            } catch (DAOException ex){  
                 int seleccion = JOptionPane.showConfirmDialog(null, "¿Quiere agregar el registro anterior?", "NO HAY REGISTRO ANTERIOR", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if(seleccion == 0){//si la respuesta es si
-//                    System.out.println(periodo-2);
+                    System.out.println(periodo-2);
                     comboPeriodo.setSelectedIndex(periodo-2);
                     try {
 //                  OBTENER EL CONSUMO ANTERIOR AL QUE SE VA A REGISTRAR
@@ -662,7 +718,7 @@ public class registrarConsumo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_numUsuario2KeyTyped
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
         if(numUsuario2.getText().equals("") || numUsuario2.getText().length() < 3){
             JOptionPane.showMessageDialog(null,"Ingresa un Núm. de usuario");
             numUsuario2.requestFocus();
@@ -702,16 +758,7 @@ public class registrarConsumo extends javax.swing.JFrame {
                             importe = 0.0;
                             cuota = 40.0;
                         }
-                        
-                        System.out.println("consumo: " + consumoLectura);
-
                         Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
-
-                                                
-                        System.out.println(numUser + "," + periodo + "," +anio+ "," +lecturaAct+ "," +
-                                consumoLectura+ "," +precio+ "," +importe+ "," +cuota+ "," +recargo+ "," +cooperacion+ "," +
-                                bonificacion+ "," +sanciones+ "," +varios+ "," +total+ "," +fecha+ "," +notas+ "," +aviso+ "," +
-                                status);
 
                         c.setNumUsuario(numUser);
                         c.setPeriodo(periodo);
@@ -731,7 +778,7 @@ public class registrarConsumo extends javax.swing.JFrame {
                         c.setNotas(notas);
                         c.setAviso(aviso);
                         c.setStatus(status);
-
+                        System.out.println("PERIODO:" + periodo);
                         daoConsumo.insertar(c);
                         numUsuario2.setText("");
                         numUsuario2.requestFocus();
@@ -742,7 +789,7 @@ public class registrarConsumo extends javax.swing.JFrame {
                 }
             }
         }
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_guardarActionPerformed
     
     void limpiarCampos(){
         jLabelNmedidor2.setText("####");
@@ -759,6 +806,9 @@ public class registrarConsumo extends javax.swing.JFrame {
         jTextAreaMotivo1.setText("");
         jLabelLecturaAnterior.setText("####");
         jLabelConsumoAnterior.setText("####");
+        guardar.setEnabled(true);
+        actualizar.setEnabled(false);
+        periodo=p;
     }
     
     private void jTextLecturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextLecturaKeyTyped
@@ -803,6 +853,79 @@ public class registrarConsumo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextVarios1KeyTyped
 
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        if(numUsuario2.getText().equals("") || numUsuario2.getText().length() < 3){
+            JOptionPane.showMessageDialog(null,"Ingresa un Núm. de usuario");
+            numUsuario2.requestFocus();
+        }else if(Double.parseDouble(jTextLectura.getText()) < Double.parseDouble(jLabelLecturaAnterior.getText())){
+            JOptionPane.showMessageDialog(null,"LECTURA INVALIDA. \n La lectura actual es menor a la anterior:"
+                    + "\n" + jTextLectura.getText() + " < " + jLabelLecturaAnterior.getText());
+            jTextLectura.requestFocus();
+        }else{
+            int seleccion = JOptionPane.showConfirmDialog(null, "¿Actualizar cambios?", "Confirmar cambios", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(seleccion == 0){//Si la respuesta fue SÍ
+                Double ant = Double.parseDouble(jLabelLecturaAnterior.getText());
+                Double act = Double.parseDouble(jTextLectura.getText());
+
+                if(act >= ant){
+                    consumoLectura = act - ant;
+                    try {            
+                        conn = conecionBD.conexion();
+                        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
+                        consumo c = new consumo();
+
+                        String numUser = numUsuario2.getText();                
+
+                        lecturaAct = Double.valueOf(jTextLectura.getText());
+                        Double recargo = Double.valueOf(jTextRecargo1.getText());
+                        Double cooperacion = Double.valueOf(jTextCooperacion1.getText());
+                        Double bonificacion = Double.valueOf(jTextBonificaciones1.getText());
+                        Double sanciones = Double.valueOf(jTextSanciones1.getText());
+                        Double varios = Double.valueOf(jTextVarios1.getText());
+                        String fecha = null;
+                        String notas = jTextAreaMotivo1.getText();
+                        String aviso = "Sin aviso";
+                        int status = 0;
+
+                        if(consumoLectura > 10){
+                            importe = (lecturaAct-Double.parseDouble(jLabelLecturaAnterior.getText()))*precio;
+                        }else{
+                            importe = 0.0;
+                            cuota = 40.0;
+                        }
+                        Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
+
+                        c.setNumUsuario(numUser);
+                        c.setPeriodo(periodo);
+                        c.setAnio(anio);
+                        c.setLecturaActual(lecturaAct);
+                        c.setConsumoMedidor(consumoLectura);
+                        c.setPrecio(precio);
+                        c.setImporteConsumo(importe);
+                        c.setCoutaFija(cuota);
+                        c.setRecargos(recargo);
+                        c.setCooperacion(cooperacion);
+                        c.setBonificaciones(bonificacion);
+                        c.setSanciones(sanciones);
+                        c.setVarios(varios);
+                        c.setTotalPagar(total);
+                        c.setFechaPAgo(fecha);
+                        c.setNotas(notas);
+                        c.setAviso(aviso);
+                        c.setStatus(status);
+
+                        daoConsumo.actualizar(c);
+                        numUsuario2.setText("");
+                        numUsuario2.requestFocus();
+                        limpiarCampos();
+                    } catch (DAOException ex) {
+                        JOptionPane.showMessageDialog(null,"Este registro ya EXISTE");
+                    }
+                }
+            }
+        }        
+    }//GEN-LAST:event_actualizarActionPerformed
+
    /**
      * @param args the command line arguments
      */
@@ -846,11 +969,12 @@ public class registrarConsumo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton actualizar;
     private javax.swing.JButton btnSalir3;
     private javax.swing.JComboBox comboPeriodo;
     private javax.swing.JPanel contenedor2;
     private javax.swing.JComboBox estado;
+    private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;

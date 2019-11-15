@@ -27,18 +27,18 @@ public class PintarCelda extends DefaultTableCellRenderer {
 
         if (value instanceof String) {
             String valor = String.valueOf(value);
-//            cell.setBackground(Color.white);
-//            cell.setForeground(Color.BLUE);
-//            if (column == 3) {
+            cell.setBackground(Color.white);
+            cell.setForeground(Color.BLACK);
+            if (column == 3) {
                 if (valor.equals("PENDIENTE")) {
                     cell.setBackground(Color.WHITE);
                     cell.setForeground(Color.RED);
-                }
-//                }else{
-//                    cell.setBackground(Color.white);
-//                    cell.setForeground(Color.BLUE);
 //                }
-//            }
+                }else{
+                    cell.setBackground(Color.white);
+                    cell.setForeground(Color.BLUE);
+                }
+            }
         }
         return cell;
     }

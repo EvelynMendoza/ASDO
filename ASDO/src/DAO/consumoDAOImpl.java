@@ -146,7 +146,7 @@ public class consumoDAOImpl implements consumoDAO {
             if (stat.executeUpdate() == 0) {
                 throw new DAOException("No se guardaron los datos");
             } else {
-                JOptionPane.showMessageDialog(null, "El pago se ha realiado exitosamente!");
+                JOptionPane.showMessageDialog(null, "La información ha sido actualizada exitosamente!");
             }
         } catch (SQLException e) {
             throw new DAOException("Error sql" + e);
