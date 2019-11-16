@@ -9,6 +9,7 @@ import ConexionCloseBD.ConexionBD;
 import DAO.DAOException;
 import DAO.consumidoresDAO;
 import DAO.consumidoresDAOImpl;
+import DAO.consumoDAO;
 import DAO.consumoDAOImpl;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
@@ -716,18 +717,21 @@ public class pagoConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobanteActionPerformed
-        conn = conecionBD.conexion();
+                          
+        try {        
+            conn = conecionBD.conexion();
+            consumoDAO daoConsumo = new consumoDAOImpl(conn);
+            consumo consumoAnt = daoConsumo.buscarConsumo(Integer.parseInt(numUsuario1.getText()), periodox-1, aniox);
          
-        try {
             JasperReport reporte = null;
             String path = "src\\reportes\\report1.jasper";
-//            JasperReport reporte = (JasperReport) JRLoader.loadObject("report1.jasper");
             Map  parametro = new HashMap();
             
             parametro.put("idUser",Integer.parseInt(numUsuario1.getText()));
-            
-//            JasperPrint j = JasperFillManager.fillReport(reporte, parametro,conn);
-            
+            parametro.put("periodo",periodox);
+            parametro.put("anio",aniox);
+            parametro.put("lectAnterior",consumoAnt.getLecturaActual());
+            parametro.put("nombrePeriodo",periodoPago.getText());
             
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, conn);
@@ -739,7 +743,34 @@ public class pagoConsumo extends javax.swing.JFrame {
         } catch (JRException ex) {
 //            Logger.getLogger(reporte.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showConfirmDialog(null, "No se generó el reporte");
-        }        
+        } catch (DAOException ex) {
+            conn = conecionBD.conexion();
+
+            JasperReport reporte = null;
+            String path = "src\\reportes\\report1.jasper";
+            Map  parametro = new HashMap();
+            
+            parametro.put("idUser",Integer.parseInt(numUsuario1.getText()));
+            parametro.put("periodo",periodox);
+            parametro.put("anio",aniox);
+            parametro.put("lectAnterior",0.0);
+            parametro.put("nombrePeriodo",periodoPago.getText());
+            
+            try {
+                reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            } catch (JRException ex1) {
+                Logger.getLogger(pagoConsumo.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            JasperPrint jprint = null;
+            try {
+                jprint = JasperFillManager.fillReport(reporte, parametro, conn);
+            } catch (JRException ex1) {
+                Logger.getLogger(pagoConsumo.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+////            crearr vista d ereporte
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);        }        
     }//GEN-LAST:event_btnComprobanteActionPerformed
 
     private void btnCobrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCobrarKeyReleased

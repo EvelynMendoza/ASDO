@@ -667,7 +667,6 @@ public class registrarConsumo extends javax.swing.JFrame {
                                 jLabelLecturaAnterior.setText(String.valueOf((consumoAnt.getLecturaActual())));
                                 jLabelConsumoAnterior.setText(String.valueOf((consumoAnt.getConsumoMedidor())));
                                 comboPeriodo.setSelectedIndex(periodo-1);
-//                                perio0do=periodo-1;
                             }
                         }
                     }

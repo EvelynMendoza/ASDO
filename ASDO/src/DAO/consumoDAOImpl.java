@@ -29,7 +29,7 @@ public class consumoDAOImpl implements consumoDAO {
     final String INSERT = "insert consumo(numUsuario, periodo, anio, lecturaActual, consumoMedidor, precio, importeConsumo,\n"
             + "  coutaFija, recargos, cooperacion, bonificaciones, sanciones, varios, totalPagar,\n"
             + "  fechaPAgo, notas,aviso, status ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
-    final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
+        final String GETONE = "select * from consumo WHERE numUsuario=? and periodo=? and anio=?;";
 
     final String GETONEUSER = "select * from consumo WHERE numUsuario=? and anio=? LIMIT 5;";
 
