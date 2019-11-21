@@ -781,7 +781,11 @@ public class registrarConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_numUsuario2KeyTyped
 
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-        
+        Consulta("guardar");
+    }//GEN-LAST:event_guardarActionPerformed
+    
+    //FUNCION PARA GUARDAR O ACTUALIZAR LOS DATOS
+    void Consulta(String consulta){
         if(numUsuario2.getText().equals("") || numUsuario2.getText().length() < 3){
             JOptionPane.showMessageDialog(null,"Ingresa un Núm. de usuario");
             numUsuario2.requestFocus();
@@ -798,7 +802,13 @@ public class registrarConsumo extends javax.swing.JFrame {
                             + "\n" + jTextLectura.getText() + " < " + jLabelLecturaAnterior.getText());
                     jTextLectura.requestFocus();
             }else{
-                int seleccion = JOptionPane.showConfirmDialog(null, "¿Guardar cambios?", "Confirmar cambios", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                int seleccion;
+                if(consulta.equals("guardar")){
+                    seleccion = JOptionPane.showConfirmDialog(null, "¿Guardar cambios?", "Confirmar cambios", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                }else{
+                    seleccion = JOptionPane.showConfirmDialog(null, "¿Actualizar cambios?", "Confirmar cambios", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);                    
+                }
+                
                 if(seleccion == 0){//Si la respuesta fue SÍ
 
                     consumoLectura = act - ant;
@@ -853,8 +863,13 @@ public class registrarConsumo extends javax.swing.JFrame {
                         c.setAviso(aviso);
 
                         c.setStatus(status);
-                        System.out.println("PERIODO:" + periodo);
-                        daoConsumo.insertar(c);
+
+                        if(consulta.equals("guardar")){                        
+                            daoConsumo.insertar(c);
+                        }else{
+                            daoConsumo.actualizar(c);
+                        }
+
                         numUsuario2.setText("");
                         numUsuario2.requestFocus();
                         limpiarCampos();
@@ -863,8 +878,8 @@ public class registrarConsumo extends javax.swing.JFrame {
                     }
                 }
             }
-        }
-    }//GEN-LAST:event_guardarActionPerformed
+        }        
+    }
     
     void limpiarCampos(){
         jLabelNmedidor2.setText("####");
@@ -934,76 +949,7 @@ public class registrarConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextVarios1KeyTyped
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
-        if(numUsuario2.getText().equals("") || numUsuario2.getText().length() < 3){
-            JOptionPane.showMessageDialog(null,"Ingresa un Núm. de usuario");
-            numUsuario2.requestFocus();
-        }else if(Double.parseDouble(jTextLectura.getText()) < Double.parseDouble(jLabelLecturaAnterior.getText())){
-            JOptionPane.showMessageDialog(null,"LECTURA INVALIDA. \n La lectura actual es menor a la anterior:"
-                    + "\n" + jTextLectura.getText() + " < " + jLabelLecturaAnterior.getText());
-            jTextLectura.requestFocus();
-        }else{
-            int seleccion = JOptionPane.showConfirmDialog(null, "¿Actualizar cambios?", "Confirmar cambios", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if(seleccion == 0){//Si la respuesta fue SÍ
-                Double ant = Double.parseDouble(jLabelLecturaAnterior.getText());
-                Double act = Double.parseDouble(jTextLectura.getText());
-
-                if(act >= ant){
-                    consumoLectura = act - ant;
-                    try {            
-                        conn = conecionBD.conexion();
-                        consumoDAOImpl daoConsumo = new consumoDAOImpl(conn);
-                        consumo c = new consumo();
-
-                        String numUser = numUsuario2.getText();                
-
-                        lecturaAct = Double.valueOf(jTextLectura.getText());
-                        Double recargo = Double.valueOf(jTextRecargo1.getText());
-                        Double cooperacion = Double.valueOf(jTextCooperacion1.getText());
-                        Double bonificacion = Double.valueOf(jTextBonificaciones1.getText());
-                        Double sanciones = Double.valueOf(jTextSanciones1.getText());
-                        Double varios = Double.valueOf(jTextVarios1.getText());
-                        String fecha = null;
-                        String notas = jTextAreaMotivo1.getText();
-                        String aviso = "Sin aviso";
-                        int status = 0;
-
-                        if(consumoLectura > 10){
-                            importe = (lecturaAct-Double.parseDouble(jLabelLecturaAnterior.getText()))*precio;
-                        }else{
-                            importe = 0.0;
-                            cuota = 40.0;
-                        }
-                        Double total = importe+cuota+recargo+cooperacion+bonificacion+sanciones+varios;
-
-                        c.setNumUsuario(numUser);
-                        c.setPeriodo(periodo);
-                        c.setAnio(anio);
-                        c.setLecturaActual(lecturaAct);
-                        c.setConsumoMedidor(consumoLectura);
-                        c.setPrecio(precio);
-                        c.setImporteConsumo(importe);
-                        c.setCoutaFija(cuota);
-                        c.setRecargos(recargo);
-                        c.setCooperacion(cooperacion);
-                        c.setBonificaciones(bonificacion);
-                        c.setSanciones(sanciones);
-                        c.setVarios(varios);
-                        c.setTotalPagar(total);
-                        c.setFechaPAgo(fecha);
-                        c.setNotas(notas);
-                        c.setAviso(aviso);
-                        c.setStatus(status);
-
-                        daoConsumo.actualizar(c);
-                        numUsuario2.setText("");
-                        numUsuario2.requestFocus();
-                        limpiarCampos();
-                    } catch (DAOException ex) {
-                        JOptionPane.showMessageDialog(null,"Este registro ya EXISTE");
-                    }
-                }
-            }
-        }        
+       Consulta("actualizar");
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void reinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reinicioMouseClicked
